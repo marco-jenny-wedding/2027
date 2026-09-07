@@ -293,8 +293,18 @@ body.entered #experience{
   margin:14px 0;
 }
 .scene-note p{font-size:13px;line-height:2.4;color:var(--muted)}
-.note-one{top:135svh;left:8%}
-.note-two{top:235svh;right:8%}
+/* 第一張：入場完成即刻見到 */
+.note-one{
+  top:max(100px,20svh);
+  left:8%;
+}
+
+/* 第二張：向下捲動後出現 */
+.note-two{
+  top:235svh;
+  right:8%;
+}
+
 #scrollHint{
   position:fixed;
   z-index:15;
@@ -3097,7 +3107,7 @@ try{
     let changed=sceneDirty;
 
     if(phase==="approach"){
-      approachProgress=paused ? 1 : Math.min(1,approachProgress+dt/5.5);
+      approachProgress=paused ? 1 : Math.min(1,approachProgress+dt/2.5);
       const eased=approachProgress*approachProgress*(3-2*approachProgress);
       approachPath.getPointAt(eased,position);
       camera.position.copy(position);
