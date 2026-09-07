@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#dceaf0">
 <meta name="description" content="2027 年 3 月 30 日，一步一步，走向你。沖繩婚禮請帖。">
 <title>一步一步，走向你｜沖繩婚禮請帖</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&amp;family=Noto+Serif+JP:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400;500;600&amp;display=swap"
+  rel="stylesheet">
+  
 <script>
 /* ==================================================
    主要修改區
@@ -49,7 +55,8 @@ window.INVITE = {
   --paper:#f7f5ec;
   --gold:#ad9771;
   --line:rgba(122,145,115,.22);
-  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --serif-jp: "Noto Serif JP", "Noto Serif TC", "Yu Mincho", serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -502,8 +509,283 @@ body.no3d .scene-note{display:none}
   html{scroll-behavior:auto}
   .playing .music-bars i{animation:none}
 }
+
+/* ===== 日系婚禮明朝體排版：新增喺呢個位置 ===== */
+
+body{
+  font-family:var(--serif);
+  font-weight:400;
+  line-height:1.9;
+  letter-spacing:.035em;
+}
+
+button,
+input,
+select,
+textarea{
+  font-family:var(--serif);
+}
+
+/* 日文祝福使用日文字體 */
+.jp,
+:lang(ja){
+  font-family:var(--serif-jp);
+}
+
+/* 大標題 */
+.landing-title h1,
+.section-title,
+.scene-note h2,
+footer h2{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:.14em;
+  line-height:1.9;
+}
+
+.landing-title h1{
+  letter-spacing:.17em;
+}
+
+/* 信件內文 */
+.letter p{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:14px;
+  line-height:2.65;
+  letter-spacing:.045em;
+}
+
+/* 一般內文 */
+.small,
+.scene-note p,
+.detail-row p,
+.event p{
+  font-family:var(--serif);
+  font-weight:400;
+  line-height:2.2;
+  letter-spacing:.04em;
+}
+
+/* 婚禮資料 */
+.detail-row strong,
+.event h3{
+  font-weight:500;
+  letter-spacing:.065em;
+}
+
+/* 名字與落款 */
+.signature,
+.footer-name{
+  font-family:var(--serif);
+  font-weight:500;
+  letter-spacing:.13em;
+}
+
+/* 按鈕 */
+.enter-button{
+  font-family:var(--serif);
+  font-weight:500;
+  letter-spacing:.12em;
+}
+
+.control,
+.pill,
+.preview-button,
+.skip-button{
+  letter-spacing:.055em;
+}
+
+/* 人物倒數文案 */
+.walk-caption strong{
+  font-family:var(--serif);
+  font-weight:500;
+  letter-spacing:.07em;
+  line-height:2;
+}
+
+.walk-caption p,
+.walk-labels{
+  letter-spacing:.065em;
+}
+
+/* 頁尾日文 */
+.jp{
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:.16em;
+  line-height:2.3;
+}
+
+/* 英文保留西式襯線 */
+.brand,
+.eyebrow,
+.arrival-date{
+  font-family:Georgia,"Times New Roman",serif;
+}
+
+.eyebrow{
+  letter-spacing:.2em;
+}
+
+.detail-row .venue{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  letter-spacing:.025em;
+  overflow-wrap:break-word;
+}
+
+/* 手機字距稍微收窄 */
+@media(max-width:760px){
+  body{
+    letter-spacing:.025em;
+  }
+
+  .landing-title h1{
+    font-size:23px;
+    letter-spacing:.1em;
+    line-height:1.85;
+  }
+
+  .section-title,
+  .scene-note h2{
+    letter-spacing:.09em;
+    line-height:1.9;
+  }
+
+  .letter p{
+    font-size:13px;
+    line-height:2.55;
+    letter-spacing:.035em;
+  }
+
+  .walk-caption strong{
+    letter-spacing:.035em;
+    line-height:1.95;
+  }
+
+  .signature,
+  .footer-name{
+    letter-spacing:.09em;
+  }
+
+  .jp{
+    font-size:11px;
+    letter-spacing:.11em;
+  }
+
+  footer h2{
+    letter-spacing:.15em;
+  }
+}
+/* ===== 真正換字體：日系手寫書信風 ===== */
+
+:root{
+  --handwriting:
+    "Klee One",
+    "Noto Serif TC",
+    "Songti TC",
+    serif;
+}
+
+/* 大標題 */
+.landing-title h1,
+.section-title,
+.scene-note h2,
+footer h2{
+  font-family:var(--handwriting);
+  font-weight:600;
+  letter-spacing:.08em;
+  line-height:1.85;
+}
+
+/* 開場主句 */
+.landing-title h1{
+  font-size:clamp(29px,4vw,43px);
+  text-shadow:0 2px 15px #ffffffb3;
+}
+
+/* 人物下方重要句子 */
+.walk-caption strong{
+  font-family:var(--handwriting);
+  font-weight:600;
+  font-size:clamp(20px,2.8vw,27px);
+  letter-spacing:.055em;
+}
+
+/* 名字及落款 */
+.signature,
+.footer-name{
+  font-family:var(--handwriting);
+  font-weight:600;
+  font-size:27px;
+  letter-spacing:.08em;
+}
+
+/* 入場按鈕 */
+.enter-button{
+  font-family:var(--handwriting);
+  font-weight:600;
+  font-size:21px;
+  letter-spacing:.08em;
+}
+
+/* 日文祝福 */
+.jp,
+p:lang(ja){
+  font-family:var(--handwriting);
+  font-weight:400;
+  font-size:15px;
+  letter-spacing:.1em;
+}
+
+/* 長篇中文維持明朝體，避免閱讀太花 */
+.letter p{
+  font-family:var(--serif);
+  font-weight:400;
+  line-height:2.5;
+}
+
+/* 手機 */
+@media(max-width:760px){
+  .landing-title h1{
+    font-size:29px;
+    letter-spacing:.045em;
+  }
+
+  .section-title{
+    font-size:31px;
+    letter-spacing:.055em;
+  }
+
+  .scene-note h2{
+    font-size:29px;
+    letter-spacing:.055em;
+  }
+
+  .walk-caption strong{
+    font-size:20px;
+    letter-spacing:.025em;
+  }
+
+  .enter-button{
+    font-size:19px;
+  }
+
+  .signature,
+  .footer-name{
+    font-size:25px;
+  }
+
+  .jp,
+  p:lang(ja){
+    font-size:13px;
+  }
+}
+
 </style>
 </head>
+
 
 <body>
 <div id="world" aria-hidden="true"></div>
