@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f7f3e9">
 <meta id="pageDescription" name="description" content="">
-<title></title>
+<title>一步一步，走向你｜沖繩婚禮請帖</title>
 
 <script>
 /* ==========================================================
@@ -15,7 +15,7 @@
    1. 文字放在雙引號 "..." 裏面。
    2. 換行用 \n，唔需要寫 HTML。
    3. 段落 / 流程可以在陣列內新增或刪除。
-   4. 以下變數會自動代入：
+   4. 可使用以下變數：
       {names}              新人名字
       {initials}           名字縮寫
       {guestName}          賓客稱呼
@@ -30,8 +30,9 @@
       {location}           酒店名字
 
    注意：
-   請勿在文字中直接貼 HTML 標籤。
-   引號內需要雙引號時，請寫成 \"。
+   - 唔好直接喺文字裏面貼 HTML。
+   - 引號內需要雙引號時，請寫成 \"。
+   - 教堂相片請使用自己拍攝或已獲准使用的圖片。
    ========================================================== */
 
 window.INVITE = {
@@ -43,7 +44,7 @@ window.INVITE = {
   weddingDate: "2027-03-30",
   journeyStartDate: "2026-03-30",
 
-  // 日本行禮時間；未定留空，格式例如 "14:00"。
+  // 日本行禮時間；未定留空，例如 "14:00"。
   ceremonyTime: "",
   meetingTime: "集合時間待定",
 
@@ -52,13 +53,19 @@ window.INVITE = {
 
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Monterey+Lumer+Chapel+Okinawa",
   contactUrl: "",
+  chapelWebsiteUrl: "https://www.resortwedding.net/okinawa/monterey/",
 
   /* ---------- B. 相片、字體、音樂 ---------- */
   photoUrl: "images/couple.jpg",
   photoPosition: "50% 50%",
   photoAlt: "我們的合照",
 
-  // 下載繁體字體檔後放入此位置，並保留原授權及版權資料。
+  // 請將已獲准使用的教堂照片放入以下位置。
+  chapelPhotoUrl: "images/monterey-lumer-chapel.jpg",
+  chapelPhotoPosition: "50% 50%",
+  chapelPhotoAlt: "Monterey Lumer Chapel 教堂實景",
+
+  // 保留字體原作者的授權及版權資料。
   fontUrl: "fonts/MaokenAssortedSans-TC.ttf",
 
   // 留空使用內置合成音樂。
@@ -69,7 +76,6 @@ window.INVITE = {
   revealThreshold: 0.35,
 
   // 合照及揭曉文字出現後，停留幾多秒先自動入教堂。
-  // 想快啲可改為 1，想睇耐啲可改為 3。
   autoEnterDelaySeconds: 2,
 
   entranceSeconds: 2.5,
@@ -81,7 +87,7 @@ window.INVITE = {
     description: "{dateLong}，一步一步，走向你。沖繩婚禮請帖。"
   },
 
-  /* ---------- E. 日期顯示格式 ---------- */
+  /* ---------- E. 日期顯示 ---------- */
   dates: {
     long: "{year} 年 {month} 月 {day} 日",
     dot: "{year}.{month2}.{day2}",
@@ -93,7 +99,7 @@ window.INVITE = {
     invalidDisplay: "日期待確認"
   },
 
-  /* ---------- F. 右上角控制 ---------- */
+  /* ---------- F. 頂部控制 ---------- */
   controls: {
     pause: "暫停動畫",
     play: "播放動畫",
@@ -115,7 +121,6 @@ window.INVITE = {
     helpRevealed: "搵到我哋喇 ♡",
     helpUnavailable: "按「直接揭曉」，打開我哋嘅小小心意。",
 
-    // 相片載入失敗時顯示名字卡。
     fallbackSymbol: "♡",
     fallbackNames: "{names}",
     fallbackLine: "由兩個人，走到我們。",
@@ -126,10 +131,10 @@ window.INVITE = {
     enterButton: "一齊走入教堂 →",
     skipButton: "直接閱讀請帖",
 
-    announcement: "合照已揭曉，即將帶你走入教堂。",
+    announcement: "合照已揭曉，即將帶你走入教堂。"
   },
 
-  /* ---------- H. 載入及提示文字 ---------- */
+  /* ---------- H. 提示文字 ---------- */
   messages: {
     sceneLoading: "教堂準備中；你可以先慢慢睇相。",
     sceneSlow: "教堂載入較慢；可先欣賞合照，或直接閱讀請帖。",
@@ -149,7 +154,7 @@ window.INVITE = {
     timeInvalid: "行禮時間格式有誤，請使用 HH:MM，例如 14:00。"
   },
 
-  /* ---------- I. 入教堂及文字卡 ---------- */
+  /* ---------- I. 教堂導覽 ---------- */
   church: {
     regionLabel: "教堂導覽",
     travel: "沿著樓梯，走近我們的約定。",
@@ -205,8 +210,6 @@ window.INVITE = {
     eyebrow: "A LITTLE NOTE FOR YOU",
     heading: "多謝你，\n為我們遠道而來。",
     greeting: "{guestName}：",
-
-    // 每一項係一段，可以加減。
     paragraphs: [
       "知道你會嚟，我哋已經開始期待嗰一日。",
       "{dateLong}，我哋會喺沖繩嘅海邊，交換承諾，展開人生下一段旅程。而你，會係呢個重要時刻入面，最珍貴嘅一部分。",
@@ -215,7 +218,7 @@ window.INVITE = {
     signature: "{names}"
   },
 
-  /* ---------- L. 婚禮資料 ---------- */
+  /* ---------- L. 婚禮資料及教堂相片 ---------- */
   details: {
     eyebrow: "THE CEREMONY",
     heading: "把這一天，\n留給海與我們。",
@@ -232,6 +235,11 @@ window.INVITE = {
     venueLabel: "VENUE / 場所",
     venueValue: "{chapel}",
     venueNote: "{location}",
+
+    chapelPhotoCaption: "{chapel}\n{location}",
+    chapelPhotoLoading: "教堂相片載入中…",
+    chapelPhotoUnavailable: "教堂相片暫未能顯示，你可以按下面連結查看官方介紹。",
+    chapelWebsiteButton: "教堂官方介紹 ↗",
 
     mapButton: "查看教堂位置 ↗",
     contactButton: "有事搵我哋 ↗"
@@ -252,8 +260,6 @@ window.INVITE = {
   schedule: {
     ceremonyKnown: "{ceremonyTime} JST",
     ceremonyUnknown: "時間待定",
-
-    // 可以新增更多流程項目。
     events: [
       {
         time: "時間待定",
@@ -280,15 +286,10 @@ window.INVITE = {
     paragraph: "有你同行，呢段回憶先至完整。",
     names: "{names}",
     date: "{dateEnglish}",
-
-    // 此段係網站內容說明，唔係字體授權文件。
-    // 可以修改；但唔好因此刪除 fonts 內原作者的授權資料。
     disclaimer: "教堂為 3D 風格示意，並非官方模型或精確建築重建。\nQ 版人物為本頁繪製的 SVG 插畫，並非真人肖像。\n倒數以日本日期及裝置時鐘計算；正式婚禮安排以通知為準。"
   }
 };
-
 /* ================= 主要修改區完 ================= */
-document.title = window.INVITE.page.title;
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -305,9 +306,13 @@ document.title = window.INVITE.page.title;
   --line:#bac6af66;
   --serif:"Noto Serif TC","Songti TC",serif;
   --cute:"Maoken Wedding","Noto Serif TC",serif;
+  --topbar-height:80px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--topbar-height) + 16px);
+}
 body{
   margin:0;
   background:var(--paper);
@@ -324,62 +329,122 @@ button{font:inherit;color:inherit;cursor:pointer}
 button:disabled{opacity:.6;cursor:wait}
 a{color:inherit}
 button:focus-visible,a:focus-visible,[tabindex]:focus-visible{
-  outline:3px solid #a27856;outline-offset:5px;
+  outline:3px solid #a27856;
+  outline-offset:5px;
 }
 ::selection{background:#ead8c6}
 h1,h2,h3,p{overflow-wrap:anywhere}
 h1,h2,h3,.cute{
-  font-family:var(--cute);font-weight:400;font-synthesis:none;
+  font-family:var(--cute);
+  font-weight:400;
+  font-synthesis:none;
 }
-[data-copy],.copy{
-  white-space:pre-line;
-}
+[data-copy],.copy{white-space:pre-line}
 .eyebrow{font:10px/1.9 Georgia,serif;letter-spacing:.2em}
 .small{font-size:12px;line-height:2.2;color:var(--muted)}
 .center{text-align:center}
 
+/* 固定 3D 背景 */
 #world{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
   background:linear-gradient(#95c9db,#e5eee5 70%,#dedcc7);
 }
 #world canvas{display:block;width:100%;height:100%}
 #world::after{
-  content:"";position:absolute;inset:0;
+  content:"";
+  position:absolute;
+  inset:0;
   background:linear-gradient(0deg,#faf5e777,transparent 30%);
 }
+
+/* 頂部：實色背景，不透出下層文字 */
 .topbar{
-  position:fixed;top:0;left:0;right:0;z-index:40;
-  padding:max(16px,env(safe-area-inset-top)) 5% 12px;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:12px;pointer-events:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  padding:
+    max(14px,env(safe-area-inset-top))
+    max(18px,5%,env(safe-area-inset-right))
+    14px
+    max(18px,5%,env(safe-area-inset-left));
+  background:#f7f3e9;
+  border-bottom:1px solid #d8dccc;
+  box-shadow:0 5px 20px rgba(64,86,79,.07);
+  isolation:isolate;
 }
-.brand{font:23px Georgia,serif;letter-spacing:.08em;text-shadow:0 1px 15px white}
-.top-buttons{display:flex;gap:8px;pointer-events:auto}
+.brand{
+  flex:0 1 auto;
+  min-width:0;
+  font:23px/1.5 Georgia,serif;
+  letter-spacing:.08em;
+  color:#4d6556;
+  overflow-wrap:anywhere;
+}
+.top-buttons{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-left:auto;
+}
 .control{
-  min-height:44px;min-width:44px;padding:9px 13px;
-  border:1px solid #fff;border-radius:30px;
-  background:#fffaf0ed;font-size:11px;
-  box-shadow:0 3px 16px #465b5010;
+  min-height:44px;
+  min-width:44px;
+  padding:9px 13px;
+  border:1px solid #cbd2bd;
+  border-radius:30px;
+  background:#fffdf6;
+  font-size:11px;
+  box-shadow:0 2px 8px rgba(64,86,79,.04);
+}
+.control:hover{background:#eef1e5}
+.control[aria-pressed="true"]{
+  background:#e8eddf;
+  border-color:#acbba0;
 }
 .primary{
-  display:inline-flex;justify-content:center;align-items:center;
-  min-height:48px;padding:11px 25px;
-  border:1px solid #b1baa1;border-radius:28px;
-  background:#f8fbef;color:#4b6354;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:48px;
+  padding:11px 25px;
+  border:1px solid #b1baa1;
+  border-radius:28px;
+  background:#f8fbef;
+  color:#4b6354;
   box-shadow:0 6px 20px #50664b12;
   font:400 20px/1.6 var(--cute);
 }
 .text-button{
-  min-height:44px;padding:9px 13px;
-  border:0;background:transparent;
-  font-size:11px;color:#71816d;
-  text-decoration:underline;text-underline-offset:5px;
+  min-height:44px;
+  padding:9px 13px;
+  border:0;
+  background:transparent;
+  font-size:11px;
+  color:#71816d;
+  text-decoration:underline;
+  text-underline-offset:5px;
 }
 
 /* 合照開場 */
 #intro{
-  position:fixed;inset:0;z-index:35;
-  overflow-y:auto;overscroll-behavior:contain;
+  position:fixed;
+  inset:0;
+  z-index:35;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scroll-padding-top:calc(var(--topbar-height) + 16px);
   background:
     radial-gradient(ellipse at 20% 15%,#fff8ec,transparent 60%),
     radial-gradient(ellipse at 90% 80%,#efdede77,transparent 50%),
@@ -388,31 +453,63 @@ h1,h2,h3,.cute{
 }
 #intro.leaving{opacity:0;pointer-events:none}
 .intro-inner{
-  position:relative;width:min(100%,760px);min-height:100%;
-  margin:auto;padding:85px 22px max(24px,env(safe-area-inset-bottom));
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;
+  position:relative;
+  width:min(100%,760px);
+  min-height:100%;
+  margin:auto;
+  padding:
+    calc(var(--topbar-height) + 18px)
+    22px
+    max(24px,env(safe-area-inset-bottom));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
-.intro-heading{margin:9px 0 18px;font-size:clamp(23px,4.5vw,33px);line-height:1.6}
+.intro-heading{
+  margin:9px 0 18px;
+  font-size:clamp(23px,4.5vw,33px);
+  line-height:1.6;
+}
 .photo-card{
-  position:relative;width:min(350px,78vw,43svh);
-  padding:10px 10px 14px;background:#fffdf6;
-  border:1px solid #fff;border-radius:22px;
+  position:relative;
+  width:min(350px,78vw,43svh);
+  padding:10px 10px 14px;
+  background:#fffdf6;
+  border:1px solid #fff;
+  border-radius:22px;
   box-shadow:0 18px 55px -20px #75685955;
 }
 .photo-card::before{
-  content:"";position:absolute;width:86px;height:25px;
-  left:calc(50% - 43px);top:-11px;z-index:5;
-  background:#d8d9ba99;transform:rotate(-4deg);pointer-events:none;
+  content:"";
+  position:absolute;
+  width:86px;
+  height:25px;
+  left:calc(50% - 43px);
+  top:-11px;
+  z-index:5;
+  background:#d8d9ba99;
+  transform:rotate(-4deg);
+  pointer-events:none;
 }
 .photo-window{
-  position:relative;width:100%;aspect-ratio:4/5;
-  overflow:hidden;border-radius:15px;background:#eadfce;
+  position:relative;
+  width:100%;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:15px;
+  background:#eadfce;
   isolation:isolate;
 }
 .photo-fallback{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;padding:22px;
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
   background:
     radial-gradient(circle at 30% 20%,#fffbed,transparent 65%),
     linear-gradient(150deg,#e1e9dc,#f1d9d4);
@@ -420,36 +517,82 @@ h1,h2,h3,.cute{
 .photo-fallback .heart{font-size:62px;color:#c98e92;line-height:1.5}
 .photo-fallback .names{font:22px/1.8 var(--cute)}
 .photo-fallback .small{font-size:10px}
-#couplePhoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#couplePhoto{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 #fogCanvas{
-  position:absolute;inset:0;width:100%;height:100%;z-index:2;
-  touch-action:none;cursor:crosshair;transition:opacity 1s ease;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  touch-action:none;
+  cursor:crosshair;
+  transition:opacity 1s ease;
 }
 #fogHint{
-  position:absolute;inset:0;z-index:3;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  color:#8d9684;pointer-events:none;transition:opacity .3s ease;
-  font:20px/1.8 var(--cute);text-shadow:0 1px 4px white;
+  position:absolute;
+  inset:0;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#8d9684;
+  pointer-events:none;
+  transition:opacity .3s ease;
+  font:20px/1.8 var(--cute);
+  text-shadow:0 1px 4px white;
 }
 #fogHint .symbol{font:38px/1.7 Georgia,serif}
 #fogHint small{font-size:12px}
-#intro.scratching #fogHint,#intro.revealed #fogHint{opacity:0}
+#intro.scratching #fogHint,
+#intro.revealed #fogHint{opacity:0}
 #intro.revealed #fogCanvas{opacity:0;pointer-events:none}
-.photo-caption{padding-top:9px;font:11px/1.8 Georgia,serif;letter-spacing:.15em}
+.photo-caption{
+  padding-top:9px;
+  font:11px/1.8 Georgia,serif;
+  letter-spacing:.15em;
+}
 #scratchHelp{margin:14px 0 0}
-#revealMessage{width:100%;margin-top:15px;animation:messageIn .65s ease both}
-#revealMessage h2{font-size:clamp(23px,4vw,29px);line-height:1.65;margin:0 0 13px}
-#loadStatus{display:block;font-size:10px;color:#7e877b;margin:8px 0 0}
-.intro-links{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}
+#revealMessage{
+  width:100%;
+  margin-top:15px;
+  animation:messageIn .65s ease both;
+}
+#revealMessage h2{
+  font-size:clamp(23px,4vw,29px);
+  line-height:1.65;
+  margin:0 0 13px;
+}
+#loadStatus{
+  display:block;
+  font-size:10px;
+  color:#7e877b;
+  margin:8px 0 0;
+}
+.intro-links{
+  display:flex;
+  justify-content:center;
+  gap:5px;
+  flex-wrap:wrap;
+}
 @keyframes messageIn{
   from{opacity:0;transform:translateY(10px)}
   to{opacity:1;transform:translateY(0)}
 }
 .petals{position:absolute;inset:-35px;pointer-events:none}
 .petal{
-  position:absolute;width:13px;height:20px;
+  position:absolute;
+  width:13px;
+  height:20px;
   background:linear-gradient(130deg,#fff1ec,#e6b8bd);
-  border-radius:90% 8% 80% 25%;opacity:.75;
+  border-radius:90% 8% 80% 25%;
+  opacity:.75;
   animation:petalFloat 5s ease-in-out infinite alternate;
   transition:opacity 1.1s ease,translate 1.1s ease;
 }
@@ -469,38 +612,74 @@ body.motion-paused .petal{animation-play-state:paused}
 
 /* 教堂及請帖 */
 main{position:relative;z-index:2}
-#experience{position:relative;height:100vh;height:100svh;pointer-events:none}
+#experience{
+  position:relative;
+  height:100vh;
+  height:100svh;
+  pointer-events:none;
+}
 body.entered #experience{height:330vh;height:330svh}
 .scene-note{
-  position:absolute;width:min(380px,calc(100% - 44px));padding:27px;
-  background:#fffdf2ed;border:1px solid white;
+  position:absolute;
+  width:min(380px,calc(100% - 44px));
+  padding:27px;
+  background:#fffdf2ed;
+  border:1px solid white;
   border-radius:22px 22px 22px 4px;
   box-shadow:0 15px 45px #39584b17;
-  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
   pointer-events:auto;
 }
 .scene-note h2{font-size:33px;line-height:1.65;margin:12px 0}
 .scene-note p{font-size:13px;line-height:2.2;color:var(--muted)}
-.note-one{top:max(105px,20svh);left:8%}
+.note-one{
+  top:max(calc(var(--topbar-height) + 24px),20svh);
+  left:8%;
+}
 .note-two{top:235svh;right:8%}
 #travelPanel{
-  position:fixed;z-index:38;left:18px;right:18px;
-  bottom:max(24px,env(safe-area-inset-bottom));text-align:center;
+  position:fixed;
+  z-index:38;
+  left:18px;
+  right:18px;
+  bottom:max(24px,env(safe-area-inset-bottom));
+  text-align:center;
 }
-#travelPanel p{margin:0;font:22px/1.8 var(--cute);text-shadow:0 1px 12px white,0 1px 3px white}
+#travelPanel p{
+  margin:0;
+  font:22px/1.8 var(--cute);
+  text-shadow:0 1px 12px white,0 1px 3px white;
+}
 #travelPanel button{background:#fff9;border-radius:20px}
 #scrollHint{
-  position:fixed;z-index:20;right:5%;
+  position:fixed;
+  z-index:20;
+  right:5%;
   bottom:max(18px,env(safe-area-inset-bottom));
-  padding:9px 14px;background:#fff9e9e8;border-radius:22px;
-  font-size:11px;pointer-events:none;
+  padding:9px 14px;
+  background:#fff9e9e8;
+  border-radius:22px;
+  font-size:11px;
+  pointer-events:none;
 }
-.content{position:relative;padding:80px 24px 0;background:linear-gradient(#f6f3e9ed,#f7f4eb 350px)}
+.content{
+  position:relative;
+  padding:80px 24px 0;
+  background:linear-gradient(#f6f3e9ed,#f7f4eb 350px);
+}
 .container{max-width:980px;margin:auto}
-.section-title{margin:14px 0 24px;font-size:clamp(30px,4.5vw,44px);line-height:1.7;letter-spacing:.045em}
+.section-title{
+  margin:14px 0 24px;
+  font-size:clamp(30px,4.5vw,44px);
+  line-height:1.7;
+  letter-spacing:.045em;
+}
 .walk-card{
-  margin-top:32px;overflow:hidden;
-  border:1px solid #d7dac8;border-radius:95px 95px 22px 22px;
+  margin-top:32px;
+  overflow:hidden;
+  border:1px solid #d7dac8;
+  border-radius:95px 95px 22px 22px;
   background:
     radial-gradient(ellipse at 50% 35%,#fffdf2,transparent 65%),
     linear-gradient(#edf0e4,#f0e6d6);
@@ -508,65 +687,250 @@ body.entered #experience{height:330vh;height:330svh}
 }
 #walkWorld{width:100%;overflow:hidden}
 #coupleSvg{display:block;width:100%;height:auto}
-.walk-labels{display:flex;justify-content:space-between;gap:15px;padding:0 9% 20px;font:17px/1.8 var(--cute);color:#8a947d}
-.walk-caption{border-top:1px solid #c6cfbb77;padding:20px;text-align:center}
+.walk-labels{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:0 9% 20px;
+  font:17px/1.8 var(--cute);
+  color:#8a947d;
+}
+.walk-caption{
+  border-top:1px solid #c6cfbb77;
+  padding:20px;
+  text-align:center;
+}
 #journeyText{font:25px/1.8 var(--cute)}
 .walk-caption p{font-size:11px;color:var(--muted);margin:8px 0}
-.progress-track{width:min(430px,86%);height:4px;margin:15px auto;border-radius:10px;background:#dce0cc;overflow:hidden}
+.progress-track{
+  width:min(430px,86%);
+  height:4px;
+  margin:15px auto;
+  border-radius:10px;
+  background:#dce0cc;
+  overflow:hidden;
+}
 #journeyFill{width:0;height:100%;background:#b4a17e}
-.preview-badge{display:inline-block;font-size:11px;background:#eddbcc;color:#987568;padding:4px 12px;border-radius:15px;margin-bottom:8px}
-.day-counter{display:flex;justify-content:center;align-items:baseline;gap:12px;margin:24px 0 0}
-.day-counter b{font:clamp(66px,10vw,90px)/1.4 Georgia,serif;color:#668b77;font-variant-numeric:tabular-nums}
+.preview-badge{
+  display:inline-block;
+  font-size:11px;
+  background:#eddbcc;
+  color:#987568;
+  padding:4px 12px;
+  border-radius:15px;
+  margin-bottom:8px;
+}
+.day-counter{
+  display:flex;
+  justify-content:center;
+  align-items:baseline;
+  gap:12px;
+  margin:24px 0 0;
+}
+.day-counter b{
+  font:clamp(66px,10vw,90px)/1.4 Georgia,serif;
+  color:#668b77;
+  font-variant-numeric:tabular-nums;
+}
 .day-counter span{font-size:12px;color:var(--muted)}
-.preview-button{min-height:44px;padding:10px 20px;border:1px solid #afbaa0;border-radius:24px;background:#fff8;font:17px/1.6 var(--cute)}
-.paper{background:#fffdf5;border:1px solid #d9dbc966;border-radius:7px;padding:42px;box-shadow:0 20px 55px -40px #48655866}
+.preview-button{
+  min-height:44px;
+  padding:10px 20px;
+  border:1px solid #afbaa0;
+  border-radius:24px;
+  background:#fff8;
+  font:17px/1.6 var(--cute);
+}
+.paper{
+  background:#fffdf5;
+  border:1px solid #d9dbc966;
+  border-radius:7px;
+  padding:42px;
+  box-shadow:0 20px 55px -40px #48655866;
+}
 .letter{margin:70px 0}
 .letter p{font-size:14px;line-height:2.6;color:#758176}
 .signature{text-align:right;font:26px/1.8 var(--cute);margin-top:30px}
-.details{display:grid;grid-template-columns:1fr 1fr;gap:50px;padding:25px 0 65px}
+.details{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:50px;
+  padding:25px 0 65px;
+}
 .detail-row{padding:22px 0;border-bottom:1px solid var(--line)}
-.detail-row small{display:block;color:#84907f;font-size:10px;letter-spacing:.12em;margin-bottom:8px}
+.detail-row small{
+  display:block;
+  color:#84907f;
+  font-size:10px;
+  letter-spacing:.12em;
+  margin-bottom:8px;
+}
 .detail-row strong{font-size:20px;font-weight:400;line-height:1.8}
 .detail-row p{font-size:12px;line-height:2;color:var(--muted);margin:7px 0 0}
 .detail-row .venue{font:25px/1.6 Georgia,serif}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.pill{display:inline-flex;align-items:center;min-height:44px;padding:12px 18px;border:1px solid #a8b69b88;border-radius:22px;background:#fff8;text-decoration:none;font-size:12px}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:12px 18px;
+  border:1px solid #a8b69b88;
+  border-radius:22px;
+  background:#fff8;
+  text-decoration:none;
+  font-size:12px;
+}
 .timeline{margin-top:28px;border-top:1px solid var(--line)}
-.event{display:grid;grid-template-columns:90px 1fr;gap:12px;padding:22px 0;border-bottom:1px solid var(--line)}
+.event{
+  display:grid;
+  grid-template-columns:90px minmax(0,1fr);
+  gap:12px;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
 .event time{font-size:12px;color:#7d907b}
 .event h3{font-size:21px;margin:0 0 7px}
 .event p{font-size:12px;color:var(--muted);margin:0}
-footer{text-align:center;padding:65px 10px max(65px,env(safe-area-inset-bottom))}
+
+/* 教堂實景相片 */
+.chapel-photo{
+  margin:22px 0 0;
+  padding:8px 8px 12px;
+  background:#fffdf7;
+  border:1px solid #d9ddcd;
+  border-radius:18px;
+  box-shadow:0 12px 30px -20px rgba(64,86,79,.35);
+}
+.chapel-photo-frame{
+  position:relative;
+  aspect-ratio:8/5;
+  overflow:hidden;
+  border-radius:12px;
+  background:#e8ede3;
+}
+#chapelPhoto{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity .45s ease;
+}
+.chapel-photo.has-photo #chapelPhoto{opacity:1}
+.chapel-photo-fallback{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 25% 20%,#fffbed,transparent 65%),
+    linear-gradient(145deg,#e0e9df,#f0e6d6);
+}
+.chapel-photo-fallback > span{
+  font:38px/1.4 Georgia,serif;
+  color:#a2b097;
+}
+.detail-row .chapel-photo-fallback p{
+  max-width:260px;
+  margin:10px 0 0;
+  font-size:12px;
+  color:#71806e;
+}
+.chapel-photo figcaption{
+  padding:11px 8px 0;
+  text-align:center;
+  white-space:pre-line;
+  font:11px/1.9 var(--serif);
+  color:#7b8877;
+}
+.chapel-website{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  margin-top:8px;
+  padding:6px 0;
+  font-size:11px;
+  color:#71816d;
+  text-underline-offset:5px;
+}
+
+/* 頁尾 */
+footer{
+  text-align:center;
+  padding:65px 10px max(65px,env(safe-area-inset-bottom));
+}
 footer h2{font-size:clamp(46px,7vw,70px);margin:20px 0}
 .footer-name{font:27px/1.8 var(--cute);margin:25px 0 15px}
-.jp{font:13px/2.2 "Noto Serif JP",var(--serif);color:#a08a73;letter-spacing:.08em}
-.disclaimer{max-width:660px;margin:35px auto 0;font-size:10px;line-height:2;color:#8a9583}
+.jp{
+  font:13px/2.2 "Noto Serif JP",var(--serif);
+  color:#a08a73;
+  letter-spacing:.08em;
+}
+.disclaimer{
+  max-width:660px;
+  margin:35px auto 0;
+  font-size:10px;
+  line-height:2;
+  color:#8a9583;
+}
 #toast{
-  position:fixed;z-index:70;left:50%;
-  bottom:max(20px,env(safe-area-inset-bottom));transform:translateX(-50%);
-  width:max-content;max-width:90%;padding:12px 18px;
-  border-radius:12px;background:#40564ff2;color:#fffaf0;font-size:12px;
+  position:fixed;
+  z-index:70;
+  left:50%;
+  bottom:max(20px,env(safe-area-inset-bottom));
+  transform:translateX(-50%);
+  width:max-content;
+  max-width:90%;
+  padding:12px 18px;
+  border-radius:12px;
+  background:#40564ff2;
+  color:#fffaf0;
+  font-size:12px;
 }
 body.no3d #world{background:linear-gradient(#cbe1df,#f3eddb)}
 body.no3d #world canvas{display:none}
 body.no3d.entered #experience{height:0}
 body.no3d .scene-note{display:none}
+body.no3d.entered .content{
+  padding-top:calc(var(--topbar-height) + 45px);
+}
+.noscript{
+  position:relative;
+  z-index:50;
+  margin:100px auto 30px;
+  padding:25px;
+  max-width:600px;
+  background:#fffdf5;
+  text-align:center;
+}
+
 @media(max-width:760px){
-  .topbar{padding-left:18px;padding-right:18px}
+  .topbar{
+    padding-left:max(18px,env(safe-area-inset-left));
+    padding-right:max(18px,env(safe-area-inset-right));
+  }
   .control{font-size:10px;padding:9px 11px}
   .brand{font-size:21px}
-  .intro-inner{padding-top:80px}
   .intro-heading{font-size:24px}
   .photo-card{width:min(330px,80vw,43svh)}
-  .note-one{left:22px}.note-two{right:22px}
-  .scene-note{padding:23px}.scene-note h2{font-size:29px}
+  .note-one{left:22px}
+  .note-two{right:22px}
+  .scene-note{padding:23px}
+  .scene-note h2{font-size:29px}
   .content{padding:60px 20px 0}
   .walk-card{border-radius:65px 65px 20px 20px}
   .walk-labels{font-size:14px;padding-bottom:16px}
   #journeyText{font-size:21px}
   .paper{padding:28px 24px}
-  .letter{margin:52px 0}.letter p{font-size:13px}
-  .details{grid-template-columns:1fr;gap:30px}
+  .letter{margin:52px 0}
+  .letter p{font-size:13px}
+  .details{grid-template-columns:minmax(0,1fr);gap:30px}
 }
 @media(max-height:620px){
   .intro-inner{justify-content:flex-start}
@@ -574,19 +938,31 @@ body.no3d .scene-note{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+  }
 }
 </style>
 </head>
 
 <body>
+<noscript>
+  <div class="noscript">
+    呢張互動請帖需要開啟 JavaScript 才能顯示完整內容。
+    如未能開啟，請直接聯絡新人查詢婚禮安排。
+  </div>
+</noscript>
+
 <div id="world" aria-hidden="true"></div>
 
 <header class="topbar">
   <div id="brand" class="brand"></div>
   <div class="top-buttons">
-    <button id="motionButton" class="control" type="button" aria-pressed="false" hidden></button>
-    <button id="musicButton" class="control" type="button" aria-pressed="false" hidden></button>
+    <button id="motionButton" class="control"
+            type="button" aria-pressed="false" hidden></button>
+    <button id="musicButton" class="control"
+            type="button" aria-pressed="false" hidden></button>
   </div>
 </header>
 
@@ -606,8 +982,11 @@ body.no3d .scene-note{display:none}
           <div class="names" data-copy="intro.fallbackNames"></div>
           <p class="small" data-copy="intro.fallbackLine"></p>
         </div>
+
         <img id="couplePhoto" alt="" decoding="async" fetchpriority="high" hidden>
+
         <canvas id="fogCanvas" width="600" height="750" aria-hidden="true"></canvas>
+
         <div id="fogHint" aria-hidden="true">
           <span class="symbol" data-copy="intro.fogSymbol"></span>
           <div data-copy="intro.fogTitle"></div>
@@ -618,15 +997,21 @@ body.no3d .scene-note{display:none}
     </div>
 
     <p id="scratchHelp" class="small copy" data-copy="intro.help"></p>
+
     <div id="revealMessage" hidden>
       <h2 data-copy="intro.revealHeading"></h2>
-      <button id="enterButton" class="primary" type="button" data-copy="intro.enterButton"></button>
+      <button id="enterButton" class="primary" type="button"
+              data-copy="intro.enterButton"></button>
       <span id="loadStatus" class="copy" role="status"></span>
     </div>
+
     <div class="intro-links">
-      <button id="revealButton" class="text-button" type="button" data-copy="intro.revealButton"></button>
-      <button id="skipButton" class="text-button" type="button" data-copy="intro.skipButton"></button>
+      <button id="revealButton" class="text-button" type="button"
+              data-copy="intro.revealButton"></button>
+      <button id="skipButton" class="text-button" type="button"
+              data-copy="intro.skipButton"></button>
     </div>
+
     <p id="revealAnnouncement" class="small copy" role="status"></p>
   </div>
 </section>
@@ -638,6 +1023,7 @@ body.no3d .scene-note{display:none}
       <h2 id="firstStoryHeading" tabindex="-1" data-copy="church.first.heading"></h2>
       <p data-copy="church.first.paragraph"></p>
     </article>
+
     <article class="scene-note note-two" data-story hidden>
       <div class="eyebrow" data-copy="church.second.eyebrow"></div>
       <h2 data-copy="church.second.heading"></h2>
@@ -649,7 +1035,8 @@ body.no3d .scene-note{display:none}
     <div class="container">
       <section class="center" aria-labelledby="countdownHeading">
         <div class="eyebrow" data-copy="countdown.eyebrow"></div>
-        <h2 id="countdownHeading" class="section-title" tabindex="-1" data-copy="countdown.heading"></h2>
+        <h2 id="countdownHeading" class="section-title" tabindex="-1"
+            data-copy="countdown.heading"></h2>
         <p class="small" data-copy="countdown.intro"></p>
 
         <div class="walk-card">
@@ -659,16 +1046,22 @@ body.no3d .scene-note{display:none}
                  role="img" aria-labelledby="coupleTitle coupleDesc">
               <title id="coupleTitle" data-copy="countdown.svgTitle"></title>
               <desc id="coupleDesc"></desc>
+
               <defs>
                 <linearGradient id="qSuit" x1="0" y1="0" x2="1" y2="1">
-                  <stop stop-color="#eddbc3"/><stop offset="1" stop-color="#cdb08e"/>
+                  <stop stop-color="#eddbc3"/>
+                  <stop offset="1" stop-color="#cdb08e"/>
                 </linearGradient>
+
                 <linearGradient id="qDress" x1="0" y1="0" x2="1" y2=".3">
-                  <stop stop-color="#e4e4d9"/><stop offset=".5" stop-color="#fffef8"/>
+                  <stop stop-color="#e4e4d9"/>
+                  <stop offset=".5" stop-color="#fffef8"/>
                   <stop offset="1" stop-color="#eee9dd"/>
                 </linearGradient>
+
                 <radialGradient id="qGlow">
-                  <stop stop-color="#fffdef"/><stop offset="1" stop-color="#fffdef" stop-opacity="0"/>
+                  <stop stop-color="#fffdef"/>
+                  <stop offset="1" stop-color="#fffdef" stop-opacity="0"/>
                 </radialGradient>
 
                 <g id="qGroomHead">
@@ -679,9 +1072,11 @@ body.no3d .scene-note{display:none}
                   <path d="M-43-121Q-59-152-40-171Q-44-190-22-188Q-6-205 9-188Q36-201 43-178Q57-165 43-126L34-149Q16-139 1-150L-2-163Q-13-140-36-141Z"
                         fill="#41433b"/>
                   <path d="M-35-164Q-20-181-8-179M-6-166Q10-183 25-177"
-                        fill="none" stroke="#747468" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+                        fill="none" stroke="#747468" stroke-width="4"
+                        stroke-linecap="round" opacity=".6"/>
                   <g fill="#fff" fill-opacity=".08" stroke="#938270" stroke-width="2.8">
-                    <circle cx="-20" cy="-128" r="16"/><circle cx="20" cy="-128" r="16"/>
+                    <circle cx="-20" cy="-128" r="16"/>
+                    <circle cx="20" cy="-128" r="16"/>
                     <path d="M-4-130H4M-36-132-44-134M36-132 44-134" fill="none"/>
                   </g>
                   <g fill="#4b453c">
@@ -689,105 +1084,157 @@ body.no3d .scene-note{display:none}
                     <ellipse cx="22" cy="-127" rx="3.8" ry="5.5"/>
                   </g>
                   <g fill="#fff">
-                    <circle cx="-17" cy="-129" r="1.3"/><circle cx="23" cy="-129" r="1.3"/>
+                    <circle cx="-17" cy="-129" r="1.3"/>
+                    <circle cx="23" cy="-129" r="1.3"/>
                   </g>
                   <g fill="#e6a198" opacity=".65">
-                    <ellipse cx="-30" cy="-111" rx="10" ry="5.5"/><ellipse cx="31" cy="-111" rx="10" ry="5.5"/>
+                    <ellipse cx="-30" cy="-111" rx="10" ry="5.5"/>
+                    <ellipse cx="31" cy="-111" rx="10" ry="5.5"/>
                   </g>
-                  <path d="M-7-107Q2-97 11-108" fill="#fff5e8" stroke="#b67f68" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M-7-107Q2-97 11-108" fill="#fff5e8"
+                        stroke="#b67f68" stroke-width="2" stroke-linecap="round"/>
                 </g>
 
                 <g id="qBrideHead">
-                  <path d="M-44-133Q-51-181 0-184Q48-182 47-139L49-89Q35-75 23-90H-23Q-48-75-49-95Z" fill="#6b5141"/>
+                  <path d="M-44-133Q-51-181 0-184Q48-182 47-139L49-89Q35-75 23-90H-23Q-48-75-49-95Z"
+                        fill="#6b5141"/>
                   <ellipse cx="-43" cy="-126" rx="7" ry="10" fill="#f2c3a4"/>
                   <ellipse cx="43" cy="-126" rx="7" ry="10" fill="#f2c3a4"/>
                   <path d="M-42-140Q-45-177 0-177Q46-177 43-140L41-117Q34-91 0-90Q-34-91-41-116Z"
                         fill="#f8d5b9" stroke="#cfa487" stroke-width="1.5"/>
-                  <path d="M-43-131Q-50-166-22-181Q4-198 29-176Q49-169 43-134Q21-144 12-163Q5-148-8-142L-5-162Q-20-139-40-141Z" fill="#725644"/>
+                  <path d="M-43-131Q-50-166-22-181Q4-198 29-176Q49-169 43-134Q21-144 12-163Q5-148-8-142L-5-162Q-20-139-40-141Z"
+                        fill="#725644"/>
                   <ellipse cx="-7" cy="-185" rx="19" ry="12" fill="#725644"/>
-                  <path d="M-39-166Q0-192 39-165" fill="none" stroke="#91a27f" stroke-width="4"/>
+                  <path d="M-39-166Q0-192 39-165" fill="none"
+                        stroke="#91a27f" stroke-width="4"/>
                   <g fill="#fff8e7" stroke="#e0c1a7" stroke-width="1">
-                    <circle cx="-35" cy="-168" r="6"/><circle cx="-19" cy="-177" r="7"/>
-                    <circle cx="-1" cy="-181" r="6.5"/><circle cx="17" cy="-177" r="7"/>
+                    <circle cx="-35" cy="-168" r="6"/>
+                    <circle cx="-19" cy="-177" r="7"/>
+                    <circle cx="-1" cy="-181" r="6.5"/>
+                    <circle cx="17" cy="-177" r="7"/>
                     <circle cx="34" cy="-168" r="6"/>
                   </g>
                   <g fill="#e6b6a8">
-                    <circle cx="-19" cy="-177" r="2"/><circle cx="17" cy="-177" r="2"/>
+                    <circle cx="-19" cy="-177" r="2"/>
+                    <circle cx="17" cy="-177" r="2"/>
                   </g>
                   <path d="M-28-126Q-20-136-12-126M12-126Q20-136 28-126"
-                        fill="none" stroke="#614738" stroke-width="3" stroke-linecap="round"/>
+                        fill="none" stroke="#614738" stroke-width="3"
+                        stroke-linecap="round"/>
                   <g fill="#e9a19b" opacity=".65">
-                    <ellipse cx="-29" cy="-111" rx="10" ry="5.5"/><ellipse cx="29" cy="-111" rx="10" ry="5.5"/>
+                    <ellipse cx="-29" cy="-111" rx="10" ry="5.5"/>
+                    <ellipse cx="29" cy="-111" rx="10" ry="5.5"/>
                   </g>
-                  <path d="M-8-108Q0-96 9-108" fill="#fff8ef" stroke="#bd826e" stroke-width="2" stroke-linecap="round"/>
-                  <circle cx="-43" cy="-114" r="3" fill="#fff1cd"/><circle cx="43" cy="-114" r="3" fill="#fff1cd"/>
+                  <path d="M-8-108Q0-96 9-108" fill="#fff8ef"
+                        stroke="#bd826e" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="-43" cy="-114" r="3" fill="#fff1cd"/>
+                  <circle cx="43" cy="-114" r="3" fill="#fff1cd"/>
                 </g>
 
                 <g id="qGroomBody">
                   <path d="M-13-91Q-29-90-30-73L-28-31Q0-22 28-31L30-73Q28-90 13-91Z"
                         fill="url(#qSuit)" stroke="#bda180" stroke-width="1.6"/>
                   <path d="M-11-90 0-79 11-90 9-48-9-48Z" fill="#fffaf0"/>
-                  <path d="M-13-90-24-77-14-65-19-60 0-37-5-79Z" fill="#d8bc98" stroke="#bda180"/>
-                  <path d="M13-90 24-77 14-65 19-60 0-37 5-79Z" fill="#ead4b4" stroke="#bda180"/>
+                  <path d="M-13-90-24-77-14-65-19-60 0-37-5-79Z"
+                        fill="#d8bc98" stroke="#bda180"/>
+                  <path d="M13-90 24-77 14-65 19-60 0-37 5-79Z"
+                        fill="#ead4b4" stroke="#bda180"/>
                   <path d="M-11-79 0-74-11-68ZM11-79 0-74 11-68Z" fill="#8b9b7e"/>
                   <circle cx="0" cy="-74" r="3" fill="#6d8465"/>
-                  <circle cx="1" cy="-46" r="2" fill="#ad8e6c"/><circle cx="1" cy="-35" r="2" fill="#ad8e6c"/>
+                  <circle cx="1" cy="-46" r="2" fill="#ad8e6c"/>
+                  <circle cx="1" cy="-35" r="2" fill="#ad8e6c"/>
                   <path d="M15-59h9" stroke="#a78e71" stroke-width="1.5"/>
                   <circle cx="20" cy="-65" r="4" fill="#fff5de"/>
                 </g>
+
                 <g id="qBrideBody">
                   <path d="M-17-90Q0-81 17-90L22-66 17-55Q40-38 48-10Q0 11-48-10Q-40-38-17-55L-22-66Z"
                         fill="url(#qDress)" stroke="#c9c6b4" stroke-width="1.6"/>
-                  <path d="M-18-83Q0-71 18-83" fill="none" stroke="#fffef7" stroke-width="6"/>
-                  <path d="M-18-56Q0-49 18-56" fill="none" stroke="#d6b597" stroke-width="4"/>
-                  <path d="M-9-48-25-9M0-47V-4M9-48 25-9" stroke="#dcdccf" stroke-width="1.5"/>
-                  <path d="M-40-11Q0 4 40-11" fill="none" stroke="#fffef8" stroke-width="4"/>
+                  <path d="M-18-83Q0-71 18-83" fill="none"
+                        stroke="#fffef7" stroke-width="6"/>
+                  <path d="M-18-56Q0-49 18-56" fill="none"
+                        stroke="#d6b597" stroke-width="4"/>
+                  <path d="M-9-48-25-9M0-47V-4M9-48 25-9"
+                        stroke="#dcdccf" stroke-width="1.5"/>
+                  <path d="M-40-11Q0 4 40-11" fill="none"
+                        stroke="#fffef8" stroke-width="4"/>
                   <path d="M0-56-12-63-12-51ZM0-56 12-63 12-51Z" fill="#eed4bd"/>
                   <circle cx="0" cy="-56" r="3" fill="#cfac88"/>
-                  <g fill="#fff"><circle cx="-9" cy="-70" r="2"/><circle cx="9" cy="-69" r="2"/><circle cx="0" cy="-63" r="2"/></g>
+                  <g fill="#fff">
+                    <circle cx="-9" cy="-70" r="2"/>
+                    <circle cx="9" cy="-69" r="2"/>
+                    <circle cx="0" cy="-63" r="2"/>
+                  </g>
                 </g>
+
                 <g id="qVeil">
                   <path d="M-39-172Q0-200 39-172L59-18Q0 5-59-18Z"
-                        fill="#fffdf7" fill-opacity=".55" stroke="#fffdf7" stroke-width="2"/>
-                  <path d="M-38-157-51-24M38-157 51-24" fill="none" stroke="#fff" stroke-width="1.5" opacity=".75"/>
+                        fill="#fffdf7" fill-opacity=".55"
+                        stroke="#fffdf7" stroke-width="2"/>
+                  <path d="M-38-157-51-24M38-157 51-24"
+                        fill="none" stroke="#fff" stroke-width="1.5" opacity=".75"/>
                 </g>
+
                 <g id="qGroomArm">
-                  <path d="M0 0Q5 12 2 22" fill="none" stroke="#d5b997" stroke-width="15" stroke-linecap="round"/>
+                  <path d="M0 0Q5 12 2 22" fill="none" stroke="#d5b997"
+                        stroke-width="15" stroke-linecap="round"/>
                   <path d="M2 21v5" stroke="#fff9ed" stroke-width="12"/>
                   <ellipse cx="2" cy="30" rx="8" ry="8" fill="#f2c7a3"/>
                 </g>
+
                 <g id="qBrideArm">
-                  <path d="M0 0Q5 12 2 24" fill="none" stroke="#f2c9ac" stroke-width="11" stroke-linecap="round"/>
-                  <path d="M0 0 2 5" stroke="#fffef5" stroke-width="13" stroke-linecap="round"/>
+                  <path d="M0 0Q5 12 2 24" fill="none" stroke="#f2c9ac"
+                        stroke-width="11" stroke-linecap="round"/>
+                  <path d="M0 0 2 5" stroke="#fffef5"
+                        stroke-width="13" stroke-linecap="round"/>
                   <ellipse cx="2" cy="28" rx="7" ry="7" fill="#f2c9ac"/>
                 </g>
+
                 <g id="qGroomLeg">
-                  <path d="M0 0 1 21" stroke="#c9ab89" stroke-width="17" stroke-linecap="round"/>
-                  <path d="M-9 18-10 28Q4 33 20 26Q18 18 7 18Z" fill="#81705e" stroke="#6e6050" stroke-width="1.4"/>
+                  <path d="M0 0 1 21" stroke="#c9ab89"
+                        stroke-width="17" stroke-linecap="round"/>
+                  <path d="M-9 18-10 28Q4 33 20 26Q18 18 7 18Z"
+                        fill="#81705e" stroke="#6e6050" stroke-width="1.4"/>
                   <path d="M-5 25H10" stroke="#bca68a" stroke-width="1.5"/>
                 </g>
+
                 <g id="qBrideLeg">
-                  <path d="M0 0 1 13" stroke="#f2c6a6" stroke-width="11" stroke-linecap="round"/>
-                  <path d="M-7 10-9 19Q2 24 16 18Q14 10 5 10Z" fill="#fff7df" stroke="#c7b591" stroke-width="1.3"/>
+                  <path d="M0 0 1 13" stroke="#f2c6a6"
+                        stroke-width="11" stroke-linecap="round"/>
+                  <path d="M-7 10-9 19Q2 24 16 18Q14 10 5 10Z"
+                        fill="#fff7df" stroke="#c7b591" stroke-width="1.3"/>
                 </g>
+
                 <g id="qBouquet">
                   <path d="M-12 0 0 24 12 0" fill="#a4b080"/>
                   <path d="M-10 4 0 24 10 4" fill="#ecdbc2"/>
                   <g fill="#8fa576">
-                    <ellipse cx="-15" cy="-5" rx="5" ry="10" transform="rotate(-35 -15 -5)"/>
-                    <ellipse cx="15" cy="-4" rx="5" ry="10" transform="rotate(35 15 -4)"/>
+                    <ellipse cx="-15" cy="-5" rx="5" ry="10"
+                             transform="rotate(-35 -15 -5)"/>
+                    <ellipse cx="15" cy="-4" rx="5" ry="10"
+                             transform="rotate(35 15 -4)"/>
                   </g>
                   <g fill="#d68f97" stroke="#f1c0be" stroke-width="1.5">
-                    <circle cx="-10" cy="-7" r="8"/><circle cx="2" cy="-12" r="9"/>
-                    <circle cx="12" cy="-4" r="8"/><circle cx="-3" cy="3" r="9"/><circle cx="10" cy="6" r="7"/>
+                    <circle cx="-10" cy="-7" r="8"/>
+                    <circle cx="2" cy="-12" r="9"/>
+                    <circle cx="12" cy="-4" r="8"/>
+                    <circle cx="-3" cy="3" r="9"/>
+                    <circle cx="10" cy="6" r="7"/>
                   </g>
-                  <path d="M-5 17H5M0 19-8 29M0 19 8 28" stroke="#b88976" stroke-width="2" fill="none"/>
+                  <path d="M-5 17H5M0 19-8 29M0 19 8 28"
+                        stroke="#b88976" stroke-width="2" fill="none"/>
                 </g>
-                <path id="qHeart" d="M0 9C-22-5-17-22-7-20Q-2-20 0-13Q3-21 9-20C20-19 22-4 0 9Z" fill="#d4949a"/>
+
+                <path id="qHeart"
+                      d="M0 9C-22-5-17-22-7-20Q-2-20 0-13Q3-21 9-20C20-19 22-4 0 9Z"
+                      fill="#d4949a"/>
               </defs>
 
-              <ellipse id="svgGlow" cx="450" cy="155" rx="245" ry="165" fill="url(#qGlow)"/>
-              <g id="svgArch" transform="translate(450 0)" fill="none" stroke="#c1ad89" stroke-width="2">
+              <ellipse id="svgGlow" cx="450" cy="155" rx="245" ry="165"
+                       fill="url(#qGlow)"/>
+
+              <g id="svgArch" transform="translate(450 0)"
+                 fill="none" stroke="#c1ad89" stroke-width="2">
                 <path d="M-123 292V153C-123 8 123 8 123 153V292"/>
                 <path d="M-114 292V153C-114 25 114 25 114 153V292" opacity=".35"/>
                 <g fill="#b7c59d" stroke="none">
@@ -797,12 +1244,19 @@ body.no3d .scene-note{display:none}
                   <ellipse cx="67" cy="61" rx="9" ry="18" transform="rotate(-60 67 61)"/>
                 </g>
                 <g fill="#efd2c4" stroke="none">
-                  <circle cx="-79" cy="65" r="10"/><circle cx="79" cy="65" r="10"/>
-                  <circle cx="-57" cy="52" r="7"/><circle cx="57" cy="52" r="7"/>
+                  <circle cx="-79" cy="65" r="10"/>
+                  <circle cx="79" cy="65" r="10"/>
+                  <circle cx="-57" cy="52" r="7"/>
+                  <circle cx="57" cy="52" r="7"/>
                 </g>
               </g>
-              <path id="svgGround" d="M50 295H850" fill="none" stroke="#c0cbb0" stroke-width="2"/>
-              <path id="svgDots" d="M60 315H840" fill="none" stroke="#c5b590" stroke-width="2" stroke-dasharray="2 12"/>
+
+              <path id="svgGround" d="M50 295H850"
+                    fill="none" stroke="#c0cbb0" stroke-width="2"/>
+              <path id="svgDots" d="M60 315H840"
+                    fill="none" stroke="#c5b590" stroke-width="2"
+                    stroke-dasharray="2 12"/>
+
               <g id="walkingPeople"></g>
               <g id="togetherPeople" visibility="hidden"></g>
             </svg>
@@ -812,21 +1266,31 @@ body.no3d .scene-note{display:none}
             <span data-copy="countdown.leftLabel"></span>
             <span data-copy="countdown.rightLabel"></span>
           </div>
+
           <div class="walk-caption">
-            <div id="previewBadge" class="preview-badge" data-copy="countdown.previewBadge" hidden></div>
+            <div id="previewBadge" class="preview-badge"
+                 data-copy="countdown.previewBadge" hidden></div>
             <div id="journeyText" class="copy"></div>
-            <div class="progress-track" aria-hidden="true"><div id="journeyFill"></div></div>
+            <div class="progress-track" aria-hidden="true">
+              <div id="journeyFill"></div>
+            </div>
             <p id="journeyNote" class="copy"></p>
             <p id="arrivalDate" data-copy="countdown.arrivalDate" hidden></p>
           </div>
         </div>
 
-        <div id="dayCounter" class="day-counter" role="group" data-label="countdown.counterLabel" hidden>
-          <b id="daysNumber"></b><span data-copy="countdown.dayUnit"></span>
+        <div id="dayCounter" class="day-counter" role="group"
+             data-label="countdown.counterLabel" hidden>
+          <b id="daysNumber"></b>
+          <span data-copy="countdown.dayUnit"></span>
         </div>
+
         <p id="countdownNote" class="small copy"></p>
-        <p id="arrivalMessage" class="small" role="status" data-copy="countdown.arrivalMessage" hidden></p>
-        <button id="previewButton" class="preview-button" type="button" aria-pressed="false" hidden></button>
+        <p id="arrivalMessage" class="small" role="status"
+           data-copy="countdown.arrivalMessage" hidden></p>
+
+        <button id="previewButton" class="preview-button"
+                type="button" aria-pressed="false" hidden></button>
       </section>
 
       <article class="paper letter">
@@ -841,32 +1305,68 @@ body.no3d .scene-note{display:none}
         <div>
           <div class="eyebrow" data-copy="details.eyebrow"></div>
           <h2 class="section-title" data-copy="details.heading"></h2>
+
           <div class="detail-row">
             <small data-copy="details.dateLabel"></small>
             <strong data-copy="details.dateValue"></strong>
             <p data-copy="details.dateNote"></p>
           </div>
+
           <div class="detail-row">
             <small data-copy="details.timeLabel"></small>
             <strong id="ceremonyLabel" class="copy"></strong>
             <p data-copy="details.meeting"></p>
           </div>
+
           <div class="detail-row">
             <small data-copy="details.venueLabel"></small>
             <strong class="venue" data-copy="details.venueValue"></strong>
             <p data-copy="details.venueNote"></p>
+
+            <figure id="chapelFigure" class="chapel-photo">
+              <div class="chapel-photo-frame">
+                <div id="chapelPhotoFallback" class="chapel-photo-fallback">
+                  <span aria-hidden="true">♡</span>
+                  <p id="chapelPhotoStatus" class="copy"
+                     data-copy="details.chapelPhotoLoading"></p>
+                </div>
+
+                <img id="chapelPhoto"
+                     alt=""
+                     width="1600"
+                     height="1000"
+                     loading="lazy"
+                     decoding="async">
+              </div>
+
+              <figcaption data-copy="details.chapelPhotoCaption"></figcaption>
+            </figure>
+
+            <a id="chapelWebsiteLink"
+               class="chapel-website"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-copy="details.chapelWebsiteButton"
+               hidden></a>
           </div>
+
           <div class="actions">
-            <a id="mapLink" class="pill" target="_blank" rel="noopener noreferrer" data-copy="details.mapButton" hidden></a>
-            <a id="contactLink" class="pill" target="_blank" rel="noopener noreferrer" data-copy="details.contactButton" hidden></a>
+            <a id="mapLink" class="pill"
+               target="_blank" rel="noopener noreferrer"
+               data-copy="details.mapButton" hidden></a>
+            <a id="contactLink" class="pill"
+               target="_blank" rel="noopener noreferrer"
+               data-copy="details.contactButton" hidden></a>
           </div>
         </div>
+
         <div>
           <article class="paper">
             <div class="eyebrow" data-copy="reminders.eyebrow"></div>
             <h3 style="font-size:25px" data-copy="reminders.heading"></h3>
             <div id="reminderParagraphs"></div>
           </article>
+
           <div id="timeline" class="timeline"></div>
         </div>
       </section>
@@ -885,8 +1385,10 @@ body.no3d .scene-note{display:none}
 
 <div id="travelPanel" hidden>
   <p role="status" data-copy="church.travel"></p>
-  <button id="travelSkip" class="text-button" type="button" data-copy="church.travelSkip"></button>
+  <button id="travelSkip" class="text-button"
+          type="button" data-copy="church.travelSkip"></button>
 </div>
+
 <div id="scrollHint" data-copy="church.scrollHint" hidden></div>
 <div id="toast" class="copy" role="status" hidden></div>
 
@@ -897,99 +1399,214 @@ body.no3d .scene-note{display:none}
 const C=window.INVITE;
 const $=id=>document.getElementById(id);
 const clamp=(n,min=0,max=1)=>Math.max(min,Math.min(max,n));
-const numeric=(v,fallback)=>Number.isFinite(Number(v))?Number(v):fallback;
+const numeric=(value,fallback)=>{
+  if(value===null || value===undefined || value==="") return fallback;
+  const n=Number(value);
+  return Number.isFinite(n)?n:fallback;
+};
+
 const reduced=matchMedia("(prefers-reduced-motion:reduce)");
 const mobileQuery=matchMedia("(max-width:760px)");
 const DAY=86400000;
 const JST=9*3600000;
 
 let paused=reduced.matches;
-let entered=false,requested=false,leaving=false,revealed=false,preview=false;
-let sceneState="loading",sceneAPI=null;
-let toastTimer,waitTimer,dayTimer,revealTimer,departureTimer;
-let frame=0,lastFrame=0,animationTime=0;
-let svgVisible=true,svgDirty=true,svgWidth=900;
+let entered=false;
+let requested=false;
+let leaving=false;
+let revealed=false;
+let preview=false;
 
+let sceneState="loading";
+let sceneAPI=null;
+
+let toastTimer;
+let waitTimer;
+let dayTimer;
+let revealTimer;
+let departureTimer;
+
+let frame=0;
+let lastFrame=0;
+let animationTime=0;
+
+let svgVisible=true;
+let svgDirty=true;
+let svgWidth=900;
+
+/* ==========================================================
+   頂部列高度
+   ========================================================== */
+const topbar=document.querySelector(".topbar");
+
+function syncTopbarHeight(){
+  if(!topbar) return;
+  const height=Math.ceil(topbar.getBoundingClientRect().height);
+  document.documentElement.style.setProperty(
+    "--topbar-height",
+    `${height}px`
+  );
+}
+
+syncTopbarHeight();
+
+if("ResizeObserver" in window){
+  const observer=new ResizeObserver(syncTopbarHeight);
+  observer.observe(topbar);
+}else{
+  addEventListener("resize",syncTopbarHeight,{passive:true});
+}
+
+document.fonts?.ready.then(syncTopbarHeight);
+
+/* ==========================================================
+   文案
+   ========================================================== */
 const day={
-  valid:false,start:0,end:0,progress:0,remaining:0,
-  arrived:false,cached:null,error:""
+  valid:false,
+  start:0,
+  end:0,
+  progress:0,
+  remaining:0,
+  arrived:false,
+  cached:null,
+  error:""
 };
 
-/* 文案只讀取主要修改區；一律 textContent，唔執行 HTML。 */
 const vars={
-  names:C.names,initials:C.initials,guestName:C.guestName,
-  chapel:C.chapel,location:C.location,meetingTime:C.meetingTime,
+  names:C.names,
+  initials:C.initials,
+  guestName:C.guestName,
+  chapel:C.chapel,
+  location:C.location,
+  meetingTime:C.meetingTime,
   ceremonyTime:String(C.ceremonyTime||"").trim(),
   dateLong:C.dates.invalidDisplay,
   dateDot:C.dates.invalidDisplay,
   dateEnglish:C.dates.invalidDisplay,
   days:C.countdown.placeholder
 };
+
 function get(path){
   return path.split(".").reduce((value,key)=>value?.[key],C);
 }
+
 function format(value,extra={}){
   const values={...vars,...extra};
-  return String(value??"").replace(/\{([A-Za-z0-9_]+)\}/g,(match,key)=>
-    Object.prototype.hasOwnProperty.call(values,key)?String(values[key]??""):match
+  return String(value??"").replace(
+    /\{([A-Za-z0-9_]+)\}/g,
+    (match,key)=>Object.prototype.hasOwnProperty.call(values,key)
+      ?String(values[key]??"")
+      :match
   );
 }
-function copy(path,extra={}){return format(get(path),extra)}
-function put(id,path,extra={}){$(id).textContent=copy(path,extra)}
+
+function copy(path,extra={}){
+  return format(get(path),extra);
+}
+
+function put(id,path,extra={}){
+  $(id).textContent=copy(path,extra);
+}
+
 function toast(path){
-  $("toast").textContent=copy(path);
+  put("toast",path);
   $("toast").hidden=false;
   clearTimeout(toastTimer);
   toastTimer=setTimeout(()=>$("toast").hidden=true,5000);
 }
+
 function link(id,value){
   try{
-    const url=new URL(value);
-    if(!["http:","https:"].includes(url.protocol)) throw new Error("Invalid protocol");
+    const url=new URL(String(value||""));
+    if(!["http:","https:"].includes(url.protocol)){
+      throw new Error("Unsupported link protocol");
+    }
     $(id).href=url.href;
     $(id).hidden=false;
-  }catch{$(id).hidden=true}
+  }catch{
+    $(id).hidden=true;
+  }
 }
 
-/* 日期解析 */
+/* ==========================================================
+   日期解析
+   ========================================================== */
 function parseDay(value){
   const match=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value));
-  if(!match) throw new Error(copy("messages.dateFormat"));
+
+  if(!match){
+    throw new Error(copy("messages.dateFormat"));
+  }
+
   const [year,month,dateDay]=match.slice(1).map(Number);
   const date=new Date(0);
+
   date.setUTCFullYear(year,month-1,dateDay);
   date.setUTCHours(0,0,0,0);
-  if(date.getUTCFullYear()!==year ||
-     date.getUTCMonth()!==month-1 ||
-     date.getUTCDate()!==dateDay){
+
+  if(
+    date.getUTCFullYear()!==year ||
+    date.getUTCMonth()!==month-1 ||
+    date.getUTCDate()!==dateDay
+  ){
     throw new Error(copy("messages.dateInvalid"));
   }
-  return {index:Math.floor(date.getTime()/DAY),year,month,day:dateDay};
+
+  return {
+    index:Math.floor(date.getTime()/DAY),
+    year,
+    month,
+    day:dateDay
+  };
 }
+
 let wedding=null;
+
 try{
   wedding=parseDay(C.weddingDate);
+
   const dateVars={
-    year:wedding.year,month:wedding.month,day:wedding.day,
+    year:wedding.year,
+    month:wedding.month,
+    day:wedding.day,
     month2:String(wedding.month).padStart(2,"0"),
     day2:String(wedding.day).padStart(2,"0"),
     monthEnglish:C.dates.months[wedding.month-1]
   };
+
   vars.dateLong=format(C.dates.long,dateVars);
   vars.dateDot=format(C.dates.dot,dateVars);
   vars.dateEnglish=format(C.dates.english,dateVars);
 }catch(error){
   day.error=error.message;
 }
+
 if(wedding){
   try{
     const start=parseDay(C.journeyStartDate);
-    if(start.index>=wedding.index) throw new Error(copy("messages.dateOrder"));
-    Object.assign(day,{valid:true,start:start.index,end:wedding.index});
-  }catch(error){day.error=error.message}
+
+    if(start.index>=wedding.index){
+      throw new Error(copy("messages.dateOrder"));
+    }
+
+    Object.assign(day,{
+      valid:true,
+      start:start.index,
+      end:wedding.index
+    });
+  }catch(error){
+    day.error=error.message;
+  }
 }
+
 const ceremonyValid=/^([01]\d|2[0-3]):[0-5]\d$/.test(vars.ceremonyTime);
-vars.ceremonySchedule=copy(ceremonyValid?"schedule.ceremonyKnown":"schedule.ceremonyUnknown");
+
+vars.ceremonySchedule=copy(
+  ceremonyValid
+    ?"schedule.ceremonyKnown"
+    :"schedule.ceremonyUnknown"
+);
 
 document.title=copy("page.title");
 $("pageDescription").content=copy("page.description");
@@ -998,142 +1615,275 @@ $("brand").textContent=C.initials;
 document.querySelectorAll("[data-copy]").forEach(el=>{
   el.textContent=copy(el.dataset.copy);
 });
+
 document.querySelectorAll("[data-label]").forEach(el=>{
   el.setAttribute("aria-label",copy(el.dataset.label));
 });
 
 function paragraphs(id,values,className=""){
   const fragment=document.createDocumentFragment();
+
   for(const value of values){
     const p=document.createElement("p");
     p.className=("copy "+className).trim();
     p.textContent=format(value);
     fragment.append(p);
   }
+
   $(id).replaceChildren(fragment);
 }
+
 paragraphs("letterParagraphs",C.letter.paragraphs);
 paragraphs("reminderParagraphs",C.reminders.paragraphs,"small");
 
 for(const event of C.schedule.events){
   const row=document.createElement("div");
-  row.className="event";
   const time=document.createElement("time");
   const block=document.createElement("div");
   const heading=document.createElement("h3");
   const p=document.createElement("p");
-  time.className=heading.className=p.className="copy";
+
+  row.className="event";
+  time.className="copy";
+  heading.className="copy";
+  p.className="copy";
+
   time.textContent=format(event.time);
   heading.textContent=format(event.heading);
   p.textContent=format(event.paragraph);
+
   block.append(heading,p);
   row.append(time,block);
   $("timeline").append(row);
 }
-put("ceremonyLabel",
-  ceremonyValid?"details.timeKnown":
-  vars.ceremonyTime?"messages.timeInvalid":"details.timeUnknown"
+
+put(
+  "ceremonyLabel",
+  ceremonyValid
+    ?"details.timeKnown"
+    :vars.ceremonyTime
+      ?"messages.timeInvalid"
+      :"details.timeUnknown"
 );
+
 link("mapLink",C.mapUrl);
 link("contactLink",C.contactUrl);
+link("chapelWebsiteLink",C.chapelWebsiteUrl);
 put("loadStatus","messages.sceneLoading");
 
-/* 字體載入：只改 CSS alias，不會修改字體檔內部名稱或 metadata。 */
-if(C.fontUrl && "FontFace" in window){
-  try{
-    const url=new URL(C.fontUrl,document.baseURI).href;
-    const font=new FontFace("Maoken Wedding",`url(${JSON.stringify(url)})`,{
-      style:"normal",weight:"400",display:"swap"
-    });
-    document.fonts.add(font);
-    font.load().catch(error=>console.warn("Font loading failed:",error));
-  }catch(error){console.warn("Font configuration error:",error)}
+/* ==========================================================
+   教堂實景相片
+   ========================================================== */
+const chapelPhoto=$("chapelPhoto");
+const chapelFigure=$("chapelFigure");
+const chapelPhotoFallback=$("chapelPhotoFallback");
+
+chapelPhoto.alt=format(C.chapelPhotoAlt||C.chapel);
+chapelPhoto.style.objectPosition=C.chapelPhotoPosition||"50% 50%";
+
+function showChapelPhoto(){
+  chapelPhoto.hidden=false;
+  chapelFigure.classList.add("has-photo");
+  chapelPhotoFallback.hidden=true;
+}
+
+function showChapelPhotoFallback(){
+  chapelFigure.classList.remove("has-photo");
+  chapelPhoto.hidden=true;
+  chapelPhotoFallback.hidden=false;
+  put("chapelPhotoStatus","details.chapelPhotoUnavailable");
+}
+
+chapelPhoto.addEventListener("load",()=>{
+  if(chapelPhoto.naturalWidth>0){
+    showChapelPhoto();
+  }else{
+    showChapelPhotoFallback();
+  }
+});
+
+chapelPhoto.addEventListener("error",showChapelPhotoFallback);
+
+const chapelPhotoUrl=String(C.chapelPhotoUrl||"").trim();
+
+if(chapelPhotoUrl){
+  chapelPhoto.src=chapelPhotoUrl;
+}else{
+  showChapelPhotoFallback();
 }
 
 /* ==========================================================
-   Q 版人物群組
+   字體載入
+   只用 CSS alias，唔改字體內部 metadata。
+   ========================================================== */
+if(C.fontUrl && "FontFace" in window){
+  try{
+    const url=new URL(C.fontUrl,document.baseURI).href;
+    const font=new FontFace(
+      "Maoken Wedding",
+      `url(${JSON.stringify(url)})`,
+      {style:"normal",weight:"400",display:"swap"}
+    );
+
+    document.fonts.add(font);
+
+    font.load()
+      .then(syncTopbarHeight)
+      .catch(error=>console.warn("Font loading failed:",error));
+  }catch(error){
+    console.warn("Font configuration error:",error);
+  }
+}
+
+/* ==========================================================
+   SVG 人物
+   以下 innerHTML 只包含程式內固定圖形，
+   不會將設定區文字當作 HTML 執行。
    ========================================================== */
 function groomMarkup(prefix,holding=false){
   return `
-  <g id="${prefix}Position">
-    <ellipse cx="0" cy="2" rx="38" ry="6" fill="#8e9d7c" opacity=".16"/>
-    <g id="${prefix}Motion">
-      <g id="${prefix}LegL" transform="translate(-12 -29)"><use href="#qGroomLeg"/></g>
-      <g id="${prefix}LegR" transform="translate(12 -29)"><use href="#qGroomLeg"/></g>
-      <g id="${prefix}ArmL" transform="translate(-29 -77)"><use href="#qGroomArm"/></g>
-      <use href="#qGroomBody"/>
-      ${holding?"":`<g id="${prefix}ArmR" transform="translate(29 -77)"><use href="#qGroomArm"/></g>`}
-      <g id="${prefix}Head"><use href="#qGroomHead"/></g>
-    </g>
-  </g>`;
-}
-function brideMarkup(prefix,holding=false){
-  return `
-  <g id="${prefix}Position">
-    <ellipse cx="0" cy="2" rx="49" ry="7" fill="#8e9d7c" opacity=".14"/>
-    <g transform="scale(-1 1)">
+    <g id="${prefix}Position">
+      <ellipse cx="0" cy="2" rx="38" ry="6"
+               fill="#8e9d7c" opacity=".16"/>
       <g id="${prefix}Motion">
-        <g id="${prefix}LegL" transform="translate(-12 -20)"><use href="#qBrideLeg"/></g>
-        <g id="${prefix}LegR" transform="translate(12 -20)"><use href="#qBrideLeg"/></g>
-        <g id="${prefix}Veil"><use href="#qVeil"/></g>
-        <use href="#qBrideBody"/>
-        ${holding?"":`<g id="${prefix}ArmR" transform="translate(25 -76)"><use href="#qBrideArm"/></g>`}
-        <g id="${prefix}ArmL" transform="translate(-25 -76)">
-          <path d="M0 0-8 16-8 28" stroke="#f2c9ac" stroke-width="11" fill="none" stroke-linecap="round"/>
-          <path d="M0 0-2 5" stroke="#fffdf4" stroke-width="13" stroke-linecap="round"/>
-          <g transform="translate(-11 28)"><use href="#qBouquet"/></g>
+        <g id="${prefix}LegL" transform="translate(-12 -29)">
+          <use href="#qGroomLeg"/>
         </g>
-        <g id="${prefix}Head"><use href="#qBrideHead"/></g>
+        <g id="${prefix}LegR" transform="translate(12 -29)">
+          <use href="#qGroomLeg"/>
+        </g>
+        <g id="${prefix}ArmL" transform="translate(-29 -77)">
+          <use href="#qGroomArm"/>
+        </g>
+        <use href="#qGroomBody"/>
+        ${holding?"":`
+          <g id="${prefix}ArmR" transform="translate(29 -77)">
+            <use href="#qGroomArm"/>
+          </g>
+        `}
+        <g id="${prefix}Head">
+          <use href="#qGroomHead"/>
+        </g>
       </g>
     </g>
-  </g>`;
+  `;
 }
+
+function brideMarkup(prefix,holding=false){
+  return `
+    <g id="${prefix}Position">
+      <ellipse cx="0" cy="2" rx="49" ry="7"
+               fill="#8e9d7c" opacity=".14"/>
+      <g transform="scale(-1 1)">
+        <g id="${prefix}Motion">
+          <g id="${prefix}LegL" transform="translate(-12 -20)">
+            <use href="#qBrideLeg"/>
+          </g>
+          <g id="${prefix}LegR" transform="translate(12 -20)">
+            <use href="#qBrideLeg"/>
+          </g>
+          <g id="${prefix}Veil">
+            <use href="#qVeil"/>
+          </g>
+          <use href="#qBrideBody"/>
+          ${holding?"":`
+            <g id="${prefix}ArmR" transform="translate(25 -76)">
+              <use href="#qBrideArm"/>
+            </g>
+          `}
+          <g id="${prefix}ArmL" transform="translate(-25 -76)">
+            <path d="M0 0-8 16-8 28" stroke="#f2c9ac"
+                  stroke-width="11" fill="none" stroke-linecap="round"/>
+            <path d="M0 0-2 5" stroke="#fffdf4"
+                  stroke-width="13" stroke-linecap="round"/>
+            <g transform="translate(-11 28)">
+              <use href="#qBouquet"/>
+            </g>
+          </g>
+          <g id="${prefix}Head">
+            <use href="#qBrideHead"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  `;
+}
+
 $("walkingPeople").innerHTML=groomMarkup("g")+brideMarkup("b");
+
 $("togetherPeople").innerHTML=`
   <g id="togetherSway">
     ${groomMarkup("ag",true)}
     ${brideMarkup("ab",true)}
-    <path d="M-29-77-17-57" fill="none" stroke="#d7bc9b" stroke-width="14" stroke-linecap="round"/>
-    <path d="M-17-57 0-46" fill="none" stroke="#f2c7a3" stroke-width="10" stroke-linecap="round"/>
-    <path d="M33-77 20-58 1-46" fill="none" stroke="#f2c9ac" stroke-width="10" stroke-linecap="round"/>
-    <path d="M33-77 29-71" stroke="#fffdf4" stroke-width="13" stroke-linecap="round"/>
+    <path d="M-29-77-17-57" fill="none" stroke="#d7bc9b"
+          stroke-width="14" stroke-linecap="round"/>
+    <path d="M-17-57 0-46" fill="none" stroke="#f2c7a3"
+          stroke-width="10" stroke-linecap="round"/>
+    <path d="M33-77 20-58 1-46" fill="none" stroke="#f2c9ac"
+          stroke-width="10" stroke-linecap="round"/>
+    <path d="M33-77 29-71" stroke="#fffdf4"
+          stroke-width="13" stroke-linecap="round"/>
     <ellipse cx="0" cy="-46" rx="7" ry="6" fill="#f2c7a3"/>
   </g>
   <g id="heart0"><use href="#qHeart"/></g>
   <g id="heart1"><use href="#qHeart"/></g>
   <g id="heart2"><use href="#qHeart"/></g>
 `;
-function tr(id,value){$(id).setAttribute("transform",value)}
+
+function tr(id,value){
+  $(id).setAttribute("transform",value);
+}
+
 tr("agPosition","translate(-58 0)");
 tr("abPosition","translate(58 0)");
 
-function japanToday(){return Math.floor((Date.now()+JST)/DAY)}
-function together(){return day.arrived||preview}
+function japanToday(){
+  return Math.floor((Date.now()+JST)/DAY);
+}
+
+function together(){
+  return day.arrived||preview;
+}
+
 function layoutSVG(){
   svgWidth=$("walkWorld").clientWidth<620?540:900;
+
   const center=svgWidth/2;
-  const margin=78,halfGap=58;
+  const margin=78;
+  const halfGap=58;
   const distance=center-halfGap-margin;
   const gx=margin+distance*day.progress;
   const bx=svgWidth-margin-distance*day.progress;
+
   $("coupleSvg").setAttribute("viewBox",`0 0 ${svgWidth} 350`);
   tr("gPosition",`translate(${gx} 291)`);
   tr("bPosition",`translate(${bx} 291)`);
   tr("togetherPeople",`translate(${center} 291)`);
   tr("svgArch",`translate(${center} 0)`);
+
   $("svgGlow").setAttribute("cx",center);
   $("svgGround").setAttribute("d",`M35 295H${svgWidth-35}`);
   $("svgDots").setAttribute("d",`M45 315H${svgWidth-45}`);
+
   svgDirty=true;
 }
+
 function coupleState(){
   const met=together();
+
   $("walkingPeople").setAttribute("visibility",met?"hidden":"visible");
   $("togetherPeople").setAttribute("visibility",met?"visible":"hidden");
+
   $("previewBadge").hidden=!preview;
   $("arrivalDate").hidden=!met;
+
+  // 預覽只切換人物動畫，不更改真實日期進度。
   $("journeyFill").style.width=day.progress*100+"%";
-  put("previewButton",preview?"countdown.returnButton":"countdown.previewButton");
+
+  put(
+    "previewButton",
+    preview?"countdown.returnButton":"countdown.previewButton"
+  );
   $("previewButton").setAttribute("aria-pressed",String(preview));
 
   if(day.valid){
@@ -1145,43 +1895,61 @@ function coupleState(){
     $("journeyNote").textContent=day.error;
     put("coupleDesc","countdown.svgInvalid");
   }
+
   layoutSVG();
 }
+
 function updateDay(force=false){
   if(!day.valid) return;
+
   const today=japanToday();
-  if(!force&&today===day.cached) return;
+  if(!force && today===day.cached) return;
+
   day.cached=today;
   day.remaining=Math.max(0,day.end-today);
   day.arrived=today>=day.end;
   day.progress=clamp((today-day.start)/(day.end-day.start));
   vars.days=day.remaining;
+
   if(day.arrived) preview=false;
+
   $("daysNumber").textContent=day.remaining;
   $("dayCounter").hidden=day.arrived;
   $("arrivalMessage").hidden=!day.arrived;
   $("previewButton").hidden=day.arrived;
-  put("countdownNote",day.arrived?"countdown.afterNote":"countdown.beforeNote");
+
+  put(
+    "countdownNote",
+    day.arrived?"countdown.afterNote":"countdown.beforeNote"
+  );
+
   coupleState();
 }
+
 function scheduleDay(){
   clearTimeout(dayTimer);
-  if(document.hidden||!day.valid) return;
+  if(document.hidden || !day.valid) return;
+
   const until=(japanToday()+1)*DAY-JST-Date.now();
+
   dayTimer=setTimeout(()=>{
     updateDay();
     scheduleDay();
   },Math.max(100,Math.min(60000,until+80)));
 }
+
 function drawCouple(t){
   if(!together()){
-    const s=Math.sin(t*7),b=Math.sin(t*7+.45);
+    const s=Math.sin(t*7);
+    const b=Math.sin(t*7+.45);
+
     tr("gMotion",`translate(0 ${-Math.abs(s)*3.3})`);
     tr("gLegL",`translate(-12 -29) rotate(${s*22})`);
     tr("gLegR",`translate(12 -29) rotate(${-s*22})`);
     tr("gArmL",`translate(-29 -77) rotate(${-s*18})`);
     tr("gArmR",`translate(29 -77) rotate(${s*18})`);
     tr("gHead",`rotate(${Math.sin(t*3.5)*1.2} 0 -90)`);
+
     tr("bMotion",`translate(0 ${-Math.abs(b)*2.8})`);
     tr("bLegL",`translate(-12 -20) rotate(${b*23})`);
     tr("bLegR",`translate(12 -20) rotate(${-b*23})`);
@@ -1190,33 +1958,51 @@ function drawCouple(t){
     tr("bVeil",`rotate(${Math.sin(t*2)*1.6} 0 -173)`);
     tr("bHead",`rotate(${Math.sin(t*3.5+.3)*1.2} 0 -90)`);
   }else{
-    const cycle=(t%8)/8,phase=cycle*Math.PI*2;
+    const cycle=(t%8)/8;
+    const phase=cycle*Math.PI*2;
     const lean=Math.pow(Math.sin(Math.PI*cycle),2);
+
     tr("togetherSway",`rotate(${Math.sin(phase)*1.6} 0 0)`);
     tr("agHead",`rotate(${lean*7} 0 -90)`);
     tr("abHead",`rotate(${lean*7} 0 -90)`);
     tr("abVeil",`rotate(${Math.sin(phase+.7)*1.5} 0 -173)`);
     tr("abArmL",`translate(-25 -76) rotate(${Math.sin(phase)*3})`);
+
     for(let i=0;i<3;i++){
       const p=(cycle+i*.24)%1;
-      $("heart"+i).setAttribute("opacity",Math.pow(Math.sin(Math.PI*p),2)*.85);
-      tr("heart"+i,`translate(${[0,-28,29][i]+Math.sin(p*Math.PI*2)*5} ${-170-p*62}) scale(${[.6,.4,.35][i]})`);
+      $("heart"+i).setAttribute(
+        "opacity",
+        Math.pow(Math.sin(Math.PI*p),2)*.85
+      );
+      tr(
+        "heart"+i,
+        `translate(
+          ${[0,-28,29][i]+Math.sin(p*Math.PI*2)*5}
+          ${-170-p*62}
+        ) scale(${[.6,.4,.35][i]})`
+      );
     }
   }
 }
+
 $("previewButton").addEventListener("click",()=>{
   preview=!preview;
   animationTime=0;
   coupleState();
-  if(preview&&paused) toast("messages.previewPaused");
+  if(preview && paused) toast("messages.previewPaused");
 });
-if("ResizeObserver" in window) new ResizeObserver(layoutSVG).observe($("walkWorld"));
+
+if("ResizeObserver" in window){
+  new ResizeObserver(layoutSVG).observe($("walkWorld"));
+}
+
 if("IntersectionObserver" in window){
   new IntersectionObserver(entries=>{
     svgVisible=entries[0].isIntersecting;
     if(svgVisible) svgDirty=true;
   },{rootMargin:"120px"}).observe($("walkWorld"));
 }
+
 put("daysNumber","countdown.placeholder");
 put("countdownNote","countdown.beforeNote");
 updateDay(true);
@@ -1227,89 +2013,161 @@ scheduleDay();
 /* ==========================================================
    音樂
    ========================================================== */
-let audioContext,master,audioElement;
-let musicPlaying=false,audioBusy=false,audioToken=0;
-let musicTimer,noteIndex=0,nextNote=0;
+let audioContext;
+let master;
+let audioElement;
+
+let musicPlaying=false;
+let audioBusy=false;
+let audioToken=0;
+
+let musicTimer;
+let noteIndex=0;
+let nextNote=0;
+
 const voices=new Set();
 const volume=clamp(numeric(C.musicVolume,.22));
+
 const melody=[
   72,76,79,76,74,77,81,77,
   71,74,79,74,72,76,79,84,
   81,79,76,74,72,76,74,67,
   69,72,76,72,67,71,74,71
 ];
+
 const bass=[48,53,55,48,57,53,50,55];
+
 function musicUI(){
-  put("musicButton",musicPlaying?"controls.musicOn":"controls.musicOff");
+  put(
+    "musicButton",
+    musicPlaying?"controls.musicOn":"controls.musicOff"
+  );
+
   $("musicButton").setAttribute("aria-pressed",String(musicPlaying));
-  $("musicButton").setAttribute("aria-label",copy(
-    musicPlaying?"controls.musicDisableLabel":"controls.musicEnableLabel"
-  ));
+  $("musicButton").setAttribute(
+    "aria-label",
+    copy(musicPlaying
+      ?"controls.musicDisableLabel"
+      :"controls.musicEnableLabel")
+  );
 }
+
 function tone(midi,when,duration,strength){
-  const osc=audioContext.createOscillator(),gain=audioContext.createGain();
+  const osc=audioContext.createOscillator();
+  const gain=audioContext.createGain();
+
   osc.type="sine";
   osc.frequency.value=440*Math.pow(2,(midi-69)/12);
+
   gain.gain.setValueAtTime(0,when);
   gain.gain.linearRampToValueAtTime(strength,when+.025);
   gain.gain.exponentialRampToValueAtTime(.0001,when+duration);
-  osc.connect(gain);gain.connect(master);voices.add(osc);
-  osc.onended=()=>{voices.delete(osc);osc.disconnect();gain.disconnect()};
-  osc.start(when);osc.stop(when+duration+.05);
+
+  osc.connect(gain);
+  gain.connect(master);
+  voices.add(osc);
+
+  osc.onended=()=>{
+    voices.delete(osc);
+    osc.disconnect();
+    gain.disconnect();
+  };
+
+  osc.start(when);
+  osc.stop(when+duration+.05);
 }
+
 function scheduleMusic(){
-  if(!musicPlaying||audioContext?.state!=="running") return;
-  if(nextNote<audioContext.currentTime) nextNote=audioContext.currentTime+.04;
+  if(!musicPlaying || audioContext?.state!=="running") return;
+
+  if(nextNote<audioContext.currentTime){
+    nextNote=audioContext.currentTime+.04;
+  }
+
   while(nextNote<audioContext.currentTime+.3){
     tone(melody[noteIndex%melody.length],nextNote,1.6,.23);
+
     if(noteIndex%4===0){
       const root=bass[Math.floor(noteIndex/4)%bass.length];
-      tone(root,nextNote,2.7,.16);tone(root+7,nextNote,2.5,.065);
+      tone(root,nextNote,2.7,.16);
+      tone(root+7,nextNote,2.5,.065);
     }
-    noteIndex++;nextNote+=.49;
+
+    noteIndex++;
+    nextNote+=.49;
   }
 }
+
 function stopMusic(){
-  audioToken++;musicPlaying=false;clearInterval(musicTimer);
+  audioToken++;
+  musicPlaying=false;
+  clearInterval(musicTimer);
   audioElement?.pause();
-  for(const osc of voices){try{osc.stop()}catch{}}
+
+  for(const osc of voices){
+    try{osc.stop()}catch{}
+  }
+
   voices.clear();
-  if(audioContext?.state==="running") audioContext.suspend().catch(()=>{});
+
+  if(audioContext?.state==="running"){
+    audioContext.suspend().catch(()=>{});
+  }
+
   musicUI();
 }
+
 async function startMusic(){
-  if(musicPlaying||audioBusy) return;
+  if(musicPlaying || audioBusy || document.hidden) return;
+
   audioBusy=true;
   const token=++audioToken;
   $("musicButton").disabled=true;
+
   try{
     if(String(C.musicUrl||"").trim()){
       if(!audioElement){
         audioElement=new Audio(C.musicUrl);
-        audioElement.loop=true;audioElement.volume=volume;
+        audioElement.loop=true;
+        audioElement.volume=volume;
+
         audioElement.addEventListener("error",()=>{
-          stopMusic();toast("messages.musicFileFailed");
+          stopMusic();
+          toast("messages.musicFileFailed");
         });
       }
+
       await audioElement.play();
     }else{
       const API=window.AudioContext||window.webkitAudioContext;
       if(!API) throw new Error("Web Audio unavailable");
+
       if(!audioContext){
         audioContext=new API();
         master=audioContext.createGain();
         master.gain.value=volume;
         master.connect(audioContext.destination);
       }
+
       await audioContext.resume();
-      if(audioContext.state!=="running") throw new Error("Audio blocked");
+
+      if(audioContext.state!=="running"){
+        throw new Error("Audio blocked");
+      }
     }
-    if(token!==audioToken||document.hidden){
+
+    if(token!==audioToken || document.hidden){
       audioElement?.pause();
-      if(audioContext?.state==="running") await audioContext.suspend();
+
+      if(audioContext?.state==="running"){
+        await audioContext.suspend();
+      }
+
       return;
     }
+
     musicPlaying=true;
+
     if(!audioElement){
       nextNote=audioContext.currentTime+.04;
       scheduleMusic();
@@ -1317,78 +2175,109 @@ async function startMusic(){
       musicTimer=setInterval(scheduleMusic,120);
     }
   }catch(error){
-    console.warn(error);musicPlaying=false;
-    if(token===audioToken) toast("messages.musicBlocked");
+    console.warn(error);
+    musicPlaying=false;
+
+    if(token===audioToken){
+      toast("messages.musicBlocked");
+    }
   }finally{
-    audioBusy=false;$("musicButton").disabled=false;musicUI();
+    audioBusy=false;
+    $("musicButton").disabled=false;
+    musicUI();
   }
 }
+
 musicUI();
 $("musicButton").hidden=false;
+
 $("musicButton").addEventListener("click",()=>{
-  if(musicPlaying) stopMusic();else void startMusic();
+  if(musicPlaying){
+    stopMusic();
+  }else{
+    void startMusic();
+  }
 });
 
 /* ==========================================================
    合照及擦霧
    ========================================================== */
-const intro=$("intro"),fog=$("fogCanvas"),photo=$("couplePhoto");
-let pointerId=null,previousPoint=null,lastSample=0,fogContext=null;
+const intro=$("intro");
+const fog=$("fogCanvas");
+const photo=$("couplePhoto");
+
+let pointerId=null;
+let previousPoint=null;
+let lastSample=0;
+let fogContext=null;
+
 photo.alt=format(C.photoAlt);
-photo.style.objectPosition=C.photoPosition;
+photo.style.objectPosition=C.photoPosition||"50% 50%";
+
 photo.addEventListener("load",()=>{
-  photo.hidden=false;$("photoFallback").hidden=true;
+  photo.hidden=false;
+  $("photoFallback").hidden=true;
 });
+
 photo.addEventListener("error",()=>{
-  photo.hidden=true;$("photoFallback").hidden=false;
+  photo.hidden=true;
+  $("photoFallback").hidden=false;
   console.warn("Photo loading failed; showing fallback card.");
 });
-if(String(C.photoUrl||"").trim()) photo.src=C.photoUrl;
+
+if(String(C.photoUrl||"").trim()){
+  photo.src=C.photoUrl;
+}
+
+function queueAutoEntry(){
+  clearTimeout(revealTimer);
+
+  if(!revealed || requested || entered || document.hidden) return;
+
+  const delay=clamp(numeric(C.autoEnterDelaySeconds,2),0,15)*1000;
+
+  revealTimer=setTimeout(()=>{
+    if(!document.hidden && !requested && !entered){
+      requestEntry();
+    }
+  },delay);
+}
+
+function showRevealMessage(){
+  if(requested || entered) return;
+
+  $("revealMessage").hidden=false;
+  $("enterButton").hidden=false;
+  put("revealAnnouncement","intro.announcement");
+
+  $("revealMessage").scrollIntoView({
+    block:"nearest",
+    behavior:reduced.matches?"instant":"smooth"
+  });
+
+  queueAutoEntry();
+}
 
 function revealPhoto(fromButton=false){
   if(revealed || requested || entered) return;
 
-  revealed = true;
-  pointerId = null;
-  previousPoint = null;
+  revealed=true;
+  pointerId=null;
+  previousPoint=null;
 
   intro.classList.add("revealed");
   put("scratchHelp","intro.helpRevealed");
 
-  $("revealButton").hidden = true;
-  $("enterButton").hidden = true;
+  $("revealButton").hidden=true;
+  $("enterButton").hidden=true;
 
-  // 「直接揭曉」係使用者點擊，可在此嘗試啟動音樂。
   if(fromButton) void startMusic();
 
   clearTimeout(revealTimer);
 
-  // 等薄霧淡出，再顯示揭曉文字。
-  revealTimer = setTimeout(()=>{
-    if(requested || entered) return;
-
-    $("revealMessage").hidden = false;
-    put("revealAnnouncement","intro.announcement");
-
-    // 小螢幕確保合照下面嘅文字可以見到。
-    $("revealMessage").scrollIntoView({
-      block:"nearest",
-      behavior:reduced.matches ? "instant" : "smooth"
-    });
-
-    // 停留指定秒數後，自動入教堂。
-    const delay = clamp(
-      numeric(C.autoEnterDelaySeconds,2),
-      0,
-      15
-    ) * 1000;
-
-    revealTimer = setTimeout(()=>{
-      if(requested || entered) return;
-      requestEntry();
-    },delay);
-
-  },reduced.matches ? 0 : 650);
+  revealTimer=setTimeout(()=>{
+    if(!document.hidden) showRevealMessage();
+  },reduced.matches?0:1000);
 }
 
 $("revealButton").addEventListener("click",()=>revealPhoto(true));
@@ -1396,81 +2285,150 @@ $("revealButton").addEventListener("click",()=>revealPhoto(true));
 try{
   fogContext=fog.getContext("2d",{willReadFrequently:true});
   if(!fogContext) throw new Error("Canvas unavailable");
+
   const ctx=fogContext;
   const bg=ctx.createLinearGradient(0,0,600,750);
-  bg.addColorStop(0,"#f0f0e6");bg.addColorStop(.45,"#f8f4e9");bg.addColorStop(1,"#e2e9de");
-  ctx.fillStyle=bg;ctx.fillRect(0,0,600,750);
+
+  bg.addColorStop(0,"#f0f0e6");
+  bg.addColorStop(.45,"#f8f4e9");
+  bg.addColorStop(1,"#e2e9de");
+
+  ctx.fillStyle=bg;
+  ctx.fillRect(0,0,600,750);
+
   for(let i=0;i<35;i++){
-    const x=(Math.sin(i*7.19)+1)*300,y=(Math.cos(i*4.73)+1)*375,r=80+(i%5)*25;
+    const x=(Math.sin(i*7.19)+1)*300;
+    const y=(Math.cos(i*4.73)+1)*375;
+    const r=80+(i%5)*25;
     const gradient=ctx.createRadialGradient(x,y,0,x,y,r);
+
     gradient.addColorStop(0,"rgba(255,255,251,.5)");
     gradient.addColorStop(1,"rgba(255,255,251,0)");
-    ctx.fillStyle=gradient;ctx.fillRect(x-r,y-r,r*2,r*2);
+
+    ctx.fillStyle=gradient;
+    ctx.fillRect(x-r,y-r,r*2,r*2);
   }
 }catch(error){
-  console.warn(error);fog.hidden=true;$("fogHint").hidden=true;
+  console.warn(error);
+  fog.hidden=true;
+  $("fogHint").hidden=true;
   put("scratchHelp","intro.helpUnavailable");
 }
+
 const sampleCanvas=document.createElement("canvas");
-sampleCanvas.width=60;sampleCanvas.height=75;
-const sampleContext=sampleCanvas.getContext("2d",{willReadFrequently:true});
+sampleCanvas.width=60;
+sampleCanvas.height=75;
+
+let sampleContext=null;
+try{
+  sampleContext=sampleCanvas.getContext("2d",{willReadFrequently:true});
+}catch(error){
+  console.warn("Scratch sampler unavailable:",error);
+}
+
 function localPoint(event){
   const rect=fog.getBoundingClientRect();
+
   return {
     x:clamp((event.clientX-rect.left)/rect.width)*600,
     y:clamp((event.clientY-rect.top)/rect.height)*750
   };
 }
+
 function stamp(x,y){
-  const radius=58,ctx=fogContext;
+  const radius=58;
+  const ctx=fogContext;
   const brush=ctx.createRadialGradient(x,y,radius*.48,x,y,radius);
+
   brush.addColorStop(0,"rgba(0,0,0,1)");
   brush.addColorStop(1,"rgba(0,0,0,0)");
+
   ctx.globalCompositeOperation="destination-out";
   ctx.fillStyle=brush;
   ctx.fillRect(x-radius,y-radius,radius*2,radius*2);
 }
+
 function checkCoverage(force=false){
-  if(!sampleContext||revealed) return;
+  if(!sampleContext || revealed) return;
+
   const now=performance.now();
-  if(!force&&now-lastSample<140) return;
+  if(!force && now-lastSample<140) return;
   lastSample=now;
+
   try{
     sampleContext.clearRect(0,0,60,75);
     sampleContext.drawImage(fog,0,0,60,75);
+
     const pixels=sampleContext.getImageData(0,0,60,75).data;
     let alpha=0;
-    for(let i=3;i<pixels.length;i+=4) alpha+=pixels[i];
-    if(1-alpha/(60*75*255)>=clamp(numeric(C.revealThreshold,.35),.1,.8)) revealPhoto();
-  }catch(error){console.warn("Coverage sampling failed:",error)}
+
+    for(let i=3;i<pixels.length;i+=4){
+      alpha+=pixels[i];
+    }
+
+    const erased=1-alpha/(60*75*255);
+    const threshold=clamp(numeric(C.revealThreshold,.35),.1,.8);
+
+    if(erased>=threshold) revealPhoto();
+  }catch(error){
+    console.warn("Coverage sampling failed:",error);
+  }
 }
+
 function eraseTo(point){
-  if(!fogContext||revealed) return;
+  if(!fogContext || revealed) return;
+
   intro.classList.add("scratching");
+
   const from=previousPoint||point;
-  const steps=Math.max(1,Math.ceil(Math.hypot(point.x-from.x,point.y-from.y)/12));
+  const steps=Math.max(
+    1,
+    Math.ceil(Math.hypot(point.x-from.x,point.y-from.y)/12)
+  );
+
   for(let i=1;i<=steps;i++){
     const p=i/steps;
-    stamp(from.x+(point.x-from.x)*p,from.y+(point.y-from.y)*p);
+    stamp(
+      from.x+(point.x-from.x)*p,
+      from.y+(point.y-from.y)*p
+    );
   }
-  previousPoint=point;checkCoverage();
+
+  previousPoint=point;
+  checkCoverage();
 }
+
 fog.addEventListener("pointerdown",event=>{
-  if(revealed||requested||!event.isPrimary||event.button!==0||!fogContext) return;
-  pointerId=event.pointerId;previousPoint=null;
-  fog.setPointerCapture(event.pointerId);eraseTo(localPoint(event));
+  if(
+    revealed || requested || !event.isPrimary ||
+    event.button!==0 || !fogContext
+  ) return;
+
+  pointerId=event.pointerId;
+  previousPoint=null;
+
+  try{fog.setPointerCapture(event.pointerId)}catch{}
+  eraseTo(localPoint(event));
 });
+
 fog.addEventListener("pointermove",event=>{
-  if(event.pointerId===pointerId&&!revealed) eraseTo(localPoint(event));
+  if(event.pointerId===pointerId && !revealed){
+    eraseTo(localPoint(event));
+  }
 });
+
 function endScratch(event){
   if(event.pointerId!==pointerId) return;
-  pointerId=null;previousPoint=null;checkCoverage(true);
+
+  pointerId=null;
+  previousPoint=null;
+  checkCoverage(true);
 }
+
 fog.addEventListener("pointerup",endScratch);
 fog.addEventListener("pointercancel",endScratch);
-// 使用者擦開合照後放手，嘗試啟動音樂。
-// 獨立監聽，唔受 revealPhoto 重設 pointerId 影響。
+fog.addEventListener("lostpointercapture",endScratch);
+
 fog.addEventListener("pointerup",()=>{
   if(revealed && !entered){
     void startMusic();
@@ -1485,94 +2443,213 @@ function motionUI(){
   $("motionButton").setAttribute("aria-pressed",String(paused));
   document.body.classList.toggle("motion-paused",paused);
 }
-motionUI();$("motionButton").hidden=false;
+
+motionUI();
+$("motionButton").hidden=false;
+syncTopbarHeight();
+
 $("motionButton").addEventListener("click",()=>{
-  paused=!paused;motionUI();svgDirty=true;
+  paused=!paused;
+  motionUI();
+  svgDirty=true;
 });
-reduced.addEventListener?.("change",event=>{
+
+function reducedChange(event){
   if(event.matches){
     paused=true;
-    if(requested&&!entered&&sceneAPI&&sceneState==="ready") finishEntrance();
+
+    if(requested && !entered && sceneAPI && sceneState==="ready"){
+      finishEntrance();
+    }
   }
-  motionUI();svgDirty=true;
-});
-function hideIntro(){intro.hidden=true;intro.inert=true}
+
+  motionUI();
+  svgDirty=true;
+}
+
+if(reduced.addEventListener){
+  reduced.addEventListener("change",reducedChange);
+}else{
+  reduced.addListener(reducedChange);
+}
+
+function hideIntro(){
+  intro.hidden=true;
+  intro.inert=true;
+}
+
 function updateScroll(){
   const visible=$("experience").getBoundingClientRect().bottom>0;
-  $("scrollHint").hidden=!entered||sceneState!=="ready"||!visible;
+
+  $("scrollHint").hidden=
+    !entered || sceneState!=="ready" || !visible;
+
   if(sceneAPI) sceneAPI.dirty=true;
 }
+
+function focusInvitation(){
+  $("countdownHeading").scrollIntoView({
+    behavior:"instant",
+    block:"start"
+  });
+  $("countdownHeading").focus({preventScroll:true});
+}
+
 function revealInvitation(direct=false){
-  clearTimeout(waitTimer);clearTimeout(departureTimer);clearTimeout(revealTimer);
+  clearTimeout(waitTimer);
+  clearTimeout(departureTimer);
+  clearTimeout(revealTimer);
+
   const first=!entered;
-  entered=true;requested=true;leaving=false;
+
+  entered=true;
+  requested=true;
+  leaving=false;
+
   hideIntro();
+
   document.body.classList.remove("waiting");
   document.body.classList.add("entered");
+
   $("mainContent").inert=false;
   $("travelPanel").hidden=true;
-  document.querySelectorAll("[data-story]").forEach(el=>el.hidden=sceneState!=="ready");
-  if(sceneState!=="ready") document.body.classList.add("no3d");
+
+  document.querySelectorAll("[data-story]").forEach(el=>{
+    el.hidden=sceneState!=="ready";
+  });
+
+  if(sceneState!=="ready"){
+    document.body.classList.add("no3d");
+  }
+
   updateScroll();
 
-  if(direct||sceneState!=="ready"){
-    $("invitation").scrollIntoView({behavior:"instant",block:"start"});
-    if(first) $("countdownHeading").focus({preventScroll:true});
+  if(direct || sceneState!=="ready"){
+    if(first){
+      focusInvitation();
+    }else{
+      $("countdownHeading").scrollIntoView({
+        behavior:"instant",
+        block:"start"
+      });
+    }
   }else if(first){
     $("firstStoryHeading").focus({preventScroll:true});
   }
 }
+
 function finishEntrance(){
   if(entered) return;
-  sceneAPI?.snap(0);revealInvitation(false);
+  sceneAPI?.snap(0);
+  revealInvitation(false);
 }
+
 function skipAll(){
-  requested=true;revealInvitation(true);sceneAPI?.snap(1);
+  requested=true;
+
+  // 未載入完成就直接閱讀時，不再建立隱藏的 3D 場景。
+  if(sceneState==="loading"){
+    sceneState="skipped";
+  }
+
+  revealInvitation(true);
+  sceneAPI?.snap(1);
 }
+
 $("skipButton").addEventListener("click",skipAll);
 $("travelSkip").addEventListener("click",skipAll);
+
 function beginDeparture(){
-  if(leaving||entered||sceneState!=="ready") return;
-  leaving=true;clearTimeout(waitTimer);
-  intro.classList.add("leaving");intro.inert=true;
+  if(leaving || entered || sceneState!=="ready") return;
+
+  leaving=true;
+  clearTimeout(waitTimer);
+
+  intro.classList.add("leaving");
   $("travelPanel").hidden=false;
   $("travelSkip").focus({preventScroll:true});
+  intro.inert=true;
+
   departureTimer=setTimeout(()=>{
-    if(entered||sceneState!=="ready") return;
+    if(entered || sceneState!=="ready") return;
+
     hideIntro();
-    if(paused||reduced.matches) finishEntrance();else sceneAPI.start();
+
+    if(paused || reduced.matches){
+      finishEntrance();
+    }else{
+      sceneAPI.start();
+    }
   },reduced.matches?0:450);
 }
+
 function requestEntry(){
-  if(requested||!revealed) return;
- requested = true;
-$("enterButton").disabled = true;
-  if(sceneState==="failed"){
+  if(requested || !revealed) return;
+
+  requested=true;
+  clearTimeout(revealTimer);
+  $("enterButton").disabled=true;
+
+  if(sceneState==="failed" || sceneState==="skipped"){
     revealInvitation(true);
   }else if(sceneState==="ready"){
     beginDeparture();
   }else{
     put("loadStatus","messages.sceneWaiting");
+
     waitTimer=setTimeout(()=>{
-      if(!entered&&sceneState==="loading") failScene(new Error("3D loading timeout"));
+      if(!entered && sceneState==="loading"){
+        failScene(new Error("3D loading timeout"));
+      }
     },clamp(numeric(C.sceneWaitSeconds,12),3,60)*1000);
   }
 }
-$("enterButton").addEventListener("click",requestEntry);
+
+$("enterButton").addEventListener("click",()=>{
+  void startMusic();
+  requestEntry();
+});
+
 function failScene(error){
+  if(sceneState==="skipped") return;
+
   console.warn("3D fallback:",error);
+
   sceneState="failed";
+
   if(sceneAPI) sceneAPI.failed=true;
+
   document.body.classList.add("no3d");
   put("loadStatus","messages.sceneFailed");
+
   $("scrollHint").hidden=true;
-  document.querySelectorAll("[data-story]").forEach(el=>el.hidden=true);
-  if(requested&&!entered) revealInvitation(true);
-  else if(entered) $("invitation").scrollIntoView({behavior:"instant",block:"start"});
+
+  document.querySelectorAll("[data-story]").forEach(el=>{
+    el.hidden=true;
+  });
+
+  if(requested && !entered){
+    revealInvitation(true);
+  }else if(entered){
+    $("countdownHeading").scrollIntoView({
+      behavior:"instant",
+      block:"start"
+    });
+  }
 }
+
 addEventListener("scroll",updateScroll,{passive:true});
+
 addEventListener("resize",()=>{
-  layoutSVG();sceneAPI?.resize();updateScroll();
+  layoutSVG();
+
+  try{
+    sceneAPI?.resize();
+  }catch(error){
+    failScene(error);
+  }
+
+  updateScroll();
 });
 
 $("mainContent").inert=true;
@@ -1585,131 +2662,293 @@ window.scrollTo({top:0,left:0,behavior:"instant"});
    ========================================================== */
 function animate(now){
   if(document.hidden) return;
+
   const interval=mobileQuery.matches?1000/30:1000/60;
-  if(lastFrame&&now-lastFrame<interval-1){
-    frame=requestAnimationFrame(animate);return;
+
+  if(lastFrame && now-lastFrame<interval-1){
+    frame=requestAnimationFrame(animate);
+    return;
   }
+
   const dt=lastFrame?Math.min((now-lastFrame)/1000,.07):0;
   lastFrame=now;
-  if(svgVisible&&(!paused||svgDirty)){
+
+  if(svgVisible && (!paused || svgDirty)){
     if(!paused) animationTime+=dt;
-    drawCouple(animationTime);svgDirty=false;
+    drawCouple(animationTime);
+    svgDirty=false;
   }
-  if(sceneAPI&&!sceneAPI.failed&&$("experience").getBoundingClientRect().bottom>0){
-    try{sceneAPI.tick(dt)}catch(error){failScene(error)}
+
+  if(
+    sceneAPI &&
+    !sceneAPI.failed &&
+    $("experience").getBoundingClientRect().bottom>0
+  ){
+    try{
+      sceneAPI.tick(dt);
+    }catch(error){
+      failScene(error);
+    }
   }
+
   frame=requestAnimationFrame(animate);
 }
+
 function restartFrame(){
-  cancelAnimationFrame(frame);lastFrame=0;
-  if(!document.hidden) frame=requestAnimationFrame(animate);
+  cancelAnimationFrame(frame);
+  lastFrame=0;
+
+  if(!document.hidden){
+    frame=requestAnimationFrame(animate);
+  }
 }
+
 document.addEventListener("visibilitychange",()=>{
-  cancelAnimationFrame(frame);clearTimeout(dayTimer);
+  cancelAnimationFrame(frame);
+  clearTimeout(dayTimer);
+
   if(document.hidden){
     stopMusic();
+    clearTimeout(revealTimer);
   }else{
-    updateDay(true);scheduleDay();svgDirty=true;updateScroll();restartFrame();
+    updateDay(true);
+    scheduleDay();
+    svgDirty=true;
+    updateScroll();
+    restartFrame();
+
+    if(revealed && !requested && !entered){
+      if($("revealMessage").hidden){
+        showRevealMessage();
+      }else{
+        queueAutoEntry();
+      }
+    }
   }
 });
+
 addEventListener("pageshow",()=>{
-  updateDay(true);scheduleDay();updateScroll();restartFrame();
+  updateDay(true);
+  scheduleDay();
+  updateScroll();
+  restartFrame();
 });
+
+addEventListener("pagehide",()=>{
+  stopMusic();
+  cancelAnimationFrame(frame);
+  clearTimeout(dayTimer);
+});
+
 restartFrame();
 
 /* ==========================================================
-   3D 教堂
-   保留大樓梯、尖拱、長椅、花藝、海景、開門及祭壇。
+   Three.js 3D 教堂
+   程式生成示意模型，並非官方建築模型。
    ========================================================== */
 async function loadChurch(){
-  let renderer=null,scene=null;
+  let renderer=null;
+  let scene=null;
+
   const loadingNotice=setTimeout(()=>{
-    if(sceneState==="loading") put("loadStatus","messages.sceneSlow");
+    if(sceneState==="loading"){
+      put("loadStatus","messages.sceneSlow");
+    }
   },10000);
+
   try{
-    const THREE=await import("https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js");
-    if(sceneState==="failed"||(entered&&document.body.classList.contains("no3d"))) return;
+    const THREE=await import(
+      "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    );
+
+    if(sceneState!=="loading") return;
 
     const mobile=mobileQuery.matches;
+
     scene=new THREE.Scene();
     scene.background=new THREE.Color("#90c5dc");
     scene.fog=new THREE.Fog("#c8e0e3",110,290);
-    const camera=new THREE.PerspectiveCamera(56,innerWidth/innerHeight,.08,430);
-    renderer=new THREE.WebGLRenderer({antialias:!mobile,powerPreference:"default"});
-    renderer.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.25:1.65));
+
+    const camera=new THREE.PerspectiveCamera(
+      56,
+      innerWidth/innerHeight,
+      .08,
+      430
+    );
+
+    renderer=new THREE.WebGLRenderer({
+      antialias:!mobile,
+      powerPreference:"default"
+    });
+
+    renderer.setPixelRatio(
+      Math.min(devicePixelRatio||1,mobile?1.25:1.65)
+    );
     renderer.setSize(innerWidth,innerHeight);
     renderer.outputColorSpace=THREE.SRGBColorSpace;
     renderer.toneMapping=THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure=1.1;
     renderer.shadowMap.enabled=!mobile;
     renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+
     $("world").append(renderer.domElement);
 
     scene.add(new THREE.HemisphereLight("#eefaff","#bdc8af",2.7));
+
     const sun=new THREE.DirectionalLight("#fff3dc",3);
-    sun.position.set(-18,30,15);sun.target.position.set(0,3,-7);
-    sun.castShadow=!mobile;sun.shadow.mapSize.set(1536,1536);
-    Object.assign(sun.shadow.camera,{left:-23,right:23,top:30,bottom:-30,near:1,far:100});
-    sun.shadow.camera.updateProjectionMatrix();sun.shadow.bias=-.0007;
+    sun.position.set(-18,30,15);
+    sun.target.position.set(0,3,-7);
+    sun.castShadow=!mobile;
+    sun.shadow.mapSize.set(1536,1536);
+
+    Object.assign(sun.shadow.camera,{
+      left:-23,right:23,top:30,bottom:-30,near:1,far:100
+    });
+
+    sun.shadow.camera.updateProjectionMatrix();
+    sun.shadow.bias=-.0007;
+
     scene.add(sun,sun.target);
 
-    const white=new THREE.MeshStandardMaterial({color:"#fffdf5",roughness:.64});
-    const trim=new THREE.MeshStandardMaterial({color:"#ffffff",roughness:.42});
-    const stone=new THREE.MeshStandardMaterial({color:"#d0cdbf",roughness:.88});
-    const floor=new THREE.MeshPhysicalMaterial({color:"#f2f0e6",roughness:.25,metalness:.03,clearcoat:.7});
-    const silver=new THREE.MeshStandardMaterial({color:"#c2d0cb",metalness:.65,roughness:.3});
-    const gold=new THREE.MeshStandardMaterial({color:"#bba376",metalness:.45,roughness:.4});
+    /* 材質 */
+    const white=new THREE.MeshStandardMaterial({
+      color:"#fffdf5",roughness:.64
+    });
+    const trim=new THREE.MeshStandardMaterial({
+      color:"#ffffff",roughness:.42
+    });
+    const stone=new THREE.MeshStandardMaterial({
+      color:"#d0cdbf",roughness:.88
+    });
+    const floor=new THREE.MeshPhysicalMaterial({
+      color:"#f2f0e6",
+      roughness:.25,
+      metalness:.03,
+      clearcoat:.7
+    });
+    const silver=new THREE.MeshStandardMaterial({
+      color:"#c2d0cb",metalness:.65,roughness:.3
+    });
+    const gold=new THREE.MeshStandardMaterial({
+      color:"#bba376",metalness:.45,roughness:.4
+    });
     const glass=new THREE.MeshPhysicalMaterial({
-      color:"#96bdc4",roughness:.18,transparent:true,opacity:.3,
-      side:THREE.DoubleSide,depthWrite:false
+      color:"#96bdc4",
+      roughness:.18,
+      transparent:true,
+      opacity:.3,
+      side:THREE.DoubleSide,
+      depthWrite:false
     });
     const seaGlass=new THREE.MeshPhysicalMaterial({
-      color:"#d5eeeb",roughness:.1,transparent:true,opacity:.09,
-      side:THREE.DoubleSide,depthWrite:false
+      color:"#d5eeeb",
+      roughness:.1,
+      transparent:true,
+      opacity:.09,
+      side:THREE.DoubleSide,
+      depthWrite:false
     });
+
     const boxGeometry=new THREE.BoxGeometry(1,1,1);
+
     function box(w,h,d,x,y,z,material=white,parent=scene,cast=true){
       const mesh=new THREE.Mesh(boxGeometry,material);
-      mesh.scale.set(w,h,d);mesh.position.set(x,y,z);
-      mesh.castShadow=cast&&!mobile;mesh.receiveShadow=true;parent.add(mesh);
-      return mesh;
-    }
-    function beam(a,b,r=.07,material=white){
-      const direction=new THREE.Vector3().subVectors(b,a);
-      const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,direction.length(),8),material);
-      mesh.position.copy(a).add(b).multiplyScalar(.5);
-      mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),direction.normalize());
-      mesh.castShadow=!mobile;mesh.receiveShadow=true;scene.add(mesh);
+      mesh.scale.set(w,h,d);
+      mesh.position.set(x,y,z);
+      mesh.castShadow=cast&&!mobile;
+      mesh.receiveShadow=true;
+      parent.add(mesh);
       return mesh;
     }
 
-    /* 海面及雲 */
-    const sea=new THREE.Mesh(new THREE.PlaneGeometry(650,650),
-      new THREE.MeshStandardMaterial({color:"#42adbb",roughness:.36,metalness:.08}));
-    sea.rotation.x=-Math.PI/2;sea.position.set(0,-.5,-100);scene.add(sea);
-    const waveMaterial=new THREE.MeshBasicMaterial({color:"#e2f7ea",transparent:true,opacity:.16,depthWrite:false});
+    function beam(a,b,r=.07,material=white){
+      const direction=new THREE.Vector3().subVectors(b,a);
+      const mesh=new THREE.Mesh(
+        new THREE.CylinderGeometry(r,r,direction.length(),8),
+        material
+      );
+
+      mesh.position.copy(a).add(b).multiplyScalar(.5);
+      mesh.quaternion.setFromUnitVectors(
+        new THREE.Vector3(0,1,0),
+        direction.normalize()
+      );
+
+      mesh.castShadow=!mobile;
+      mesh.receiveShadow=true;
+      scene.add(mesh);
+      return mesh;
+    }
+
+    /* 海面 */
+    const sea=new THREE.Mesh(
+      new THREE.PlaneGeometry(650,650),
+      new THREE.MeshStandardMaterial({
+        color:"#42adbb",roughness:.36,metalness:.08
+      })
+    );
+
+    sea.rotation.x=-Math.PI/2;
+    sea.position.set(0,-.5,-100);
+    scene.add(sea);
+
+    const waveMaterial=new THREE.MeshBasicMaterial({
+      color:"#e2f7ea",
+      transparent:true,
+      opacity:.16,
+      depthWrite:false
+    });
     const waveGeometry=new THREE.PlaneGeometry(150,.11);
+
     for(let i=0;i<30;i++){
       const wave=new THREE.Mesh(waveGeometry,waveMaterial);
-      wave.rotation.x=-Math.PI/2;wave.position.set(Math.sin(i)*12,-.47,-33-i*5.1);
+      wave.rotation.x=-Math.PI/2;
+      wave.position.set(
+        Math.sin(i)*12,
+        -.47,
+        -33-i*5.1
+      );
       scene.add(wave);
     }
+
+    /* 雲 */
     const cloudCanvas=document.createElement("canvas");
-    cloudCanvas.width=256;cloudCanvas.height=128;
+    cloudCanvas.width=256;
+    cloudCanvas.height=128;
+
     const cloudCtx=cloudCanvas.getContext("2d");
+
     if(cloudCtx){
-      const gradient=cloudCtx.createRadialGradient(128,64,2,128,64,64);
+      const gradient=cloudCtx.createRadialGradient(
+        128,64,2,128,64,64
+      );
+
       gradient.addColorStop(0,"rgba(255,255,255,.95)");
       gradient.addColorStop(.5,"rgba(255,255,255,.5)");
       gradient.addColorStop(1,"rgba(255,255,255,0)");
-      cloudCtx.fillStyle=gradient;cloudCtx.fillRect(0,0,256,128);
+
+      cloudCtx.fillStyle=gradient;
+      cloudCtx.fillRect(0,0,256,128);
+
       const texture=new THREE.CanvasTexture(cloudCanvas);
+
       for(let i=0;i<10;i++){
-        const cloud=new THREE.Sprite(new THREE.SpriteMaterial({
-          map:texture,transparent:true,opacity:.78,depthWrite:false
-        }));
-        cloud.position.set(-145+i*33,38+(i%3)*14,-125-(i%2)*35);
-        cloud.scale.set(85,25,1);scene.add(cloud);
+        const cloud=new THREE.Sprite(
+          new THREE.SpriteMaterial({
+            map:texture,
+            transparent:true,
+            opacity:.78,
+            depthWrite:false
+          })
+        );
+
+        cloud.position.set(
+          -145+i*33,
+          38+(i%3)*14,
+          -125-(i%2)*35
+        );
+        cloud.scale.set(85,25,1);
+        scene.add(cloud);
       }
     }
 
@@ -1718,56 +2957,142 @@ async function loadChurch(){
     box(17,3.2,26,0,1.6,-11,white);
     box(13,.1,25,0,3.25,-11,floor);
     box(3,.035,25,0,3.32,-11,trim);
+
     for(let i=0;i<17;i++){
-      const height=(i+1)*(3.2/17),z=15.1-i*.78,width=15.7-i*.22;
+      const height=(i+1)*(3.2/17);
+      const z=15.1-i*.78;
+      const width=15.7-i*.22;
+
       box(width,height,.82,0,height/2,z,stone);
       box(width,.035,.08,0,height+.012,z+.36,trim);
     }
+
     box(12.2,.12,2.35,0,3.2,1.02,white);
+
     const profile=[
       [.09,0],[.13,.07],[.1,.15],[.08,.23],[.15,.42],
       [.17,.53],[.12,.67],[.06,.83],[.1,.94],[.11,1.02]
     ].map(([r,y])=>new THREE.Vector2(r,y));
-    const balusterGeometry=new THREE.LatheGeometry(profile,mobile?8:12);
+
+    const balusterGeometry=new THREE.LatheGeometry(
+      profile,
+      mobile?8:12
+    );
     const finialGeometry=new THREE.SphereGeometry(.19,10,8);
+
     for(const side of [-1,1]){
       for(let i=0;i<15;i++){
-        const t=i/14,mesh=new THREE.Mesh(balusterGeometry,white);
-        mesh.position.set(side*(7.9-t*1.95),.35+t*3,15.3-t*13.7);
-        mesh.castShadow=!mobile;scene.add(mesh);
+        const t=i/14;
+        const mesh=new THREE.Mesh(balusterGeometry,white);
+
+        mesh.position.set(
+          side*(7.9-t*1.95),
+          .35+t*3,
+          15.3-t*13.7
+        );
+
+        mesh.castShadow=!mobile;
+        scene.add(mesh);
       }
-      beam(new THREE.Vector3(side*7.95,1.37,15.65),new THREE.Vector3(side*5.9,4.39,1.3),.13,trim);
-      beam(new THREE.Vector3(side*7.95,.23,15.65),new THREE.Vector3(side*5.9,3.27,1.3),.18,white);
-      for(const [x,y,z] of [[side*7.95,0,15.65],[side*5.9,3.2,1.3]]){
-        box(.62,1.45,.62,x,y+.725,z);box(.8,.13,.8,x,y+1.47,z,trim);
+
+      beam(
+        new THREE.Vector3(side*7.95,1.37,15.65),
+        new THREE.Vector3(side*5.9,4.39,1.3),
+        .13,
+        trim
+      );
+
+      beam(
+        new THREE.Vector3(side*7.95,.23,15.65),
+        new THREE.Vector3(side*5.9,3.27,1.3),
+        .18,
+        white
+      );
+
+      for(const [x,y,z] of [
+        [side*7.95,0,15.65],
+        [side*5.9,3.2,1.3]
+      ]){
+        box(.62,1.45,.62,x,y+.725,z);
+        box(.8,.13,.8,x,y+1.47,z,trim);
+
         const finial=new THREE.Mesh(finialGeometry,trim);
-        finial.position.set(x,y+1.77,z);scene.add(finial);
+        finial.position.set(x,y+1.77,z);
+        scene.add(finial);
       }
     }
 
-    /* 尖拱 */
-    function archShape(width=3.65,bottom=3.2,spring=7.9,apex=13.25){
+    /* 尖拱形狀 */
+    function archShape(
+      width=3.65,
+      bottom=3.2,
+      spring=7.9,
+      apex=13.25
+    ){
       const shape=new THREE.Shape();
-      shape.moveTo(-width,bottom);shape.lineTo(-width,spring);
-      shape.bezierCurveTo(-width,spring+2,-1.45,apex-1,0,apex);
-      shape.bezierCurveTo(1.45,apex-1,width,spring+2,width,spring);
-      shape.lineTo(width,bottom);shape.closePath();return shape;
+      shape.moveTo(-width,bottom);
+      shape.lineTo(-width,spring);
+      shape.bezierCurveTo(
+        -width,spring+2,-1.45,apex-1,0,apex
+      );
+      shape.bezierCurveTo(
+        1.45,apex-1,width,spring+2,width,spring
+      );
+      shape.lineTo(width,bottom);
+      shape.closePath();
+      return shape;
     }
-    function archFrame(z,width=3.65,spring=7.9,apex=13.25,r=.2){
+
+    function archFrame(
+      z,
+      width=3.65,
+      spring=7.9,
+      apex=13.25,
+      r=.2
+    ){
       const path=new THREE.CurvePath();
+
       path.add(new THREE.LineCurve3(
-        new THREE.Vector3(-width,3.2,z),new THREE.Vector3(-width,spring,z)));
+        new THREE.Vector3(-width,3.2,z),
+        new THREE.Vector3(-width,spring,z)
+      ));
+
       path.add(new THREE.CubicBezierCurve3(
-        new THREE.Vector3(-width,spring,z),new THREE.Vector3(-width,spring+2,z),
-        new THREE.Vector3(-1.45,apex-1,z),new THREE.Vector3(0,apex,z)));
+        new THREE.Vector3(-width,spring,z),
+        new THREE.Vector3(-width,spring+2,z),
+        new THREE.Vector3(-1.45,apex-1,z),
+        new THREE.Vector3(0,apex,z)
+      ));
+
       path.add(new THREE.CubicBezierCurve3(
-        new THREE.Vector3(0,apex,z),new THREE.Vector3(1.45,apex-1,z),
-        new THREE.Vector3(width,spring+2,z),new THREE.Vector3(width,spring,z)));
+        new THREE.Vector3(0,apex,z),
+        new THREE.Vector3(1.45,apex-1,z),
+        new THREE.Vector3(width,spring+2,z),
+        new THREE.Vector3(width,spring,z)
+      ));
+
       path.add(new THREE.LineCurve3(
-        new THREE.Vector3(width,spring,z),new THREE.Vector3(width,3.2,z)));
-      const mesh=new THREE.Mesh(new THREE.TubeGeometry(path,mobile?60:90,r,8,false),trim);
-      mesh.castShadow=!mobile;mesh.receiveShadow=true;scene.add(mesh);
+        new THREE.Vector3(width,spring,z),
+        new THREE.Vector3(width,3.2,z)
+      ));
+
+      const mesh=new THREE.Mesh(
+        new THREE.TubeGeometry(
+          path,
+          mobile?60:90,
+          r,
+          8,
+          false
+        ),
+        trim
+      );
+
+      mesh.castShadow=!mobile;
+      mesh.receiveShadow=true;
+      scene.add(mesh);
     }
+
+    /* 外牆 */
     for(const side of [-1,1]){
       box(3.6,4.65,2.5,side*5.55,5.525,-.8);
       box(3.85,.28,2.7,side*5.55,7.95,-.8,trim);
@@ -1775,35 +3100,62 @@ async function loadChurch(){
       box(.94,.24,1.02,side*4.08,10.18,.12,trim);
       box(.86,.38,.95,side*4.08,9.83,.12,trim);
       box(.98,.28,1.05,side*4.08,3.4,.12,trim);
+
       for(let i=0;i<10;i++){
         const baluster=new THREE.Mesh(balusterGeometry,white);
         baluster.scale.set(.65,.6,.65);
-        baluster.position.set(side*(4.5+i*.3),8.08,-.05);scene.add(baluster);
+        baluster.position.set(
+          side*(4.5+i*.3),
+          8.08,
+          -.05
+        );
+        scene.add(baluster);
       }
+
       box(3.65,.12,.22,side*5.9,8.72,-.05,trim);
     }
+
     archFrame(.17,3.85,8,13.65,.25);
     archFrame(.05,4.13,8.1,14.12,.2);
+
     const upperGlass=new THREE.Mesh(
-      new THREE.ShapeGeometry(archShape(3.64,6.2,7.9,13.22)),glass);
-    upperGlass.position.z=.01;scene.add(upperGlass);
+      new THREE.ShapeGeometry(
+        archShape(3.64,6.2,7.9,13.22)
+      ),
+      glass
+    );
+
+    upperGlass.position.z=.01;
+    scene.add(upperGlass);
+
     box(7.3,.13,.14,0,6.2,.15,trim);
     box(7.25,.11,.14,0,8.35,.15,trim);
+
     for(const x of [-2.45,-1.23,0,1.23,2.45]){
       const top=x===0?13.08:Math.abs(x)<1.5?12.05:10.7;
       box(.095,top-6.2,.12,x,(top+6.2)/2,.15,trim);
     }
+
     for(const side of [-1,1]){
-      box(1.75,2.98,.04,side*2.76,4.7,.04,glass,scene,false);
+      box(
+        1.75,2.98,.04,
+        side*2.76,4.7,.04,
+        glass,scene,false
+      );
       box(.11,3,.15,side*1.84,4.7,.1,trim);
     }
 
-    /* 開門 */
-    const leftDoor=new THREE.Group(),rightDoor=new THREE.Group();
-    leftDoor.position.set(-1.8,3.2,.08);rightDoor.position.set(1.8,3.2,.08);
+    /* 雙門 */
+    const leftDoor=new THREE.Group();
+    const rightDoor=new THREE.Group();
+
+    leftDoor.position.set(-1.8,3.2,.08);
+    rightDoor.position.set(1.8,3.2,.08);
     scene.add(leftDoor,rightDoor);
+
     function makeDoor(group,side){
       const center=side*.9;
+
       box(1.8,2.96,.045,center,1.5,0,glass,group,false);
       box(.08,3,.12,side*1.76,1.5,0,trim,group);
       box(.08,3,.12,side*.04,1.5,0,trim,group);
@@ -1811,16 +3163,31 @@ async function loadChurch(){
       box(1.8,.09,.12,center,2.96,0,trim,group);
       box(.045,.55,.1,side*1.56,1.35,.12,silver,group);
     }
-    makeDoor(leftDoor,1);makeDoor(rightDoor,-1);
 
-    /* 室內、屋頂、海景窗 */
-    for(let z=-3.4;z>=-24;z-=3.5) archFrame(z,5.7,7.1,12.25,.18);
+    makeDoor(leftDoor,1);
+    makeDoor(rightDoor,-1);
+
+    /* 室內拱樑及側窗 */
+    for(let z=-3.4;z>=-24;z-=3.5){
+      archFrame(z,5.7,7.1,12.25,.18);
+    }
+
     for(const side of [-1,1]){
       box(.25,1,25,side*5.8,3.75,-12);
-      box(.08,2.8,24,side*5.8,5.6,-12,seaGlass,scene,false);
-      for(let z=-1;z>=-24;z-=3.4) box(.22,3.9,.2,side*5.8,5.15,z,trim);
+      box(
+        .08,2.8,24,
+        side*5.8,5.6,-12,
+        seaGlass,scene,false
+      );
+
+      for(let z=-1;z>=-24;z-=3.4){
+        box(.22,3.9,.2,side*5.8,5.15,z,trim);
+      }
     }
+
+    /* 屋頂 */
     const roofShape=new THREE.Shape();
+
     roofShape.moveTo(-5.9,7.1);
     roofShape.bezierCurveTo(-5.7,9.7,-2.2,12.1,0,12.65);
     roofShape.bezierCurveTo(2.2,12.1,5.7,9.7,5.9,7.1);
@@ -1828,69 +3195,154 @@ async function loadChurch(){
     roofShape.bezierCurveTo(5.4,9.4,2,11.85,0,12.35);
     roofShape.bezierCurveTo(-2,11.85,-5.4,9.4,-5.65,7.1);
     roofShape.closePath();
-    const roof=new THREE.Mesh(new THREE.ExtrudeGeometry(roofShape,{
-      depth:24,bevelEnabled:false,steps:1,curveSegments:28
-    }),white);
-    roof.position.z=-24;roof.receiveShadow=true;scene.add(roof);
+
+    const roof=new THREE.Mesh(
+      new THREE.ExtrudeGeometry(roofShape,{
+        depth:24,
+        bevelEnabled:false,
+        steps:1,
+        curveSegments:28
+      }),
+      white
+    );
+
+    roof.position.z=-24;
+    roof.receiveShadow=true;
+    scene.add(roof);
+
+    /* 祭壇後方海景窗 */
     const altarGlass=new THREE.Mesh(
-      new THREE.ShapeGeometry(archShape(5.65,3.2,7.1,12.2)),seaGlass);
-    altarGlass.position.z=-24.1;scene.add(altarGlass);
+      new THREE.ShapeGeometry(
+        archShape(5.65,3.2,7.1,12.2)
+      ),
+      seaGlass
+    );
+
+    altarGlass.position.z=-24.1;
+    scene.add(altarGlass);
     archFrame(-24.02,5.7,7.1,12.25,.2);
+
     for(const x of [-4.5,-3,-1.5,0,1.5,3,4.5]){
       const top=12.1-Math.abs(x)*.76;
       box(.1,top-3.2,.15,x,(top+3.2)/2,-24,trim);
     }
-    box(11.3,.13,.15,0,6.8,-24,trim);box(8.4,.13,.15,0,9.3,-24,trim);
 
-    /* 長椅、花架 */
+    box(11.3,.13,.15,0,6.8,-24,trim);
+    box(8.4,.13,.15,0,9.3,-24,trim);
+
+    /* 長椅及花架 */
     const flowers=[];
+
     for(const z of [-3,-6.1,-9.2,-12.3,-15.4,-18.5]){
       for(const side of [-1,1]){
         const x=side*4.08;
-        box(2.15,.18,.95,x,3.85,z);box(2.15,.84,.13,x,4.3,z+.45,trim);
-        box(.12,.7,.95,x-1,3.6,z);box(.12,.7,.95,x+1,3.6,z);
+
+        box(2.15,.18,.95,x,3.85,z);
+        box(2.15,.84,.13,x,4.3,z+.45,trim);
+        box(.12,.7,.95,x-1,3.6,z);
+        box(.12,.7,.95,x+1,3.6,z);
+
         const fx=side*2.62;
         box(.55,.06,.55,fx,3.33,z,silver);
+
         for(const dx of [-.2,.2]){
-          for(const dz of [-.2,.2]) box(.025,1.35,.025,fx+dx,4.02,z+dz,silver,scene,false);
+          for(const dz of [-.2,.2]){
+            box(
+              .025,1.35,.025,
+              fx+dx,4.02,z+dz,
+              silver,scene,false
+            );
+          }
         }
-        box(.57,.04,.57,fx,4.7,z,silver);flowers.push([fx,4.92,z]);
+
+        box(.57,.04,.57,fx,4.7,z,silver);
+        flowers.push([fx,4.92,z]);
       }
     }
 
-    /* 花藝使用 InstancedMesh */
-    const bloomMaterial=new THREE.MeshStandardMaterial({color:"#fffef1",roughness:.9});
-    const leafMaterial=new THREE.MeshStandardMaterial({color:"#829e68",roughness:1});
-    const paleMaterial=new THREE.MeshStandardMaterial({color:"#bac58b",roughness:1});
-    const bloomMatrices=[],leafMatrices=[],paleMatrices=[];
+    /* 花藝：InstancedMesh 減少 draw calls */
+    const bloomMaterial=new THREE.MeshStandardMaterial({
+      color:"#fffef1",roughness:.9
+    });
+    const leafMaterial=new THREE.MeshStandardMaterial({
+      color:"#829e68",roughness:1
+    });
+    const paleMaterial=new THREE.MeshStandardMaterial({
+      color:"#bac58b",roughness:1
+    });
+
+    const bloomMatrices=[];
+    const leafMatrices=[];
+    const paleMatrices=[];
     const dummy=new THREE.Object3D();
+
     let seed=91;
-    function random(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
+
+    function random(){
+      seed=(seed*1664525+1013904223)>>>0;
+      return seed/4294967296;
+    }
+
     function matrix(arr,x,y,z,sx,sy,sz){
       dummy.position.set(x,y,z);
       dummy.rotation.set(random()*3,random()*3,random()*3);
-      dummy.scale.set(sx,sy,sz);dummy.updateMatrix();arr.push(dummy.matrix.clone());
+      dummy.scale.set(sx,sy,sz);
+      dummy.updateMatrix();
+      arr.push(dummy.matrix.clone());
     }
+
     for(const [x,y,z] of flowers){
       for(let i=0;i<(mobile?17:25);i++){
-        const a=random()*Math.PI*2,r=Math.sqrt(random())*.42,s=.09+random()*.07;
-        matrix(bloomMatrices,x+Math.cos(a)*r,y+(random()-.5)*.25,z+Math.sin(a)*r,s,s*.8,s);
+        const a=random()*Math.PI*2;
+        const r=Math.sqrt(random())*.42;
+        const s=.09+random()*.07;
+
+        matrix(
+          bloomMatrices,
+          x+Math.cos(a)*r,
+          y+(random()-.5)*.25,
+          z+Math.sin(a)*r,
+          s,s*.8,s
+        );
       }
+
       for(let i=0;i<(mobile?24:36);i++){
-        const a=random()*Math.PI*2,r=.15+random()*.43;
-        matrix(i%3?leafMatrices:paleMatrices,
-          x+Math.cos(a)*r,y-.08+(random()-.5)*.3,z+Math.sin(a)*r,.07,.16,.035);
+        const a=random()*Math.PI*2;
+        const r=.15+random()*.43;
+
+        matrix(
+          i%3?leafMatrices:paleMatrices,
+          x+Math.cos(a)*r,
+          y-.08+(random()-.5)*.3,
+          z+Math.sin(a)*r,
+          .07,.16,.035
+        );
       }
+
       for(let i=0;i<(mobile?18:27);i++){
-        matrix(i%2?leafMatrices:paleMatrices,
-          x+(random()-.5)*.45,y-.15-random()*1.05,z+.3+(random()-.5)*.18,.06,.14,.03);
+        matrix(
+          i%2?leafMatrices:paleMatrices,
+          x+(random()-.5)*.45,
+          y-.15-random()*1.05,
+          z+.3+(random()-.5)*.18,
+          .06,.14,.03
+        );
       }
     }
+
     function addInstances(material,matrices){
-      const mesh=new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1,1),material,matrices.length);
+      const mesh=new THREE.InstancedMesh(
+        new THREE.IcosahedronGeometry(1,1),
+        material,
+        matrices.length
+      );
+
       matrices.forEach((m,i)=>mesh.setMatrixAt(i,m));
-      mesh.instanceMatrix.needsUpdate=true;mesh.computeBoundingSphere();scene.add(mesh);
+      mesh.instanceMatrix.needsUpdate=true;
+      mesh.computeBoundingSphere();
+      scene.add(mesh);
     }
+
     addInstances(bloomMaterial,bloomMatrices);
     addInstances(leafMaterial,leafMatrices);
     addInstances(paleMaterial,paleMatrices);
@@ -1906,18 +3358,29 @@ async function loadChurch(){
     box(.75,.1,.55,3.2,4.85,-22,white);
 
     /* 鏡頭 */
-    let phase="outside",approachProgress=0,interiorProgress=0,doorProgress=0;
+    let phase="outside";
+    let approachProgress=0;
+    let interiorProgress=0;
+    let doorProgress=0;
     let approachPath;
+
     const initialPosition=new THREE.Vector3();
     const initialLook=new THREE.Vector3(0,6.8,5);
     const insideLook=new THREE.Vector3(0,6.2,-25);
-    const position=new THREE.Vector3(),look=new THREE.Vector3(),projected=new THREE.Vector3();
+
+    const position=new THREE.Vector3();
+    const look=new THREE.Vector3();
+    const projected=new THREE.Vector3();
     const bounds=[];
+
     for(const x of [-8.7,8.7]){
       for(const y of [-.3,14.5]){
-        for(const z of [-1.5,16.2]) bounds.push(new THREE.Vector3(x,y,z));
+        for(const z of [-1.5,16.2]){
+          bounds.push(new THREE.Vector3(x,y,z));
+        }
       }
     }
+
     const insidePath=new THREE.CatmullRomCurve3([
       new THREE.Vector3(0,5.1,-2.7),
       new THREE.Vector3(-.07,5.15,-8),
@@ -1927,19 +3390,43 @@ async function loadChurch(){
 
     function fitOpening(){
       camera.aspect=innerWidth/innerHeight;
-      camera.fov=innerWidth<760?58:53;camera.updateProjectionMatrix();
-      const verticalLimit=innerHeight>innerWidth ? .68 : .76;
+      camera.fov=innerWidth<760?58:53;
+      camera.updateProjectionMatrix();
+
+      const topbarHeight=topbar.getBoundingClientRect().height;
+
+      // 預留頂部實色列位置，避免教堂尖頂被遮住。
+      const topLimit=clamp(
+        1-2*(topbarHeight+24)/innerHeight,
+        .2,
+        .76
+      );
+      const bottomLimit=innerHeight>innerWidth?.68:.76;
+
       let distance=30;
+
       for(let attempt=0;attempt<100;attempt++){
         camera.position.set(0,6.2,distance);
-        camera.lookAt(initialLook);camera.updateMatrixWorld(true);
-        if(bounds.every(point=>{
+        camera.lookAt(initialLook);
+        camera.updateMatrixWorld(true);
+
+        const fits=bounds.every(point=>{
           projected.copy(point).project(camera);
-          return Math.abs(projected.x)<.88&&Math.abs(projected.y)<verticalLimit&&projected.z<1;
-        })) break;
+
+          return (
+            Math.abs(projected.x)<.88 &&
+            projected.y<topLimit &&
+            projected.y>-bottomLimit &&
+            projected.z<1
+          );
+        });
+
+        if(fits) break;
         distance+=1.2;
       }
+
       initialPosition.copy(camera.position);
+
       approachPath=new THREE.CatmullRomCurve3([
         initialPosition.clone(),
         new THREE.Vector3(.2,4.9,Math.max(22,distance*.62)),
@@ -1948,101 +3435,193 @@ async function loadChurch(){
         new THREE.Vector3(0,5.1,2.55),
         new THREE.Vector3(0,5.1,-2.7)
       ],false,"catmullrom",.3);
+
       if(phase==="outside"){
-        camera.position.copy(initialPosition);camera.lookAt(initialLook);
+        camera.position.copy(initialPosition);
+        camera.lookAt(initialLook);
       }
     }
+
     function scrollTarget(){
       if(!entered) return 0;
+
       const section=$("experience");
       const distance=Math.max(1,section.offsetHeight-innerHeight);
       const top=section.getBoundingClientRect().top+scrollY;
+
       return clamp((scrollY-top)/distance);
     }
+
     const api={
-      dirty:true,failed:false,
-      start(){phase="approach";approachProgress=0;api.dirty=true},
-      snap(progress=0){
-        phase="inside";approachProgress=1;
-        interiorProgress=clamp(progress);doorProgress=1;
-        insidePath.getPointAt(interiorProgress,position);
-        camera.position.copy(position);camera.lookAt(0,6.2+interiorProgress*.6,-25);
-        leftDoor.rotation.y=-Math.PI*.52;rightDoor.rotation.y=Math.PI*.52;
+      dirty:true,
+      failed:false,
+
+      start(){
+        phase="approach";
+        approachProgress=0;
         api.dirty=true;
       },
+
+      snap(progress=0){
+        phase="inside";
+        approachProgress=1;
+        interiorProgress=clamp(progress);
+        doorProgress=1;
+
+        insidePath.getPointAt(interiorProgress,position);
+
+        camera.position.copy(position);
+        camera.lookAt(0,6.2+interiorProgress*.6,-25);
+
+        leftDoor.rotation.y=-Math.PI*.52;
+        rightDoor.rotation.y=Math.PI*.52;
+
+        api.dirty=true;
+      },
+
       resize(){
         if(api.failed) return;
-        const oldPosition=camera.position.clone(),oldQuaternion=camera.quaternion.clone();
-        renderer.setPixelRatio(Math.min(devicePixelRatio||1,innerWidth<760?1.25:1.65));
-        renderer.setSize(innerWidth,innerHeight);fitOpening();
+
+        const oldPosition=camera.position.clone();
+        const oldQuaternion=camera.quaternion.clone();
+
+        renderer.setPixelRatio(
+          Math.min(devicePixelRatio||1,innerWidth<760?1.25:1.65)
+        );
+        renderer.setSize(innerWidth,innerHeight);
+
+        fitOpening();
+
         if(phase!=="outside"){
-          camera.position.copy(oldPosition);camera.quaternion.copy(oldQuaternion);
+          camera.position.copy(oldPosition);
+          camera.quaternion.copy(oldQuaternion);
         }
+
         api.dirty=true;
       },
+
       tick(dt){
         let changed=api.dirty;
-        if(phase==="approach"&&!paused){
+
+        if(phase==="approach" && !paused){
           const duration=clamp(numeric(C.entranceSeconds,2.5),.8,10);
-          approachProgress=Math.min(1,approachProgress+dt/duration);
-          const eased=approachProgress*approachProgress*(3-2*approachProgress);
+
+          approachProgress=Math.min(
+            1,
+            approachProgress+dt/duration
+          );
+
+          const eased=
+            approachProgress*approachProgress*(3-2*approachProgress);
+
           approachPath.getPointAt(eased,position);
           camera.position.copy(position);
-          look.copy(initialLook).lerp(insideLook,clamp(eased*1.6));camera.lookAt(look);
-          doorProgress=clamp((12-position.z)/9);changed=true;
+
+          look.copy(initialLook).lerp(
+            insideLook,
+            clamp(eased*1.6)
+          );
+          camera.lookAt(look);
+
+          doorProgress=clamp((12-position.z)/9);
+          changed=true;
+
           if(approachProgress>=1){
-            api.snap(0);revealInvitation(false);
+            api.snap(0);
+            revealInvitation(false);
           }
         }else if(phase==="inside"){
           const target=scrollTarget();
+
           if(Math.abs(target-interiorProgress)>.00002){
-            interiorProgress=paused?target:
-              interiorProgress+(target-interiorProgress)*(1-Math.exp(-dt*5));
+            interiorProgress=paused
+              ?target
+              :interiorProgress+
+                (target-interiorProgress)*(1-Math.exp(-dt*5));
+
             changed=true;
           }
+
           if(changed){
             insidePath.getPointAt(interiorProgress,position);
-            camera.position.copy(position);camera.lookAt(0,6.2+interiorProgress*.6,-25);
+            camera.position.copy(position);
+            camera.lookAt(0,6.2+interiorProgress*.6,-25);
           }
+
           doorProgress=1;
         }
+
         if(changed){
           leftDoor.rotation.y=-doorProgress*Math.PI*.52;
           rightDoor.rotation.y=doorProgress*Math.PI*.52;
-          renderer.render(scene,camera);api.dirty=false;
+
+          renderer.render(scene,camera);
+          api.dirty=false;
         }
       }
     };
+
     renderer.domElement.addEventListener("webglcontextlost",event=>{
-      event.preventDefault();api.failed=true;renderer.domElement.style.display="none";
-      failScene(new Error("WebGL context lost"));toast("messages.sceneLost");
+      event.preventDefault();
+
+      api.failed=true;
+      renderer.domElement.style.display="none";
+
+      failScene(new Error("WebGL context lost"));
+      toast("messages.sceneLost");
     });
-    fitOpening();renderer.render(scene,camera);
-    sceneAPI=api;sceneState="ready";
+
+    fitOpening();
+    renderer.render(scene,camera);
+
+    sceneAPI=api;
+    sceneState="ready";
+
     document.body.classList.remove("no3d");
     put("loadStatus","messages.sceneReady");
-    if(requested&&!entered) beginDeparture();
+
+    if(requested && !entered){
+      beginDeparture();
+    }
+
     updateScroll();
   }catch(error){
-    if(renderer){renderer.domElement.remove();renderer.dispose()}
+    if(renderer){
+      renderer.domElement.remove();
+      renderer.dispose();
+    }
+
     if(scene){
-      const geometries=new Set(),materials=new Set(),textures=new Set();
+      const geometries=new Set();
+      const materials=new Set();
+      const textures=new Set();
+
       scene.traverse(object=>{
-        if(object.geometry) geometries.add(object.geometry);
-        const list=Array.isArray(object.material)?object.material:[object.material];
+        if(object.geometry){
+          geometries.add(object.geometry);
+        }
+
+        const list=Array.isArray(object.material)
+          ?object.material
+          :[object.material];
+
         list.filter(Boolean).forEach(material=>{
-          materials.add(material);if(material.map) textures.add(material.map);
+          materials.add(material);
+          if(material.map) textures.add(material.map);
         });
       });
+
       geometries.forEach(g=>g.dispose());
       textures.forEach(t=>t.dispose());
       materials.forEach(m=>m.dispose());
     }
+
     failScene(error);
   }finally{
     clearTimeout(loadingNotice);
   }
 }
+
 void loadChurch();
 
 })();
