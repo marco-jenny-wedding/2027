@@ -75,20 +75,20 @@ window.INVITE = {
   photoUrl: "",
   photoPosition: "50% 50%",
 
-  openingPaperUrl: "images/optimized/opening-paper.webp",
+  openingPaperUrl: "./images/optimized/opening-paper.webp",
 
-  entranceMobileUrl: "images/optimized/chapel-entrance-mobile.webp",
-  entranceDesktopUrl: "images/optimized/chapel-entrance-desktop.webp",
+  entranceMobileUrl: "./images/optimized/chapel-entrance-mobile.webp",
+  entranceDesktopUrl: "./images/optimized/chapel-entrance-desktop.webp",
   entrancePositionPortrait: "50% 58%",
   entrancePositionLandscape: "50% 56%",
 
-  interiorMobileUrl: "images/optimized/chapel-interior-mobile.webp",
-  interiorDesktopUrl: "images/optimized/chapel-interior-desktop.webp",
+  interiorMobileUrl: "./images/optimized/chapel-interior-mobile.webp",
+  interiorDesktopUrl: "./images/optimized/chapel-interior-desktop.webp",
   interiorPositionPortrait: "50% 52%",
   interiorPositionLandscape: "50% 50%",
 
   /* ---------- 新人插畫（室內；已確認，未改） ---------- */
-  coupleUrl: "images/optimized/couple-illustration.png",
+  coupleUrl: "./images/optimized/couple-illustration.png",
   coupleHeightPortrait: 0.36,
   coupleCenterPortrait: 0.5,
   coupleHeightLandscape: 0.5,
@@ -108,8 +108,8 @@ window.INVITE = {
      foregroundHideIfOpaque     整張圖大部分不透明（可能未去背）時隱藏
      ⚠️ 只會等比例縮放，不會拉伸。
   */
-  foregroundMobileUrl: "images/optimized/chapel-foreground-mobile.png",
-  foregroundDesktopUrl: "images/optimized/chapel-foreground-desktop.png",
+  foregroundMobileUrl: "./images/optimized/chapel-foreground-mobile.png",
+  foregroundDesktopUrl: "./images/optimized/chapel-foreground-desktop.png",
   foregroundFit: "auto",
   foregroundBottomMaxHeight: 0.55,
   foregroundMinStageHeight: 340,
@@ -130,7 +130,7 @@ window.INVITE = {
   chapelPhotoUrl: "",
   chapelPhotoPosition: "50% 50%",
 
-  fontUrl: "fonts/MaokenAssortedSans-TC.ttf",
+  fontUrl: "./fonts/MaokenAssortedSans-TC.ttf",
 
   musicUrl: "",
   musicVolume: 0.22,
@@ -152,7 +152,7 @@ window.INVITE = {
      initialBurst     打開頁面時即刻先生成幾片，避免開頭空白
   */
   sakura: {
-    sheetUrl: "images/optimized/review-batch/animation/sakura-petals-sheet-q90.webp",
+    sheetUrl: "./images/optimized/review-batch/animation/sakura-petals-sheet-q90.webp",
     maxActive: 8,
     spawnIntervalMs: [1600, 3200],
     durationSec: [12, 20],
@@ -173,7 +173,7 @@ window.INVITE = {
   */
   walkIn: {
     enabled: true,
-    sheetUrl: "images/optimized/review-batch/animation/couple-walk-in-sheet-q90.webp",
+    sheetUrl: "./images/optimized/review-batch/animation/couple-walk-in-sheet-q90.webp",
 
     /* 素材表原始邊長（正方形）。裁切座標都以呢個數值為基準，
        即使實際檔案解像度唔同，程式會按比例換算。 */
@@ -236,7 +236,7 @@ window.INVITE = {
     fadeEnd: 0.96,
 
     florals: {
-      sheetUrl: "images/optimized/review-batch/animation/watercolor-florals-sheet-q90.webp",
+      sheetUrl: "./images/optimized/review-batch/animation/watercolor-florals-sheet-q90.webp",
       sheetRef: 1024,
       /* 四束花葉裁切：tl 左上、tr 右上、bl 左下、br 右下（sheetRef 單位） */
       crops: {
@@ -260,7 +260,7 @@ window.INVITE = {
     },
 
     ripples: {
-      sheetUrl: "images/optimized/review-batch/animation/sea-ripples-sheet-q90.webp",
+      sheetUrl: "./images/optimized/review-batch/animation/sea-ripples-sheet-q90.webp",
       sheetRef: 1024,
       /* 五組水紋裁切（sheetRef 單位） */
       crops: {
