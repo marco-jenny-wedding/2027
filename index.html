@@ -1,0 +1,3381 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f0e5">
+<meta id="pageDescription" name="description" content="2027 年 3 月 30 日（星期二），Marco & Jenny 喺沖繩 Monterey Lumer Chapel 舉行婚禮。">
+<title>一步一步，走向你｜Marco & Jenny 沖繩婚禮請帖</title>
+
+<noscript>
+  <style>.topbar,#intro,#mainContent,#toast{display:none!important}</style>
+</noscript>
+
+<script>
+/* ==========================================================
+   ★★★ 主要修改區：平時只需要改呢一區 ★★★
+   1. 文字放在雙引號 "..." 裏面；換行用 \n。
+   2. 三種語言放在 languages 內："zh-HK"（預設）、"en"、"ja"。
+      某語言缺少某項文字時，會自動使用繁體中文版本。
+   3. 可使用變數：{names} {chapel} {hotel} {guestName} {mapUrl}
+   4. ⚠️ 日期／時間文字係逐個語言寫死嘅；更改 event 時間時，
+      請同時更新三種語言文字及 <body> 內 <noscript> 純文字資料。
+   ========================================================== */
+
+window.INVITE = {
+  /* ---------- A. 基本資料（三語共用） ---------- */
+  names: "Marco & Jenny",
+  initials: "M & J",
+  chapel: "Monterey Lumer Chapel",
+  hotel: "Hotel Monterey Okinawa Spa & Resort",
+
+  mapUrl: "https://maps.app.goo.gl/KZ6U57jWLL2UsfLi7",
+  chapelWebsiteUrl: "https://www.resortwedding.net/okinawa/monterey/",
+
+  /* ---------- B. 時間（全部為日本時間 +09:00） ---------- */
+  event: {
+    doorsOpen:     "2027-03-30T12:50:00+09:00",
+    ceremonyStart: "2027-03-30T13:00:00+09:00",
+    expectedEnd:   "2027-03-30T15:30:00+09:00"   // ⚠️ 待確認
+  },
+
+  calendarUid: "marco-jenny-20270330-ceremony@wedding-invitation",
+  icsFileName: "marco-jenny-wedding-2027-03-30.ics",
+
+  defaultLang: "zh-HK",
+
+  /* ---------- C. 圖片、字體、音樂路徑 ----------
+     所有圖片都放在 images/optimized/ 或 images/optimized/review-batch/ 內。
+     （已不再使用 images/ 根目錄路徑。）
+     ✅ 清單內有檔案，使用中
+     ❌ 清單內冇檔案，暫時留空 ""（沿用佔位／後備處理）
+     ⏳ 清單內有檔案，但暫未使用
+
+     ✅ images/optimized/opening-paper.webp
+     ✅ images/optimized/chapel-entrance-mobile.webp / chapel-entrance-desktop.webp
+     ✅ images/optimized/chapel-interior-mobile.webp / chapel-interior-desktop.webp
+     ✅ images/optimized/couple-illustration.png        （室內新人插畫；沿用原本 PNG）
+          備選（未批准替換）：couple-illustration-q90.webp / couple-illustration-lossless.webp
+     ✅ images/optimized/chapel-foreground-mobile.png / chapel-foreground-desktop.png
+          備選（未批准替換）：chapel-foreground-*-q90.webp / *-lossless.webp
+     ✅ images/optimized/review-batch/animation/sakura-petals-sheet-q90.webp   （第一幕櫻花）
+     ✅ images/optimized/review-batch/animation/couple-walk-in-sheet-q90.webp  （Checkpoint 2：背面新人）
+     ✅ images/optimized/review-batch/animation/watercolor-florals-sheet-q90.webp（Checkpoint 2：前景花葉）
+     ✅ images/optimized/review-batch/animation/sea-ripples-sheet-q90.webp     （Checkpoint 2：海面水紋）
+     ❌ 真實合照 couple-photo        → photoUrl 留空
+     ❌ 教堂實景照 monterey-lumer-chapel → chapelPhotoUrl 留空
+     ❌ fonts/MaokenAssortedSans-TC.ttf  （字體，清單未列出；失敗時自動用後備字體）
+     ❌ 音樂檔                         留空 = 內置合成音樂
+     ⏳ images/optimized/ending-mobile.webp / ending-desktop.webp
+     ⏳ images/optimized/review-batch/ 內其他素材（門、走出、鐘等，之後 checkpoint 使用）
+  */
+
+  /* 真實合照（清單冇 → 留空，沿用第一幕佔位卡） */
+  photoUrl: "",
+  photoPosition: "50% 50%",
+
+  openingPaperUrl: "images/optimized/opening-paper.webp",
+
+  entranceMobileUrl: "images/optimized/chapel-entrance-mobile.webp",
+  entranceDesktopUrl: "images/optimized/chapel-entrance-desktop.webp",
+  entrancePositionPortrait: "50% 58%",
+  entrancePositionLandscape: "50% 56%",
+
+  interiorMobileUrl: "images/optimized/chapel-interior-mobile.webp",
+  interiorDesktopUrl: "images/optimized/chapel-interior-desktop.webp",
+  interiorPositionPortrait: "50% 52%",
+  interiorPositionLandscape: "50% 50%",
+
+  /* ---------- 新人插畫（室內；已確認，未改） ---------- */
+  coupleUrl: "images/optimized/couple-illustration.png",
+  coupleHeightPortrait: 0.36,
+  coupleCenterPortrait: 0.5,
+  coupleHeightLandscape: 0.5,
+  coupleCenterLandscape: 0.56,
+  coupleBottomLandscape: 0.08,
+  coupleHideIfOpaque: true,
+
+  /* ---------- 花草前景（室內兩側，靜態裝飾） ----------
+     foregroundFit
+       "auto"   自動判斷（建議）：花草圖比例同室內圖一樣 → "frame"；否則 → "bottom"
+       "frame"  當成同室內圖對齊嘅整幅覆蓋層（同一裁切方式）
+       "bottom" 貼住畫面底部，闊度最多等於畫面闊度
+     foregroundBottomMaxHeight  "bottom" 模式：最高佔畫面高度幾多（0.2–1）
+     foregroundMinStageHeight   插畫區矮過呢個高度（px）就唔顯示花草
+     foregroundMaxCoupleOverlap 花草遮住人物範圍超過呢個比例就隱藏（0.05 = 5%）
+     foregroundMaxAisleOverlap  花草遮住中間走道範圍超過呢個比例就隱藏
+     foregroundHideIfOpaque     整張圖大部分不透明（可能未去背）時隱藏
+     ⚠️ 只會等比例縮放，不會拉伸。
+  */
+  foregroundMobileUrl: "images/optimized/chapel-foreground-mobile.png",
+  foregroundDesktopUrl: "images/optimized/chapel-foreground-desktop.png",
+  foregroundFit: "auto",
+  foregroundBottomMaxHeight: 0.55,
+  foregroundMinStageHeight: 340,
+  foregroundMaxCoupleOverlap: 0.05,
+  foregroundMaxAisleOverlap: 0.08,
+  foregroundHideIfOpaque: true,
+
+  // 入口 → 室內 scroll 設定（已確認，未改）
+  entranceZoomMax: 1.5,
+  entranceFocusPortrait: "50% 62%",
+  entranceFocusLandscape: "50% 72%",
+  entranceScrollScreens: 1.6,
+  entranceMinSharpness: 0.5,
+  interiorTransitionScreens: 0.7,
+  interiorHoldScreens: 0.9,
+
+  /* 教堂實景照（清單冇 → 留空，沿用「稍後放入」佔位） */
+  chapelPhotoUrl: "",
+  chapelPhotoPosition: "50% 50%",
+
+  fontUrl: "fonts/MaokenAssortedSans-TC.ttf",
+
+  musicUrl: "",
+  musicVolume: 0.22,
+
+  revealThreshold: 0.35,
+
+  /* ---------- C2. 第一幕櫻花飄落 ----------
+     素材表：1024×1024，兩行三列共六片花瓣（以 CSS 裁切顯示，毋須拆圖）。
+     所有 [最小, 最大] 都係每片花瓣隨機抽取嘅範圍。
+
+     maxActive        同一時間畫面上最多幾片花瓣（越少越疏落）
+     spawnIntervalMs  每隔幾耐生成一片（毫秒）— 數字越大越疏
+     durationSec      由上到下飄落一次要幾多秒 — 數字越大越慢
+     sizePx           花瓣闊度（px）；高度自動為闊度 × 1.5
+     driftPx          水平總飄移（px，負數＝向左）
+     swayPx           中途額外左右擺動（px）
+     rotateDeg        飄落期間總旋轉角度（正負號隨機）
+     opacity          花瓣不透明度
+     initialBurst     打開頁面時即刻先生成幾片，避免開頭空白
+  */
+  sakura: {
+    sheetUrl: "images/optimized/review-batch/animation/sakura-petals-sheet-q90.webp",
+    maxActive: 8,
+    spawnIntervalMs: [1600, 3200],
+    durationSec: [12, 20],
+    sizePx: [22, 40],
+    driftPx: [30, 130],
+    swayPx: [10, 40],
+    rotateDeg: [120, 360],
+    opacity: [0.55, 0.85],
+    initialBurst: 3
+  },
+
+  /* ---------- C3. Checkpoint 2：入口「背面新人走近教堂」 ----------
+     ⚠️ 以下裁切座標、起點終點全部係按預覽圖估算，未經實機驗證，請喺瀏覽器睇過再微調。
+     ⚠️ 素材表黑色預覽背景係咪真透明未能確認：程式會讀取四角 alpha，
+        四角全部不透明 → 當作未去背，自動隱藏（唔會刪除黑色像素）。
+        用 file:// 開啟通常讀唔到像素 → 照常顯示（若素材其實係黑底就會見到黑框，
+        此時請用本機伺服器測試，或將 enabled 設為 false）。
+  */
+  walkIn: {
+    enabled: true,
+    sheetUrl: "images/optimized/review-batch/animation/couple-walk-in-sheet-q90.webp",
+
+    /* 素材表原始邊長（正方形）。裁切座標都以呢個數值為基準，
+       即使實際檔案解像度唔同，程式會按比例換算。 */
+    sheetRef: 1024,
+
+    /* 每格裁切框大小（sheetRef 單位）。框內包含人物 + 少量邊距，
+       已避開相鄰格；唔好無故放大，否則會露出相鄰格人物。 */
+    cropW: 400,
+    cropH: 480,
+
+    /* 四格位置：左上 → 右上 → 左下 → 右下。
+       x, y = 裁切框左上角。
+       dx, dy = 影格對齊微調（正數 = 裁切框向右／向下移 = 人物向左／向上移）。
+       如果某格行走時有跳動，微調該格 dx / dy 即可。 */
+    frames: [
+      { x: 95,  y: 15,  dx: 0, dy: 0 },   // 左上
+      { x: 597, y: 15,  dx: 0, dy: 0 },   // 右上
+      { x: 92,  y: 520, dx: 0, dy: 0 },   // 左下
+      { x: 582, y: 520, dx: 0, dy: 0 }    // 右下
+    ],
+
+    /* 播放次序（frames 嘅索引 0–3）。 */
+    frameOrder: [0, 1, 2, 3],
+
+    /* 整段路程循環幾多次四格姿勢（越大 = 步伐越密）。 */
+    cycles: 5,
+
+    /* 裁切框底部以上幾多比例係腳底／裙擺位置（用嚟對齊路面）。 */
+    feetInset: 0.04,
+
+    /* scroll 時點：數值係「入口階段進度」0–1（0 = 剛開始 scroll，1 = 入口走近完成）。
+       appearStart/End：由透明到完全出現
+       walkStart/End  ：開始／結束沿路前進
+       leaveStart/End ：淡出離場（要早過暖紙色過渡，即約 0.82 之前開始）  */
+    timing: {
+      appearStart: 0.03, appearEnd: 0.13,
+      walkStart:   0.06, walkEnd:   0.86,
+      leaveStart:  0.84, leaveEnd:  0.95
+    },
+
+    /* 起點／終點：用「入口背景圖」嘅比例座標（0–1）。
+       X = 由左到右、Y = 由上到下（腳底位置）。
+       startH / endH = 裁切框高度佔背景圖高度嘅比例（人物約佔裁切框 90%）。
+       直屏同橫屏用唔同背景圖，所以分開設定。 */
+
+        portrait:  { startX: 0.52, startY: 0.77, startH: 0.17, endX: 0.51, endY: 0.66, endH: 0.075 },
+    landscape: { startX: 0.50, startY: 0.93, startH: 0.29, endX: 0.505, endY: 0.80, endH: 0.165 }
+  },
+
+  /* ---------- C3b. 景深裝飾（前景花葉 + 遠景水紋） ----------
+     重要：入口背景係合併圖，唔係分層。呢度只係加獨立素材疊層：
+       前景 = 花葉（移動幅度最大）
+       中景 = 背面新人（上面 walkIn）
+       遠景 = 海面水紋（只做好細微漂移）
+     所有位置跟隨 scroll 進度 0→1（入口階段）。
+  */
+  depth: {
+    enabled: true,
+    fadeStart: 0.84,   // 裝飾淡出時點（對應暖紙色過渡前）
+    fadeEnd: 0.96,
+
+    florals: {
+      sheetUrl: "images/optimized/review-batch/animation/watercolor-florals-sheet-q90.webp",
+      sheetRef: 1024,
+      /* 四束花葉裁切：tl 左上、tr 右上、bl 左下、br 右下（sheetRef 單位） */
+      crops: {
+        tl: { x: 40,  y: 35,  w: 455, h: 440 },
+        tr: { x: 575, y: 45,  w: 420, h: 440 },
+        bl: { x: 25,  y: 510, w: 440, h: 445 },
+        br: { x: 600, y: 505, w: 400, h: 480 }
+      },
+      /* 每項：crop = 用邊束；x, y = 中心位置（佔入口畫面闊／高比例）；
+         w = 闊度（佔畫面闊度比例）；flip = 左右鏡像；opacity = 不透明度；
+         moveX / moveY = scroll 到尾時額外位移（px，負 X = 向左）；
+         grow = scroll 到尾時額外放大比例（0.3 = 放大 30%）。 */
+      portrait: [
+        { crop: "tl", x: 0.06, y: 0.80, w: 0.28, opacity: 0.95, moveX: -26, moveY: 22, grow: 0.28 },
+        { crop: "tr", x: 0.94, y: 0.80, w: 0.28, flip: true, opacity: 0.95, moveX: 26, moveY: 22, grow: 0.28 }
+      ],
+      landscape: [
+        { crop: "tl", x: 0.05, y: 0.97, w: 0.15, opacity: 0.95, moveX: -40, moveY: 26, grow: 0.25 },
+        { crop: "tr", x: 0.95, y: 0.97, w: 0.15, flip: true, opacity: 0.95, moveX: 40, moveY: 26, grow: 0.25 }
+      ]
+    },
+
+    ripples: {
+      sheetUrl: "images/optimized/review-batch/animation/sea-ripples-sheet-q90.webp",
+      sheetRef: 1024,
+      /* 五組水紋裁切（sheetRef 單位） */
+      crops: {
+        a: { x: 545, y: 245, w: 455, h: 150 },
+        b: { x: 20,  y: 785, w: 420, h: 130 },
+        c: { x: 445, y: 700, w: 555, h: 215 },
+        d: { x: 25,  y: 430, w: 800, h: 235 },
+        e: { x: 25,  y: 105, w: 680, h: 143 }
+      },
+      /* 每項：crop；u, v = 中心位置（佔「入口背景圖」闊／高比例，會跟住背景圖走）；
+         w = 闊度（佔背景圖闊度比例）；opacity；moveX = scroll 到尾時額外水平漂移（px）。
+         直屏海面可見範圍太窄，預設唔放（留空 []）。 */
+      portrait: [],
+      landscape: [
+        { crop: "a", u: 0.085, v: 0.63, w: 0.15, opacity: 0.5, moveX: -16 },
+        { crop: "b", u: 0.87,  v: 0.66, w: 0.18, opacity: 0.5, moveX: 20 },
+        { crop: "a", u: 0.79,  v: 0.735, w: 0.12, opacity: 0.4, moveX: 12 }
+      ]
+    }
+  },
+
+  /* ---------- D. 三語文字 ---------- */
+  languages: {
+
+    /* ===================== 繁體中文 ===================== */
+    "zh-HK": {
+      htmlLang: "zh-HK",
+      locale: "zh-HK",
+      guestName: "親愛的你",
+
+      page: {
+        title: "一步一步，走向你｜Marco & Jenny 沖繩婚禮請帖",
+        description: "2027 年 3 月 30 日（星期二），Marco & Jenny 喺沖繩 Monterey Lumer Chapel 舉行婚禮。"
+      },
+
+      controls: {
+        pause: "暫停動畫",
+        play: "播放動畫",
+        musicPlay: "♪ 播放音樂",
+        musicStop: "♪ 停止音樂",
+        musicOffLabel: "音樂目前關閉。按此播放音樂",
+        musicOnLabel: "音樂播放中。按此停止音樂",
+        langGroup: "語言",
+        langChanged: "已切換為繁體中文"
+      },
+
+      intro: {
+        eyebrow: "A LITTLE HAPPINESS, JUST FOR YOU",
+        heading: "有一份小小的幸福，\n想先給你看。",
+        fogSymbol: "♡",
+        fogTitle: "輕輕捽開薄霧",
+        fogSubtitle: "搵到我哋",
+        help: "用手指或滑鼠輕輕捽開，或者按「直接揭曉」。",
+        helpRevealed: "搵到我哋喇。",
+        helpUnavailable: "按「直接揭曉」，打開我哋嘅小小心意。",
+        srHint: "相片上有一層薄霧，可以用手指或滑鼠捽開；亦可以直接按「直接揭曉」按鈕顯示合照。",
+        fallbackSymbol: "♡",
+        fallbackNames: "{names}",
+        fallbackLine: "由兩個人，走到我們。",
+        fallbackNote: "合照稍後放入",
+        photoCaption: "2027.03.30 · OKINAWA",
+        photoAlt: "Marco 與 Jenny 的合照",
+        revealHeading: "由兩個人，走到我們。\n下一步，想有你見證。",
+        revealButton: "直接揭曉",
+        enterButton: "一齊走入教堂 →",
+        skipButton: "直接閱讀請帖",
+        announcement: "合照已揭曉。準備好嘅話，按「一齊走入教堂」繼續。"
+      },
+
+      entrance: {
+        eyebrow: "A LITTLE CHAPEL BY THE SEA",
+        heading: "沿著這條小路，\n我們在海邊等你。",
+        note: "插畫為示意，並非教堂實景。",
+        scrollHint: "向下滑動，慢慢走近",
+        skipButton: "直接閱讀請帖",
+        imageAlt: "手繪示意插畫：海邊白色小教堂及通往入口的小路",
+        fallback: "教堂插畫稍後放入"
+      },
+
+      interior: {
+        regionLabel: "手繪教堂室內",
+        eyebrow: "WELCOME TO OUR LITTLE CHAPEL",
+        heading: "歡迎你，\n走進我們的海邊小教堂。",
+        names: "{names}",
+        note: "插畫為原創示意，並非場地實景；新人插畫亦非真人寫照。",
+        scrollHint: "繼續向下，閱讀請帖",
+        skipButton: "直接閱讀請帖",
+        imageAlt: "手繪示意插畫：海邊小教堂室內，白色拱窗、花飾長椅及通往祭壇的走道",
+        fallback: "室內插畫稍後放入"
+      },
+
+      messages: {
+        musicFileFailed: "音樂未能載入；請帖仍可正常閱讀。",
+        musicBlocked: "音樂未能播放，可再按右上角音樂掣；請帖仍可正常閱讀。",
+        icsFailed: "未能下載行事曆檔案，可改用 Google 日曆，或者直接記低日期時間。"
+      },
+
+      countdown: {
+        eyebrow: "COUNTING DOWN TO OUR DAY",
+        heading: "餘下的每一天，\n都在走向你。",
+        intro: "你行近一步，我亦行近一步。每一天，都更接近彼此。",
+        target: "典禮開始：2027 年 3 月 30 日（星期二）\n日本時間下午 1:00",
+        timerLabel: "距離典禮開始",
+        days: "日",
+        hours: "小時",
+        minutes: "分鐘",
+        seconds: "秒",
+        note: "倒數以日本時間計算；無論你身處邊度，都係指向同一個時刻。",
+        localLabel: "即你當地時間：{localTime}",
+        localSame: "你所在時區嘅時間同日本時間一樣。",
+        startedHeading: "典禮已經開始。",
+        startedNote: "多謝你同我哋一齊見證呢一刻。"
+      },
+
+      letter: {
+        eyebrow: "A LITTLE NOTE FOR YOU",
+        heading: "多謝你，\n為我們遠道而來。",
+        greeting: "{guestName}：",
+        paragraphs: [
+          "知道你會嚟，我哋已經開始期待嗰一日。",
+          "2027 年 3 月 30 日，我哋會喺沖繩嘅海邊，交換承諾，展開人生下一段旅程。而你，會係呢個重要時刻入面，最珍貴嘅一部分。",
+          "多謝你特登騰出時間，帶住祝福飛到我哋身邊。到時唔使急，慢慢感受海風、陽光，同沖繩嘅溫柔。我哋喺教堂見。"
+        ],
+        signature: "{names}"
+      },
+
+      details: {
+        eyebrow: "THE CEREMONY",
+        heading: "把這一天，\n留給海與我們。",
+        dateLabel: "DATE / 日期",
+        dateValue: "2027 年 3 月 30 日（星期二）",
+        dateNote: "日本當地日期",
+        timeLabel: "TIME / 時間",
+        doors: "下午 12:50　入場",
+        ceremony: "下午 1:00　典禮開始",
+        end: "約下午 3:30　預計結束",
+        timeNote: "以上均為日本時間（JST，UTC+9）。",
+        noticeLabel: "重要提醒",
+        noticeText: "典禮開始後不能中途進入教堂。請於日本時間下午 12:50 準時入場。",
+        venueLabel: "VENUE / 地點",
+        venueValue: "{chapel}",
+        venueNote: "{hotel}\n沖繩，日本",
+        mapButton: "打開 Google 地圖 ↗",
+        calendarLabel: "ADD TO CALENDAR / 加入行事曆",
+        googleButton: "Google 日曆 ↗",
+        icsButton: "下載 .ics（Apple／Outlook）",
+        calendarNote: "行事曆暫定為日本時間 12:50–15:30；結束時間仍待確認。",
+        photoLabel: "VENUE PHOTO / 教堂實景",
+        photoBadge: "實景照",
+        chapelPhotoCaption: "{chapel}（實景照）",
+        chapelPhotoLoading: "教堂實景照載入中…",
+        chapelPhotoUnavailable: "教堂實景照稍後放入。",
+        chapelPhotoAlt: "Monterey Lumer Chapel 教堂實景照",
+        chapelWebsiteButton: "教堂官方介紹 ↗"
+      },
+
+      plans: {
+        eyebrow: "STILL TO BE CONFIRMED",
+        heading: "仲有啲安排，\n落實後再話你知。",
+        tbc: "待確認",
+        dinnerLabel: "典禮後晚飯",
+        dinnerValue: "時間及地點待確認。",
+        transportLabel: "交通及集合",
+        transportValue: "安排待確認，落實後會再通知你。",
+        absenceLabel: "未能出席",
+        absenceValue: "唔需要網上回覆。如未能出席，請直接話俾 Marco 或 Jenny 知。"
+      },
+
+      reminders: {
+        eyebrow: "BEFORE YOU ARRIVE",
+        heading: "出發之前，小小叮嚀。",
+        paragraphs: [
+          "海邊可能有風，記得帶件薄外套。穿你覺得舒服又好看嘅衣服就好。",
+          "其他未落實嘅安排，我哋確認後會再通知你。"
+        ]
+      },
+
+      schedule: {
+        heading: "當日流程",
+        note: "以上均為日本時間。",
+        events: [
+          { time: "12:50", heading: "入場", paragraph: "請準時入場。" },
+          { time: "13:00", heading: "典禮開始", paragraph: "開始後不能中途進入教堂。" },
+          { time: "約 15:30", heading: "預計結束", paragraph: "結束時間待確認。", tbc: true },
+          { time: "待確認", heading: "晚飯", paragraph: "時間及地點待確認。", tbc: true }
+        ]
+      },
+
+      calendar: {
+        title: "Marco & Jenny 婚禮典禮",
+        location: "{chapel}, {hotel}, 沖繩, 日本",
+        description: [
+          "Marco & Jenny 婚禮典禮",
+          "入場：日本時間下午 12:50",
+          "典禮開始：日本時間下午 1:00",
+          "典禮開始後不能中途進入教堂。",
+          "預計約下午 3:30 結束（結束時間待確認）。",
+          "典禮後晚飯：時間及地點待確認。",
+          "地圖：{mapUrl}"
+        ]
+      },
+
+      footer: {
+        japanese: "大切なあなたと、大切な一日を。",
+        heading: "沖繩見。",
+        paragraph: "有你同行，呢段回憶先至完整。",
+        names: "{names}",
+        date: "30 MARCH 2027 · OKINAWA",
+        disclaimer: "教堂插畫為原創示意，並非場地實景或精確建築重建；實景照會另外標明。\n新人插畫為手繪風格示意，並非真人樣貌嘅完全還原。\n倒數以日本時間 2027 年 3 月 30 日下午 1:00 計算，並以裝置時鐘為準。\n未確認嘅安排，以新人之後通知為準。"
+      }
+    },
+
+    /* ===================== English ===================== */
+    "en": {
+      htmlLang: "en",
+      locale: "en",
+      guestName: "Dear friend",
+
+      page: {
+        title: "Step by step, to you | Marco & Jenny · Okinawa Wedding",
+        description: "Marco & Jenny's wedding ceremony, Tuesday 30 March 2027, at Monterey Lumer Chapel, Okinawa."
+      },
+
+      controls: {
+        pause: "Pause motion",
+        play: "Play motion",
+        musicPlay: "♪ Play music",
+        musicStop: "♪ Stop music",
+        musicOffLabel: "Music is off. Press to play music",
+        musicOnLabel: "Music is playing. Press to stop music",
+        langGroup: "Language",
+        langChanged: "Switched to English"
+      },
+
+      intro: {
+        eyebrow: "A LITTLE HAPPINESS, JUST FOR YOU",
+        heading: "A little happiness\nwe wanted you to see first.",
+        fogTitle: "Gently wipe away the mist",
+        fogSubtitle: "and find us",
+        help: "Wipe gently with your finger or mouse, or press “Reveal now”.",
+        helpRevealed: "You found us.",
+        helpUnavailable: "Press “Reveal now” to open our little surprise.",
+        srHint: "There is a layer of mist over the photo. You can wipe it away with a finger or mouse, or press the “Reveal now” button to show the photo.",
+        fallbackLine: "From two of us, to us.",
+        fallbackNote: "Photo coming soon",
+        photoAlt: "Photo of Marco and Jenny",
+        revealHeading: "From two of us, to us.\nWe'd love you to witness what comes next.",
+        revealButton: "Reveal now",
+        enterButton: "Walk into the chapel together →",
+        skipButton: "Skip to the invitation",
+        announcement: "The photo is revealed. When you're ready, press “Walk into the chapel together”."
+      },
+
+      entrance: {
+        eyebrow: "A LITTLE CHAPEL BY THE SEA",
+        heading: "Follow this little path —\nwe're waiting by the sea.",
+        note: "Illustration only; not a photo of the venue.",
+        scrollHint: "Scroll down to walk closer",
+        skipButton: "Skip to the invitation",
+        imageAlt: "Original illustration: a small white chapel by the sea and the path to its entrance",
+        fallback: "Chapel illustration coming soon"
+      },
+
+      interior: {
+        regionLabel: "Illustrated chapel interior",
+        eyebrow: "WELCOME TO OUR LITTLE CHAPEL",
+        heading: "Welcome to\nour little chapel by the sea.",
+        note: "Original illustration; not a photo of the venue. The couple illustration is not an exact likeness.",
+        scrollHint: "Keep scrolling to read the invitation",
+        skipButton: "Skip to the invitation",
+        imageAlt: "Original illustration: a chapel interior with white arched windows, flower-lined pews and an aisle to the altar",
+        fallback: "Interior illustration coming soon"
+      },
+
+      messages: {
+        musicFileFailed: "The music couldn't be loaded. The invitation still works normally.",
+        musicBlocked: "The music couldn't start. Try the music button again; the invitation still works normally.",
+        icsFailed: "The calendar file couldn't be downloaded. Please try Google Calendar, or note down the date and time."
+      },
+
+      countdown: {
+        eyebrow: "COUNTING DOWN TO OUR DAY",
+        heading: "Every day left\nbrings us closer.",
+        intro: "You take a step, we take a step — closer every day.",
+        target: "Ceremony begins: Tuesday, 30 March 2027\n1:00 PM Japan time (JST)",
+        timerLabel: "Time until the ceremony begins",
+        days: "Days",
+        hours: "Hours",
+        minutes: "Minutes",
+        seconds: "Seconds",
+        note: "The countdown follows Japan time, so it points to the same moment wherever you are.",
+        localLabel: "In your local time: {localTime}",
+        localSame: "Your local time is the same as Japan time.",
+        startedHeading: "The ceremony has begun.",
+        startedNote: "Thank you for sharing this moment with us."
+      },
+
+      letter: {
+        eyebrow: "A LITTLE NOTE FOR YOU",
+        heading: "Thank you\nfor coming all this way.",
+        greeting: "{guestName},",
+        paragraphs: [
+          "Knowing you'll be there, we're already looking forward to the day.",
+          "On 30 March 2027, by the sea in Okinawa, we will make our promises and begin the next chapter of our lives. And you will be one of the most precious parts of that moment.",
+          "Thank you for making the time and bringing your good wishes all the way to us. There's no need to rush — take in the sea breeze, the sunshine and the gentleness of Okinawa. See you at the chapel."
+        ]
+      },
+
+      details: {
+        eyebrow: "THE CEREMONY",
+        heading: "We'd like to give this day\nto the sea, and to us.",
+        dateLabel: "DATE",
+        dateValue: "Tuesday, 30 March 2027",
+        dateNote: "Local date in Japan",
+        timeLabel: "TIME",
+        doors: "12:50 PM　Guest entry",
+        ceremony: "1:00 PM　Ceremony begins",
+        end: "Around 3:30 PM　Expected end",
+        timeNote: "All times are Japan Standard Time (JST, UTC+9).",
+        noticeLabel: "Important",
+        noticeText: "Guests cannot enter the chapel once the ceremony has begun. Please enter on time at 12:50 PM Japan time.",
+        venueLabel: "VENUE",
+        venueValue: "{chapel}",
+        venueNote: "{hotel}\nOkinawa, Japan",
+        mapButton: "Open in Google Maps ↗",
+        calendarLabel: "ADD TO CALENDAR",
+        googleButton: "Google Calendar ↗",
+        icsButton: "Download .ics (Apple / Outlook)",
+        calendarNote: "The calendar time is provisional: 12:50–15:30 Japan time. The end time is still to be confirmed.",
+        photoLabel: "VENUE PHOTO",
+        photoBadge: "Real photo",
+        chapelPhotoCaption: "{chapel} (real photo)",
+        chapelPhotoLoading: "Loading chapel photo…",
+        chapelPhotoUnavailable: "A real photo of the chapel will be added later.",
+        chapelPhotoAlt: "Real photo of Monterey Lumer Chapel",
+        chapelWebsiteButton: "Chapel official page ↗"
+      },
+
+      plans: {
+        eyebrow: "STILL TO BE CONFIRMED",
+        heading: "A few details\nare still on the way.",
+        tbc: "To be confirmed",
+        dinnerLabel: "Dinner after the ceremony",
+        dinnerValue: "Time and venue to be confirmed.",
+        transportLabel: "Transport & meeting point",
+        transportValue: "To be confirmed. We'll let you know once it's arranged.",
+        absenceLabel: "If you can't attend",
+        absenceValue: "No online reply is needed. If you can't make it, just let Marco or Jenny know directly."
+      },
+
+      reminders: {
+        eyebrow: "BEFORE YOU ARRIVE",
+        heading: "A few little notes before you travel.",
+        paragraphs: [
+          "It may be breezy by the sea, so a light jacket could be handy. Wear whatever feels comfortable and lovely to you.",
+          "We'll share any remaining arrangements once they're confirmed."
+        ]
+      },
+
+      schedule: {
+        heading: "On the day",
+        note: "All times are Japan time (JST).",
+        events: [
+          { time: "12:50 PM", heading: "Guest entry", paragraph: "Please arrive on time." },
+          { time: "1:00 PM", heading: "Ceremony begins", paragraph: "No entry once the ceremony has started." },
+          { time: "~3:30 PM", heading: "Expected end", paragraph: "End time to be confirmed.", tbc: true },
+          { time: "TBC", heading: "Dinner", paragraph: "Time and venue to be confirmed.", tbc: true }
+        ]
+      },
+
+      calendar: {
+        title: "Marco & Jenny — Wedding Ceremony",
+        location: "{chapel}, {hotel}, Okinawa, Japan",
+        description: [
+          "Marco & Jenny — Wedding Ceremony",
+          "Guest entry: 12:50 PM Japan time",
+          "Ceremony begins: 1:00 PM Japan time",
+          "Guests cannot enter the chapel once the ceremony has begun.",
+          "Expected to end around 3:30 PM (end time to be confirmed).",
+          "Dinner after the ceremony: time and venue to be confirmed.",
+          "Map: {mapUrl}"
+        ]
+      },
+
+      footer: {
+        japanese: "大切なあなたと、大切な一日を。",
+        heading: "See you in Okinawa.",
+        paragraph: "With you there, this memory will be complete.",
+        date: "30 MARCH 2027 · OKINAWA",
+        disclaimer: "The chapel illustrations are original artwork, not photos or exact reconstructions of the venue; real photos are labelled separately.\nThe couple illustration is a hand-drawn style portrait, not an exact likeness.\nThe countdown is set to 1:00 PM Japan time on 30 March 2027 and relies on your device clock.\nAny unconfirmed arrangements will be shared by the couple later."
+      }
+    },
+
+    /* ===================== 日本語 ===================== */
+    "ja": {
+      htmlLang: "ja",
+      locale: "ja-JP",
+      guestName: "大切なあなたへ",
+
+      page: {
+        title: "一歩ずつ、あなたへ｜Marco & Jenny 沖縄ウェディング",
+        description: "2027年3月30日（火）、沖縄・Monterey Lumer Chapel にて Marco & Jenny の挙式を行います。"
+      },
+
+      controls: {
+        pause: "動きを停止",
+        play: "動きを再生",
+        musicPlay: "♪ 音楽を再生",
+        musicStop: "♪ 音楽を停止",
+        musicOffLabel: "音楽はオフです。押すと再生します",
+        musicOnLabel: "音楽を再生中です。押すと停止します",
+        langGroup: "言語",
+        langChanged: "日本語に切り替えました"
+      },
+
+      intro: {
+        eyebrow: "A LITTLE HAPPINESS, JUST FOR YOU",
+        heading: "小さな幸せを、\nまずあなたに。",
+        fogTitle: "そっと霧をぬぐって",
+        fogSubtitle: "わたしたちを見つけてね",
+        help: "指またはマウスでそっとこするか、「すぐに表示」を押してください。",
+        helpRevealed: "見つけてくれてありがとう。",
+        helpUnavailable: "「すぐに表示」を押して、ささやかな気持ちをご覧ください。",
+        srHint: "写真の上に霧がかかっています。指またはマウスでこすって消すか、「すぐに表示」ボタンで写真を表示できます。",
+        fallbackLine: "ふたりから、わたしたちへ。",
+        fallbackNote: "写真は後日掲載します",
+        photoAlt: "Marco と Jenny の写真",
+        revealHeading: "ふたりから、わたしたちへ。\n次の一歩を、見届けてください。",
+        revealButton: "すぐに表示",
+        enterButton: "一緒にチャペルへ →",
+        skipButton: "招待状をすぐに読む",
+        announcement: "写真が表示されました。準備ができたら「一緒にチャペルへ」を押してください。"
+      },
+
+      entrance: {
+        eyebrow: "A LITTLE CHAPEL BY THE SEA",
+        heading: "この小道の先、\n海辺でお待ちしています。",
+        note: "イメージイラストです。実際の会場写真ではありません。",
+        scrollHint: "下へスクロールして近づく",
+        skipButton: "招待状をすぐに読む",
+        imageAlt: "オリジナルイラスト：海辺の白い小さなチャペルと入口へ続く小道",
+        fallback: "チャペルのイラストは後日掲載します"
+      },
+
+      interior: {
+        regionLabel: "チャペル内部のイラスト",
+        eyebrow: "WELCOME TO OUR LITTLE CHAPEL",
+        heading: "ようこそ、\n海辺の小さなチャペルへ。",
+        note: "オリジナルのイメージイラストです。会場の実写ではなく、ふたりのイラストも実際の姿の完全な再現ではありません。",
+        scrollHint: "下へ進んで招待状を読む",
+        skipButton: "招待状をすぐに読む",
+        imageAlt: "オリジナルイラスト：白いアーチ窓、花で飾られたベンチ、祭壇へ続く通路のあるチャペル内部",
+        fallback: "内部のイラストは後日掲載します"
+      },
+
+      messages: {
+        musicFileFailed: "音楽を読み込めませんでした。招待状は通常どおりご覧いただけます。",
+        musicBlocked: "音楽を再生できませんでした。もう一度音楽ボタンを押してください。招待状は通常どおりご覧いただけます。",
+        icsFailed: "カレンダーファイルをダウンロードできませんでした。Google カレンダーをご利用いただくか、日時をお控えください。"
+      },
+
+      countdown: {
+        eyebrow: "COUNTING DOWN TO OUR DAY",
+        heading: "残りの毎日が、\nあなたへと続いています。",
+        intro: "あなたが一歩、わたしたちも一歩。毎日、少しずつ近づいています。",
+        target: "挙式開始：2027年3月30日（火）\n日本時間 13:00",
+        timerLabel: "挙式開始まで",
+        days: "日",
+        hours: "時間",
+        minutes: "分",
+        seconds: "秒",
+        note: "カウントダウンは日本時間が基準です。どこにいても同じ瞬間を指しています。",
+        localLabel: "お住まいの地域の時刻：{localTime}",
+        localSame: "お住まいの地域の時刻は日本時間と同じです。",
+        startedHeading: "挙式が始まりました。",
+        startedNote: "この瞬間をともに見届けてくださり、ありがとうございます。"
+      },
+
+      letter: {
+        eyebrow: "A LITTLE NOTE FOR YOU",
+        heading: "遠くから来てくださり、\n本当にありがとう。",
+        greeting: "{guestName}",
+        paragraphs: [
+          "来てくださると知って、その日が今から楽しみです。",
+          "2027年3月30日、沖縄の海辺で、わたしたちは誓いを交わし、人生の新しい一歩を踏み出します。その大切な瞬間に、あなたがいてくれることが何よりの宝物です。",
+          "お忙しい中お時間をつくり、祝福とともに駆けつけてくださり、ありがとうございます。当日はどうぞゆっくりと、海風や陽ざし、沖縄のやさしさを感じてください。チャペルでお会いしましょう。"
+        ]
+      },
+
+      details: {
+        eyebrow: "THE CEREMONY",
+        heading: "この一日を、\n海とわたしたちに。",
+        dateLabel: "DATE / 日付",
+        dateValue: "2027年3月30日（火）",
+        dateNote: "日本の現地日付",
+        timeLabel: "TIME / 時間",
+        doors: "12:50　ご入場",
+        ceremony: "13:00　挙式開始",
+        end: "15:30頃　終了予定",
+        timeNote: "時刻はすべて日本時間（JST・UTC+9）です。",
+        noticeLabel: "大切なお願い",
+        noticeText: "挙式開始後は、途中でチャペルに入場できません。日本時間 12:50 のご入場に間に合うようお越しください。",
+        venueLabel: "VENUE / 会場",
+        venueValue: "{chapel}",
+        venueNote: "{hotel}\n日本・沖縄",
+        mapButton: "Google マップで開く ↗",
+        calendarLabel: "ADD TO CALENDAR / カレンダーに追加",
+        googleButton: "Google カレンダー ↗",
+        icsButton: ".ics をダウンロード（Apple／Outlook）",
+        calendarNote: "カレンダーの時間は日本時間 12:50–15:30 の仮設定です。終了時間は未確定です。",
+        photoLabel: "VENUE PHOTO / 会場の写真",
+        photoBadge: "実際の写真",
+        chapelPhotoCaption: "{chapel}（実際の写真）",
+        chapelPhotoLoading: "チャペルの写真を読み込み中…",
+        chapelPhotoUnavailable: "チャペルの実際の写真は後日掲載します。",
+        chapelPhotoAlt: "Monterey Lumer Chapel の実際の写真",
+        chapelWebsiteButton: "チャペル公式ページ ↗"
+      },
+
+      plans: {
+        eyebrow: "STILL TO BE CONFIRMED",
+        heading: "決まり次第、\nあらためてお知らせします。",
+        tbc: "未確定",
+        dinnerLabel: "挙式後のお食事",
+        dinnerValue: "時間・場所ともに未確定です。",
+        transportLabel: "交通・集合",
+        transportValue: "未確定です。決まり次第お知らせします。",
+        absenceLabel: "ご欠席の場合",
+        absenceValue: "オンラインでのご返信は不要です。ご欠席の場合は、Marco または Jenny に直接お知らせください。"
+      },
+
+      reminders: {
+        eyebrow: "BEFORE YOU ARRIVE",
+        heading: "お出かけ前に、ひとこと。",
+        paragraphs: [
+          "海辺は風があるかもしれません。薄手の羽織りものがあると安心です。服装は、心地よくお気に入りのものでどうぞ。",
+          "未確定のご案内は、決まり次第あらためてお知らせします。"
+        ]
+      },
+
+      schedule: {
+        heading: "当日の流れ",
+        note: "時刻はすべて日本時間です。",
+        events: [
+          { time: "12:50", heading: "ご入場", paragraph: "時間どおりにお越しください。" },
+          { time: "13:00", heading: "挙式開始", paragraph: "開始後は途中入場できません。" },
+          { time: "15:30頃", heading: "終了予定", paragraph: "終了時間は未確定です。", tbc: true },
+          { time: "未確定", heading: "お食事", paragraph: "時間・場所ともに未確定です。", tbc: true }
+        ]
+      },
+
+      calendar: {
+        title: "Marco & Jenny 挙式",
+        location: "{chapel}, {hotel}, 沖縄, 日本",
+        description: [
+          "Marco & Jenny 挙式",
+          "ご入場：日本時間 12:50",
+          "挙式開始：日本時間 13:00",
+          "挙式開始後は、途中でチャペルに入場できません。",
+          "15:30頃 終了予定（終了時間は未確定）。",
+          "挙式後のお食事：時間・場所ともに未確定。",
+          "地図：{mapUrl}"
+        ]
+      },
+
+      footer: {
+        japanese: "大切なあなたと、大切な一日を。",
+        heading: "沖縄で会いましょう。",
+        paragraph: "あなたがいてくれて、この思い出が完成します。",
+        date: "30 MARCH 2027 · OKINAWA",
+        disclaimer: "チャペルのイラストはオリジナルのイメージで、会場の写真や正確な再現ではありません。実際の写真は別途明記します。\nふたりのイラストは手描き風のイメージで、実際の姿を完全に再現したものではありません。\nカウントダウンは日本時間 2027年3月30日 13:00 を基準とし、お使いの端末の時計に基づきます。\n未確定のご案内は、後日ふたりからお知らせします。"
+      }
+    }
+  }
+};
+/* ================= 主要修改區完 ================= */
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&amp;family=Noto+Serif+JP:wght@400&amp;display=swap">
+
+<style>
+:root{
+  --ink:#40564f;--muted:#76837a;--paper:#f7f4eb;
+  --paper-warm:#f4ecdf;--ivory:#fffdf7;--sea:#5d8ba0;--sea-soft:#a9c8d3;
+  --sage:#8fa38c;--sage-deep:#546e63;--blush:#d9b3a8;--line:#bac6af66;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU","Noto Serif CJK TC",serif;
+  --cute:"Maoken Wedding","Noto Serif TC","Songti TC","PMingLiU",serif;
+  --opening-paper:none;
+  --entrance-pos-portrait:50% 58%;--entrance-pos-landscape:50% 56%;
+  --interior-pos-portrait:50% 52%;--interior-pos-landscape:50% 50%;
+  --entrance-scroll:320vh;--topbar-height:80px;
+}
+html:lang(ja){
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --cute:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topbar-height) + 16px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 14px/2 var(--serif);letter-spacing:.025em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.waiting{overflow:hidden;overscroll-behavior:none}
+[hidden]{display:none!important}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button{font:inherit;color:inherit;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+a{color:inherit}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #a27856;outline-offset:5px}
+::selection{background:#ead8c6}
+h1,h2,h3,p{overflow-wrap:anywhere}
+h1,h2,h3,.cute{font-family:var(--cute);font-weight:400;font-synthesis:none}
+[data-copy],.copy{white-space:pre-line}
+.eyebrow{font:10px/1.9 Georgia,serif;letter-spacing:.2em}
+.small{font-size:12px;line-height:2.2;color:var(--muted)}
+.center{text-align:center}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* 頂部 */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 16px;
+  padding:max(14px,env(safe-area-inset-top)) max(18px,5%,env(safe-area-inset-right)) 14px max(18px,5%,env(safe-area-inset-left));
+  background:#f6f0e5;border-bottom:1px solid #e2dccd;box-shadow:0 5px 20px rgba(64,86,79,.06);isolation:isolate}
+.brand{flex:0 1 auto;min-width:0;font:23px/1.5 Georgia,serif;letter-spacing:.08em;color:#4d6556;overflow-wrap:anywhere}
+.top-buttons{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin-left:auto}
+.control{min-height:44px;min-width:44px;padding:9px 13px;border:1px solid #d3cfbf;border-radius:30px;background:var(--ivory);font-size:11px;box-shadow:0 2px 8px rgba(64,86,79,.04)}
+.control:hover{background:#eef1e8}
+.control[aria-pressed="true"],#musicButton.is-playing{background:#e6eee9;border-color:#a9bfb6}
+.lang-switch{display:inline-flex;align-items:center;gap:2px;padding:2px;border:1px solid #d3cfbf;border-radius:30px;background:var(--ivory)}
+.lang-btn{min-height:40px;min-width:40px;padding:6px 10px;border:0;border-radius:24px;background:transparent;font-size:11px;color:#5f7268}
+.lang-btn:hover{background:#eef1e8}
+.lang-btn[aria-pressed="true"]{background:var(--sage-deep);color:#fffaf1}
+.lang-btn[aria-pressed="true"]:hover{background:#48615a}
+.primary{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:11px 25px;border:1px solid #b1baa1;border-radius:28px;background:#f8fbef;color:#4b6354;box-shadow:0 6px 20px #50664b12;font:400 20px/1.6 var(--cute)}
+.text-button{min-height:44px;padding:9px 13px;border:0;background:transparent;font-size:11px;color:#6a7b6f;text-decoration:underline;text-decoration-color:#a9bdb2;text-underline-offset:5px}
+.text-button:hover{color:var(--ink)}
+
+/* ===== 第一幕：合照開場 ===== */
+#intro{position:fixed;inset:0;z-index:35;overflow-y:auto;overscroll-behavior:contain;scroll-padding-top:calc(var(--topbar-height) + 16px);background:var(--paper-warm);transition:opacity .7s ease}
+#intro.leaving{opacity:0;pointer-events:none}
+.intro-paper{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 60% 45% at 50% 50%,#fffaf1cc,transparent 70%),var(--paper-warm)}
+.intro-paper::before,.intro-paper::after{content:"";position:absolute;background-image:var(--opening-paper);background-repeat:no-repeat}
+@media (orientation:portrait){
+  .intro-paper::before{left:0;right:0;top:var(--topbar-height);height:50vw;background-size:100vw auto;background-position:center top;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent);mask-image:linear-gradient(to bottom,#000 62%,transparent)}
+  .intro-paper::after{left:0;right:0;bottom:0;height:50vw;background-size:100vw auto;background-position:center bottom;-webkit-mask-image:linear-gradient(to top,#000 62%,transparent);mask-image:linear-gradient(to top,#000 62%,transparent)}
+}
+@media (orientation:landscape){
+  .intro-paper::before{top:0;bottom:0;left:0;width:50vh;background-size:auto 100vh;background-position:left center;-webkit-mask-image:linear-gradient(to right,#000 62%,transparent);mask-image:linear-gradient(to right,#000 62%,transparent)}
+  .intro-paper::after{top:0;bottom:0;right:0;width:50vh;background-size:auto 100vh;background-position:right center;-webkit-mask-image:linear-gradient(to left,#000 62%,transparent);mask-image:linear-gradient(to left,#000 62%,transparent)}
+}
+
+/* ===== 第一幕櫻花 =====
+   花瓣層：fixed、pointer-events:none，放喺文字層後面，唔會擋住任何操作。
+   素材表 3 欄 × 2 行，用 background-size 300% 200% 裁切。 */
+.sakura-layer{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;contain:strict}
+.sakura-petal{position:absolute;top:0;left:0;pointer-events:none;background-repeat:no-repeat;background-size:300% 200%;
+  opacity:0;will-change:transform,opacity;animation:sakuraFall linear forwards;
+  animation-duration:var(--dur,16s)}
+@keyframes sakuraFall{
+  0%{transform:translate3d(0,-12vh,0) rotate(0deg);opacity:0}
+  8%{opacity:var(--op,.7)}
+  50%{transform:translate3d(calc(var(--drift,60px)*.5 + var(--sway,20px)),52vh,0) rotate(calc(var(--rot,200deg)*.5))}
+  92%{opacity:var(--op,.7)}
+  100%{transform:translate3d(var(--drift,60px),112vh,0) rotate(var(--rot,200deg));opacity:0}
+}
+body.motion-paused .sakura-petal{animation-play-state:paused}
+
+.intro-inner{position:relative;z-index:1;width:min(100%,760px);min-height:100%;margin:auto;padding:calc(var(--topbar-height) + 18px) 22px max(24px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:opacity .55s ease,transform .7s ease}
+#intro.leaving .intro-inner{opacity:0;transform:scale(.97)}
+#intro .eyebrow{color:var(--sea)}
+.intro-heading{margin:9px 0 20px;font-size:clamp(23px,4.5vw,33px);line-height:1.6;color:var(--ink)}
+.photo-card{position:relative;width:min(340px,76vw,42svh);padding:12px 12px 6px;background:var(--ivory);border:1px solid #ece3d3;border-radius:4px;box-shadow:0 1px 0 #fff inset,0 24px 50px -28px rgba(80,90,78,.45),0 5px 14px -8px rgba(80,90,78,.2)}
+.photo-card::before{content:"";position:absolute;width:92px;height:26px;left:calc(50% - 46px);top:-13px;z-index:5;background:linear-gradient(90deg,rgba(169,200,211,.62),rgba(191,209,197,.62));
+  clip-path:polygon(0 8%,4% 0,8% 10%,12% 0,88% 0,92% 10%,96% 0,100% 8%,100% 92%,96% 100%,92% 90%,88% 100%,12% 100%,8% 90%,4% 100%,0 92%);transform:rotate(-3deg);box-shadow:0 1px 2px rgba(80,90,78,.08);pointer-events:none}
+.photo-window{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:2px;background:#ebe3d4;isolation:isolate}
+.photo-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px;background:radial-gradient(circle at 30% 22%,#fffbf2,transparent 62%),linear-gradient(160deg,#e6eeea,#f3ebe0 55%,#efe0da)}
+.photo-fallback .heart{font-size:54px;color:var(--blush);line-height:1.5}
+.photo-fallback .names{font:22px/1.8 var(--cute);color:var(--ink)}
+.photo-fallback .small{font-size:10px;margin:2px 0 0;line-height:1.9}
+.photo-fallback .note{margin-top:10px;padding:2px 12px;border:1px dashed #b9c6bd;border-radius:20px;font-size:10px;color:#7d8a80}
+#couplePhoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#fogCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;touch-action:none;cursor:crosshair;transition:opacity 1s ease}
+#fogHint{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 12px;color:#6c7c71;pointer-events:none;transition:opacity .3s ease;font:20px/1.8 var(--cute);text-shadow:0 1px 4px #fffdf7}
+#fogHint .symbol{font:32px/1.7 Georgia,serif;color:var(--blush)}
+#fogHint small{font-size:12px;color:#7f8b82}
+#intro.scratching #fogHint,#intro.revealed #fogHint{opacity:0}
+#intro.revealed #fogCanvas{opacity:0;pointer-events:none}
+.photo-caption{padding:10px 0 6px;font:italic 11px/1.8 Georgia,serif;letter-spacing:.18em;color:var(--sea)}
+#scratchHelp{margin:16px 0 0;color:#6f7d73}
+#revealMessage{width:100%;margin-top:15px;animation:messageIn .65s ease both}
+#revealMessage h2{font-size:clamp(23px,4vw,29px);line-height:1.65;margin:0 0 15px;color:var(--ink)}
+#enterButton.primary{border:0;background:var(--sage-deep);color:#fffaf1;box-shadow:0 10px 24px -12px rgba(64,86,79,.55)}
+#enterButton.primary:hover{background:#48615a}
+.intro-links{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}
+@keyframes messageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== 手繪教堂：入口 → 紙色 → 室內 ===== */
+main{position:relative;z-index:2}
+.chapel-entrance{position:relative;height:calc(100vh + var(--entrance-scroll));height:calc(100svh + var(--entrance-scroll));background:var(--paper-warm)}
+.entrance-sticky{position:sticky;top:0;height:100vh;height:100svh;min-height:480px;overflow:hidden;background:var(--paper-warm)}
+.scene{position:absolute;inset:0;overflow:hidden}
+.scene-entrance{z-index:1}
+.scene-interior{z-index:3;opacity:0;pointer-events:none;background:var(--paper-warm)}
+.entrance-stage,.interior-stage{position:absolute;left:0;right:0;bottom:0;top:var(--topbar-height);overflow:hidden}
+.entrance-stage::after,.interior-stage::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(to bottom,var(--paper-warm) 0,rgba(244,236,223,0) 7%,rgba(244,236,223,0) 76%,rgba(244,236,223,.82) 100%)}
+.entrance-visual{position:absolute;inset:0;opacity:0;transform:scale(1.025);transition:opacity 1.1s ease .15s,transform 1.6s cubic-bezier(.2,.6,.2,1) .15s}
+.chapel-entrance.is-shown .entrance-visual{opacity:1;transform:none}
+.entrance-zoom,.interior-zoom{position:absolute;inset:0;transform:none;will-change:transform}
+.entrance-zoom{transform-origin:50% 62%}
+.interior-zoom{transform-origin:50% 60%}
+.entrance-zoom picture,.entrance-zoom img,.interior-zoom picture,.interior-zoom img{display:block;width:100%;height:100%}
+.entrance-zoom img,.interior-zoom img{object-fit:cover;opacity:0;transition:opacity .8s ease}
+.entrance-zoom img{object-position:var(--entrance-pos-portrait)}
+.interior-zoom img{object-position:var(--interior-pos-portrait)}
+.entrance-zoom img.is-loaded,.interior-zoom img.is-loaded{opacity:1}
+@media (orientation:landscape){
+  .entrance-zoom img{object-position:var(--entrance-pos-landscape)}
+  .interior-zoom img{object-position:var(--interior-pos-landscape)}
+}
+.entrance-veil{position:absolute;inset:0;z-index:1;background:var(--paper-warm);opacity:0;pointer-events:none}
+.entrance-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px 24px 30%;
+  background:radial-gradient(ellipse 70% 50% at 50% 40%,#fffaf1,transparent 70%),linear-gradient(#e4eef0,var(--paper-warm) 62%);color:#7d8a80;font-size:12px;text-align:center}
+.entrance-fallback .arch{width:min(150px,34vw);aspect-ratio:3/4;border:2px solid #b9c8bd;border-bottom:0;border-radius:50% 50% 0 0 / 38% 38% 0 0}
+
+/* ===== Checkpoint 2：入口景深裝飾 + 背面新人 =====
+   整層 pointer-events:none、aria-hidden，唔會擋住捽霧、按鈕、連結、鍵盤或捲動。
+   z-index:3 喺漸變遮罩之上，但喺文字卡（同層、DOM 較後）之下。 */
+.entrance-decor{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;opacity:0;transition:opacity 1.2s ease .5s}
+.chapel-entrance.is-shown .entrance-decor{opacity:1}
+.decor-layer{position:absolute;inset:0;pointer-events:none}
+.deco{position:absolute;left:0;top:0;pointer-events:none;opacity:0;will-change:transform,opacity;transform-origin:50% 50%}
+.deco-clip{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.deco-clip img{position:absolute;display:block;max-width:none;height:auto;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.deco-shadow{position:absolute;left:12%;right:12%;bottom:2%;height:7%;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(84,96,82,.18),rgba(84,96,82,0) 70%)}
+body.motion-paused .entrance-decor{transition:none}
+
+/* 直屏：文字卡會遮住小路。新人開始行之後，收起標題及說明，
+   只保留「向下滑動」提示及跳過按鈕；返回頂部時自動展開。 */
+@media (orientation:portrait){
+  .entrance-card .eyebrow,.entrance-card h2,.entrance-card .entrance-note{max-height:10em;overflow:hidden;
+    transition:max-height .5s ease,opacity .4s ease,margin .4s ease}
+  body:not(.motion-paused):not(.journey-static) .chapel-entrance.walker-on.is-walking .entrance-card .eyebrow,
+  body:not(.motion-paused):not(.journey-static) .chapel-entrance.walker-on.is-walking .entrance-card h2,
+  body:not(.motion-paused):not(.journey-static) .chapel-entrance.walker-on.is-walking .entrance-card .entrance-note{
+    max-height:0;opacity:0;margin-top:0;margin-bottom:0}
+}
+
+/* ===== 新人插畫 ===== */
+.couple-figure{position:absolute;z-index:1;margin:0;pointer-events:none;opacity:0;transition:opacity .9s ease}
+.couple-figure.is-loaded{opacity:1}
+.couple-figure img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%;opacity:1}
+.couple-figure::before{content:"";position:absolute;left:14%;right:14%;bottom:-1.5%;height:5%;z-index:0;
+  background:radial-gradient(ellipse at center,rgba(84,96,82,.2),rgba(84,96,82,0) 70%)}
+
+/* ===== 花草前景 ===== */
+.foreground-figure{position:absolute;inset:0;z-index:2;margin:0;pointer-events:none;opacity:0;transition:opacity .9s ease}
+.foreground-figure.is-loaded{opacity:1}
+.foreground-figure img{object-fit:cover;object-position:var(--interior-pos-portrait);opacity:1;user-select:none;-webkit-user-drag:none}
+@media (orientation:landscape){.foreground-figure img{object-position:var(--interior-pos-landscape)}}
+.foreground-figure.is-bottom img{object-fit:contain;object-position:50% 100%}
+
+.entrance-card,.interior-card{position:absolute;z-index:3;left:50%;bottom:max(18px,env(safe-area-inset-bottom));width:min(360px,calc(100% - 36px));margin-left:max(-180px,calc(-50% + 18px));
+  padding:16px 20px 8px;background:rgba(255,253,247,.92);border:1px solid #ece3d3;border-radius:4px;box-shadow:0 18px 40px -26px rgba(80,90,78,.45);text-align:center}
+.entrance-card{opacity:0;translate:0 10px;transition:opacity .8s ease .9s,translate .8s ease .9s}
+.chapel-entrance.is-shown .entrance-card{opacity:1;translate:0 0}
+.chapel-entrance.cards-ready .entrance-card{transition:opacity .45s ease,translate .45s ease}
+.chapel-entrance.is-shown .entrance-card.is-off{opacity:0;translate:0 -6px;pointer-events:none}
+.interior-card{opacity:0;translate:0 10px;pointer-events:none;transition:opacity .6s ease,translate .6s ease}
+.interior-card.is-on{opacity:1;translate:0 0;pointer-events:auto}
+.entrance-card .eyebrow,.interior-card .eyebrow{color:var(--sea)}
+.entrance-card h2,.interior-card h2{margin:4px 0 6px;font-size:clamp(20px,5vw,24px);line-height:1.6;color:var(--ink)}
+.interior-names{margin:0 0 4px;font:clamp(22px,5.5vw,27px)/1.6 var(--cute);letter-spacing:.06em;color:var(--sage-deep)}
+.entrance-note{margin:0;font-size:10px;line-height:1.8;color:#7f8b82}
+.entrance-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px 14px;margin-top:6px}
+.scroll-cue{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--sage-deep);transition:opacity .4s ease}
+.chapel-entrance.is-walking .entrance-card .scroll-cue{opacity:.55}
+.scroll-cue .arrow{display:inline-block;animation:cueBob 2.4s ease-in-out infinite}
+@keyframes cueBob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+body.motion-paused .scroll-cue .arrow{animation:none}
+@media (orientation:landscape){
+  .entrance-card,.interior-card{left:max(4%,env(safe-area-inset-left));margin-left:0;bottom:8%;width:min(340px,38vw);text-align:left}
+  .entrance-actions{justify-content:flex-start}
+}
+@media (orientation:landscape) and (max-height:520px){
+  .entrance-card,.interior-card{padding:10px 14px 4px}
+  .entrance-card h2,.interior-card h2{font-size:18px}
+  .interior-names{font-size:20px}
+}
+body.motion-paused #intro,body.motion-paused .intro-inner,body.motion-paused .entrance-visual,
+body.motion-paused .entrance-card,body.motion-paused .interior-card,
+body.motion-paused .entrance-zoom img,body.motion-paused .interior-zoom img,
+body.motion-paused .couple-figure,body.motion-paused .foreground-figure{transition:none!important}
+
+body.journey-static .chapel-entrance{height:auto}
+body.journey-static .entrance-sticky{position:relative;height:auto;min-height:0;overflow:visible}
+body.journey-static .scene{position:relative;inset:auto;height:100vh;height:100svh;min-height:480px}
+body.journey-static .scene-interior{opacity:1!important;pointer-events:auto}
+body.journey-static .entrance-zoom,body.journey-static .interior-zoom{transform:none!important}
+body.journey-static .entrance-veil{display:none}
+body.journey-static .entrance-decor{display:none}
+body.journey-static .interior-card{opacity:1;translate:none;pointer-events:auto}
+body.journey-static .chapel-entrance.is-shown .entrance-card.is-off{opacity:1;translate:none;pointer-events:auto}
+
+/* ===== 請帖內容 ===== */
+.content{position:relative;padding:80px 24px 0;background:linear-gradient(var(--paper-warm),#f7f4eb 350px)}
+.container{max-width:980px;margin:auto}
+.section-title{margin:14px 0 24px;font-size:clamp(30px,4.5vw,44px);line-height:1.7;letter-spacing:.045em}
+.countdown-section .eyebrow{color:var(--sea)}
+.countdown-card{max-width:640px;margin:30px auto 0;padding:40px 24px 24px;background:radial-gradient(ellipse at 50% 20%,#fffdf6,transparent 70%),var(--ivory);
+  border:1px solid #e3dccb;border-radius:140px 140px 10px 10px / 80px 80px 10px 10px;box-shadow:0 25px 45px -35px rgba(83,112,77,.4)}
+.countdown-target{margin:0 0 20px;font:15px/1.9 var(--serif);color:var(--ink)}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:480px;margin:0 auto}
+.cd-unit{padding:12px 2px 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cd-unit b{display:block;font:400 clamp(32px,8vw,54px)/1.2 Georgia,serif;color:#668b77;font-variant-numeric:tabular-nums}
+.cd-unit span{display:block;margin-top:4px;font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.cd-started{margin:0;font:clamp(22px,4vw,28px)/1.7 var(--cute);color:var(--ink)}
+#countdownLocal{margin:16px 0 0}
+.countdown-card .countdown-note{margin:4px 0 0;font-size:11px}
+.paper{background:#fffdf5;border:1px solid #d9dbc966;border-radius:7px;padding:42px;box-shadow:0 20px 55px -40px #48655866}
+.letter{margin:70px 0}
+.letter p{font-size:14px;line-height:2.6;color:#758176}
+.signature{text-align:right;font:26px/1.8 var(--cute);margin-top:30px}
+.details{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:50px;padding:25px 0 65px}
+.detail-row{padding:22px 0;border-bottom:1px solid var(--line)}
+.detail-row small{display:block;color:#84907f;font-size:10px;letter-spacing:.12em;margin-bottom:8px}
+.detail-row strong{font-size:20px;font-weight:400;line-height:1.8}
+.detail-row p{font-size:12px;line-height:2;color:var(--muted);margin:7px 0 0}
+.detail-row .venue{font:25px/1.6 Georgia,serif}
+.time-list{list-style:none;margin:0;padding:0}
+.time-list li{font-size:16px;line-height:2;color:#5b6c63}
+.time-list li.is-key{font-size:19px;color:var(--ink)}
+.notice{margin-top:14px;padding:12px 16px;background:#fbf3ee;border:1px solid #ecd6cc;border-left:4px solid var(--blush);border-radius:6px}
+.notice strong{display:block;font-size:12px;line-height:1.8;letter-spacing:.1em;color:#946b5e}
+.detail-row .notice p{margin:2px 0 0;font-size:13px;color:#5c5a52}
+.tbc{display:inline-block;margin-left:8px;padding:0 9px;border:1px dashed #c3b2a2;border-radius:12px;font-size:10px;line-height:1.9;color:#94786a;vertical-align:middle;white-space:nowrap;letter-spacing:.04em}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border:1px solid #a8b69b88;border-radius:22px;background:#fff8;color:var(--ink);text-decoration:none;font:12px/1.6 var(--serif)}
+.pill:hover{background:#eef1e8}
+.pill-strong{border-color:transparent;background:var(--sage-deep);color:#fffaf1}
+.pill-strong:hover{background:#48615a}
+.plans{margin-bottom:28px}
+.plans .eyebrow,.reminders .eyebrow{color:var(--sea)}
+.plans h3,.reminders h3{font-size:24px;line-height:1.6;margin:6px 0 10px}
+.plan-row{padding:14px 0;border-bottom:1px solid var(--line)}
+.plan-row:last-child{border-bottom:0;padding-bottom:0}
+.plan-row h4{margin:0 0 2px;font:400 16px/1.8 var(--cute);color:var(--ink)}
+.plan-row p{margin:0;font-size:12px;line-height:2;color:var(--muted)}
+.timeline-title{font-size:22px;margin:34px 0 0}
+.timeline-note{margin:0}
+.timeline{margin-top:12px;border-top:1px solid var(--line)}
+.event{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;padding:20px 0;border-bottom:1px solid var(--line)}
+.event-time{font-size:13px;color:#7d907b;margin:0}
+.event h4{font:400 19px/1.7 var(--cute);margin:0 0 4px}
+.event p{font-size:12px;color:var(--muted);margin:0}
+.chapel-photo{margin:6px 0 0;padding:8px 8px 12px;background:#fffdf7;border:1px solid #d9ddcd;border-radius:18px;box-shadow:0 12px 30px -20px rgba(64,86,79,.35)}
+.chapel-photo-frame{position:relative;aspect-ratio:8/5;overflow:hidden;border-radius:12px;background:#e8ede3}
+#chapelPhoto{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
+.chapel-photo.has-photo #chapelPhoto{opacity:1}
+.photo-badge{position:absolute;top:10px;left:10px;z-index:2;padding:2px 10px;background:rgba(255,253,247,.94);border-radius:12px;font-size:10px;line-height:1.9;color:var(--ink)}
+.chapel-photo-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px;text-align:center;background:radial-gradient(circle at 25% 20%,#fffbed,transparent 65%),linear-gradient(145deg,#e0e9df,#f0e6d6)}
+.chapel-photo-fallback > span{font:38px/1.4 Georgia,serif;color:#a2b097}
+.detail-row .chapel-photo-fallback p{max-width:260px;margin:10px 0 0;font-size:12px;color:#71806e}
+.chapel-photo figcaption{padding:11px 8px 0;text-align:center;white-space:pre-line;font:11px/1.9 var(--serif);color:#7b8877}
+.chapel-website{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:6px 0;font-size:11px;color:#71816d;text-underline-offset:5px}
+footer{text-align:center;padding:65px 10px max(65px,env(safe-area-inset-bottom))}
+footer h2{font-size:clamp(40px,7vw,64px);margin:20px 0}
+.footer-name{font:27px/1.8 var(--cute);margin:25px 0 15px}
+.jp{font:13px/2.2 "Noto Serif JP",var(--serif);color:#a08a73;letter-spacing:.08em}
+.disclaimer{max-width:660px;margin:35px auto 0;font-size:10px;line-height:2;color:#8a9583}
+#toast{position:fixed;z-index:70;left:50%;bottom:max(20px,env(safe-area-inset-bottom));transform:translateX(-50%);width:max-content;max-width:90%;padding:12px 18px;border-radius:12px;background:#40564ff2;color:#fffaf0;font-size:12px}
+
+.noscript{max-width:620px;margin:40px auto;padding:32px 26px;background:#fffdf5;border:1px solid #e3dccb;border-radius:8px;color:var(--ink);font:14px/2 var(--serif)}
+.noscript h1{font-size:30px;margin:4px 0 6px}
+.noscript dl{margin:18px 0;display:grid;grid-template-columns:7.5em 1fr;gap:6px 14px}
+.noscript dt{color:#84907f;font-size:12px;padding-top:2px}
+.noscript dd{margin:0}
+.noscript a{color:var(--sage-deep)}
+
+@media(max-width:760px){
+  .topbar{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+  .control{font-size:10px;padding:9px 11px}
+  .lang-btn{font-size:10px;padding:6px 8px}
+  .brand{font-size:21px}
+  .intro-heading{font-size:24px}
+  .photo-card{width:min(320px,78vw,42svh)}
+  .content{padding:60px 20px 0}
+  .countdown-card{padding:32px 14px 20px;border-radius:90px 90px 10px 10px / 50px 50px 10px 10px}
+  .countdown-grid{gap:6px}
+  .paper{padding:28px 24px}
+  .letter{margin:52px 0}
+  .letter p{font-size:13px}
+  .details{grid-template-columns:minmax(0,1fr);gap:30px}
+  .event{grid-template-columns:84px minmax(0,1fr)}
+  .noscript dl{grid-template-columns:1fr}
+  .noscript dt{padding-top:8px}
+}
+@media(max-height:620px){
+  .intro-inner{justify-content:flex-start}
+  .photo-card{width:min(260px,68vw)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<noscript>
+  <div class="noscript" lang="zh-HK">
+    <p class="eyebrow">WEDDING INVITATION</p>
+    <h1>Marco &amp; Jenny</h1>
+    <p>誠意邀請你，嚟沖繩見證我哋嘅婚禮。</p>
+    <dl>
+      <dt>日期</dt><dd>2027 年 3 月 30 日（星期二）</dd>
+      <dt>入場時間</dt><dd>日本時間下午 12:50</dd>
+      <dt>典禮開始</dt><dd>日本時間下午 1:00</dd>
+      <dt>重要提醒</dt><dd><strong>典禮開始後不能中途進入教堂。</strong></dd>
+      <dt>預計結束</dt><dd>約下午 3:30（結束時間待確認）</dd>
+      <dt>地點</dt><dd>Monterey Lumer Chapel<br>Hotel Monterey Okinawa Spa &amp; Resort<br>沖繩，日本</dd>
+      <dt>地圖</dt><dd><a href="https://maps.app.goo.gl/KZ6U57jWLL2UsfLi7" rel="noopener noreferrer">打開 Google 地圖</a></dd>
+      <dt>典禮後晚飯</dt><dd>時間及地點待確認</dd>
+    </dl>
+    <p>唔需要網上回覆。如未能出席，請直接告知 Marco 或 Jenny。</p>
+    <p class="small">開啟 JavaScript 後，可以睇到互動請帖、倒數、行事曆，以及 English、日本語版本。</p>
+  </div>
+</noscript>
+
+<header class="topbar">
+  <div id="brand" class="brand">M &amp; J</div>
+  <div class="top-buttons">
+    <div id="langGroup" class="lang-switch" role="group" aria-label="語言">
+      <button class="lang-btn" type="button" data-lang="zh-HK" lang="zh-HK" aria-label="繁體中文" aria-pressed="true">繁中</button>
+      <button class="lang-btn" type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button class="lang-btn" type="button" data-lang="ja" lang="ja" aria-label="日本語" aria-pressed="false">日本語</button>
+    </div>
+    <button id="motionButton" class="control" type="button" aria-pressed="false" hidden></button>
+    <button id="musicButton" class="control" type="button" hidden></button>
+  </div>
+</header>
+
+<p id="langStatus" class="sr-only" role="status"></p>
+
+<section id="intro" aria-labelledby="introHeading" hidden>
+  <div class="intro-paper" aria-hidden="true"></div>
+  <!-- 櫻花層：裝飾性，由 JavaScript 生成花瓣；唔接收任何操作 -->
+  <div id="sakuraLayer" class="sakura-layer" aria-hidden="true"></div>
+  <div class="intro-inner">
+    <div class="eyebrow" data-copy="intro.eyebrow"></div>
+    <h1 id="introHeading" class="intro-heading" data-copy="intro.heading"></h1>
+    <p id="scratchSrHint" class="sr-only" data-copy="intro.srHint"></p>
+
+    <div class="photo-card">
+      <div class="photo-window">
+        <div id="photoFallback" class="photo-fallback">
+          <span class="heart" aria-hidden="true" data-copy="intro.fallbackSymbol"></span>
+          <div class="names" data-copy="intro.fallbackNames"></div>
+          <p class="small" data-copy="intro.fallbackLine"></p>
+          <span class="note" data-copy="intro.fallbackNote"></span>
+        </div>
+        <img id="couplePhoto" alt="" decoding="async" fetchpriority="high" hidden>
+        <canvas id="fogCanvas" width="600" height="750" aria-hidden="true"></canvas>
+        <div id="fogHint" aria-hidden="true">
+          <span class="symbol" data-copy="intro.fogSymbol"></span>
+          <div data-copy="intro.fogTitle"></div>
+          <small data-copy="intro.fogSubtitle"></small>
+        </div>
+      </div>
+      <div class="photo-caption" data-copy="intro.photoCaption"></div>
+    </div>
+
+    <p id="scratchHelp" class="small copy"></p>
+
+    <div id="revealMessage" hidden>
+      <h2 data-copy="intro.revealHeading"></h2>
+      <button id="enterButton" class="primary" type="button" data-copy="intro.enterButton"></button>
+    </div>
+
+    <div class="intro-links">
+      <button id="revealButton" class="text-button" type="button" aria-describedby="scratchSrHint" data-copy="intro.revealButton"></button>
+      <button id="skipButton" class="text-button" type="button" data-copy="intro.skipButton"></button>
+    </div>
+
+    <p id="revealAnnouncement" class="small copy" role="status"></p>
+  </div>
+</section>
+
+<main id="mainContent">
+
+  <section id="chapelEntrance" class="chapel-entrance" aria-labelledby="entranceHeading">
+    <div id="entranceSticky" class="entrance-sticky">
+
+      <div id="sceneEntrance" class="scene scene-entrance">
+        <div id="entranceStage" class="entrance-stage">
+          <div class="entrance-visual">
+            <div id="entranceZoom" class="entrance-zoom">
+              <picture>
+                <source id="entranceDesktopSource" media="(orientation: landscape)">
+                <img id="entranceImage" alt="" decoding="async" fetchpriority="low">
+              </picture>
+              <div id="entranceFallback" class="entrance-fallback" hidden>
+                <span class="arch" aria-hidden="true"></span>
+                <span data-copy="entrance.fallback"></span>
+              </div>
+            </div>
+          </div>
+          <div id="entranceVeil" class="entrance-veil" aria-hidden="true"></div>
+
+          <!-- Checkpoint 2：景深裝飾 + 背面新人（純裝飾，由 JavaScript 建立內容） -->
+          <div id="entranceDecor" class="entrance-decor" aria-hidden="true">
+            <div id="decorFar" class="decor-layer"></div>
+            <div id="decorMid" class="decor-layer"></div>
+            <div id="decorNear" class="decor-layer"></div>
+          </div>
+        </div>
+
+        <div id="entranceCard" class="entrance-card">
+          <div class="eyebrow" data-copy="entrance.eyebrow"></div>
+          <h2 id="entranceHeading" tabindex="-1" data-copy="entrance.heading"></h2>
+          <p class="entrance-note" data-copy="entrance.note"></p>
+          <div class="entrance-actions">
+            <span class="scroll-cue"><span data-copy="entrance.scrollHint"></span><span class="arrow" aria-hidden="true">↓</span></span>
+            <button id="entranceSkip" class="text-button" type="button" data-copy="entrance.skipButton"></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sceneInterior" class="scene scene-interior" role="region" data-label="interior.regionLabel">
+        <div id="interiorStage" class="interior-stage">
+          <div id="interiorZoom" class="interior-zoom">
+            <picture>
+              <source id="interiorDesktopSource" media="(orientation: landscape)">
+              <img id="interiorImage" alt="" decoding="async" fetchpriority="low">
+            </picture>
+            <div id="interiorFallback" class="entrance-fallback" hidden>
+              <span class="arch" aria-hidden="true"></span>
+              <span data-copy="interior.fallback"></span>
+            </div>
+
+            <!-- 新人插畫：裝飾性（文字卡已有名字），alt 留空 -->
+            <figure id="coupleFigure" class="couple-figure" aria-hidden="true" hidden>
+              <img id="coupleImage" alt="" decoding="async" fetchpriority="low" draggable="false">
+            </figure>
+
+            <!-- 花草前景：純裝飾，alt 留空 -->
+            <div id="foregroundFigure" class="foreground-figure" aria-hidden="true" hidden>
+              <picture>
+                <source id="foregroundDesktopSource" media="(orientation: landscape)">
+                <img id="foregroundImage" alt="" decoding="async" fetchpriority="low" draggable="false">
+              </picture>
+            </div>
+          </div>
+        </div>
+
+        <div id="interiorCard" class="interior-card">
+          <div class="eyebrow" data-copy="interior.eyebrow"></div>
+          <h2 id="interiorHeading" tabindex="-1" data-copy="interior.heading"></h2>
+          <p class="interior-names" data-copy="interior.names"></p>
+          <p class="entrance-note" data-copy="interior.note"></p>
+          <div class="entrance-actions">
+            <span class="scroll-cue"><span data-copy="interior.scrollHint"></span><span class="arrow" aria-hidden="true">↓</span></span>
+            <button id="interiorSkip" class="text-button" type="button" data-copy="interior.skipButton"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="invitation" class="content">
+    <div class="container">
+
+      <section class="center countdown-section" aria-labelledby="countdownHeading">
+        <div class="eyebrow" data-copy="countdown.eyebrow"></div>
+        <h2 id="countdownHeading" class="section-title" tabindex="-1" data-copy="countdown.heading"></h2>
+        <p class="small" data-copy="countdown.intro"></p>
+
+        <div class="countdown-card">
+          <p class="countdown-target" data-copy="countdown.target"></p>
+          <div id="countdownGrid" class="countdown-grid" role="timer" aria-atomic="true" data-label="countdown.timerLabel">
+            <div class="cd-unit"><b id="cdDays">—</b><span data-copy="countdown.days"></span></div>
+            <div class="cd-unit"><b id="cdHours">—</b><span data-copy="countdown.hours"></span></div>
+            <div class="cd-unit"><b id="cdMinutes">—</b><span data-copy="countdown.minutes"></span></div>
+            <div class="cd-unit"><b id="cdSeconds">—</b><span data-copy="countdown.seconds"></span></div>
+          </div>
+          <div id="countdownStarted" hidden>
+            <p class="cd-started" data-copy="countdown.startedHeading"></p>
+            <p class="small" data-copy="countdown.startedNote"></p>
+          </div>
+          <p id="countdownLocal" class="small copy"></p>
+          <p class="small countdown-note" data-copy="countdown.note"></p>
+        </div>
+      </section>
+
+      <article class="paper letter">
+        <div class="eyebrow" data-copy="letter.eyebrow"></div>
+        <h2 class="section-title" data-copy="letter.heading"></h2>
+        <p data-copy="letter.greeting"></p>
+        <div id="letterParagraphs"></div>
+        <div class="signature" data-copy="letter.signature"></div>
+      </article>
+
+      <section class="details">
+        <div>
+          <div class="eyebrow" data-copy="details.eyebrow"></div>
+          <h2 class="section-title" data-copy="details.heading"></h2>
+
+          <div class="detail-row">
+            <small data-copy="details.dateLabel"></small>
+            <strong data-copy="details.dateValue"></strong>
+            <p data-copy="details.dateNote"></p>
+          </div>
+
+          <div class="detail-row">
+            <small data-copy="details.timeLabel"></small>
+            <ul class="time-list">
+              <li data-copy="details.doors"></li>
+              <li class="is-key" data-copy="details.ceremony"></li>
+              <li><span data-copy="details.end"></span><span class="tbc" data-copy="plans.tbc"></span></li>
+            </ul>
+            <p data-copy="details.timeNote"></p>
+            <div class="notice" role="note">
+              <strong data-copy="details.noticeLabel"></strong>
+              <p data-copy="details.noticeText"></p>
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <small data-copy="details.venueLabel"></small>
+            <strong class="venue" data-copy="details.venueValue"></strong>
+            <p data-copy="details.venueNote"></p>
+            <div class="actions">
+              <a id="mapLink" class="pill pill-strong" target="_blank" rel="noopener noreferrer" data-copy="details.mapButton" hidden></a>
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <small data-copy="details.calendarLabel"></small>
+            <div class="actions">
+              <a id="googleCalLink" class="pill" target="_blank" rel="noopener noreferrer" data-copy="details.googleButton" hidden></a>
+              <button id="icsButton" class="pill" type="button" data-copy="details.icsButton"></button>
+            </div>
+            <p data-copy="details.calendarNote"></p>
+          </div>
+
+          <div class="detail-row">
+            <small data-copy="details.photoLabel"></small>
+            <figure id="chapelFigure" class="chapel-photo">
+              <div class="chapel-photo-frame">
+                <span id="chapelPhotoBadge" class="photo-badge" data-copy="details.photoBadge" hidden></span>
+                <div id="chapelPhotoFallback" class="chapel-photo-fallback">
+                  <span aria-hidden="true">♡</span>
+                  <p id="chapelPhotoStatus" class="copy"></p>
+                </div>
+                <img id="chapelPhoto" alt="" width="1600" height="1000" loading="lazy" decoding="async">
+              </div>
+              <figcaption id="chapelPhotoCaption" data-copy="details.chapelPhotoCaption" hidden></figcaption>
+            </figure>
+            <a id="chapelWebsiteLink" class="chapel-website" target="_blank" rel="noopener noreferrer" data-copy="details.chapelWebsiteButton" hidden></a>
+          </div>
+        </div>
+
+        <div>
+          <article class="paper plans">
+            <div class="eyebrow" data-copy="plans.eyebrow"></div>
+            <h3 data-copy="plans.heading"></h3>
+            <div class="plan-row">
+              <h4><span data-copy="plans.dinnerLabel"></span><span class="tbc" data-copy="plans.tbc"></span></h4>
+              <p data-copy="plans.dinnerValue"></p>
+            </div>
+            <div class="plan-row">
+              <h4><span data-copy="plans.transportLabel"></span><span class="tbc" data-copy="plans.tbc"></span></h4>
+              <p data-copy="plans.transportValue"></p>
+            </div>
+            <div class="plan-row">
+              <h4 data-copy="plans.absenceLabel"></h4>
+              <p data-copy="plans.absenceValue"></p>
+            </div>
+          </article>
+
+          <article class="paper reminders">
+            <div class="eyebrow" data-copy="reminders.eyebrow"></div>
+            <h3 data-copy="reminders.heading"></h3>
+            <div id="reminderParagraphs"></div>
+          </article>
+
+          <h3 class="timeline-title" data-copy="schedule.heading"></h3>
+          <p class="small timeline-note" data-copy="schedule.note"></p>
+          <div id="timeline" class="timeline"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p class="jp" lang="ja" data-copy="footer.japanese"></p>
+        <h2 data-copy="footer.heading"></h2>
+        <p class="small" data-copy="footer.paragraph"></p>
+        <div class="footer-name" data-copy="footer.names"></div>
+        <div class="eyebrow" data-copy="footer.date"></div>
+        <p class="disclaimer" data-copy="footer.disclaimer"></p>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="copy" role="status" hidden></div>
+
+<script>
+(() => {
+"use strict";
+
+const C=window.INVITE;
+const $=id=>document.getElementById(id);
+const root=document.documentElement;
+const clamp=(n,min=0,max=1)=>Math.max(min,Math.min(max,n));
+const smooth=x=>x*x*(3-2*x);
+const lerp=(a,b,t)=>a+(b-a)*t;
+const pct=v=>`${Math.round(v*100)}%`;
+const numeric=(value,fallback)=>{
+  if(value===null || value===undefined || value==="") return fallback;
+  const n=Number(value);
+  return Number.isFinite(n)?n:fallback;
+};
+
+const reduced=matchMedia("(prefers-reduced-motion:reduce)");
+const landscapeQuery=matchMedia("(orientation: landscape)");
+
+let paused=reduced.matches;
+let entered=false;
+let requested=false;
+let leaving=false;
+let revealed=false;
+
+let toastTimer;
+let revealTimer;
+let transitionTimer;
+
+let scratchHelpKey="intro.help";
+let announceKey="";
+let chapelStatusKey="details.chapelPhotoLoading";
+
+/* ==========================================================
+   語言：網址 ?lang= → 上次選擇 → 預設繁體中文
+   ========================================================== */
+const LANG_KEY="mj-invite-lang";
+
+function pickLang(){
+  try{
+    const q=new URLSearchParams(location.search).get("lang");
+    if(q && C.languages[q]) return q;
+  }catch{}
+  try{
+    const saved=localStorage.getItem(LANG_KEY);
+    if(saved && C.languages[saved]) return saved;
+  }catch{}
+  return C.defaultLang;
+}
+
+let lang=pickLang();
+
+const vars={names:C.names,initials:C.initials,chapel:C.chapel,hotel:C.hotel,mapUrl:C.mapUrl,guestName:""};
+
+function lookup(obj,path){
+  return path.split(".").reduce((v,k)=>v==null?undefined:v[k],obj);
+}
+function get(path){
+  const value=lookup(C.languages[lang],path);
+  return value!==undefined?value:lookup(C.languages[C.defaultLang],path);
+}
+function format(value,extra={}){
+  const values={...vars,...extra};
+  return String(value??"").replace(/\{([A-Za-z0-9_]+)\}/g,
+    (match,key)=>Object.prototype.hasOwnProperty.call(values,key)?String(values[key]??""):match);
+}
+function copy(path,extra={}){return format(get(path),extra)}
+function put(id,path,extra={}){
+  const el=$(id);
+  if(el) el.textContent=copy(path,extra);
+}
+function toast(path){
+  put("toast",path);
+  $("toast").hidden=false;
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>$("toast").hidden=true,5000);
+}
+function link(id,value){
+  try{
+    const url=new URL(String(value||""));
+    if(!["http:","https:"].includes(url.protocol)) throw new Error("Unsupported link protocol");
+    $(id).href=url.href;
+    $(id).hidden=false;
+  }catch{
+    $(id).hidden=true;
+  }
+}
+
+function isStatic(){return reduced.matches}
+function applyStaticClass(){document.body.classList.toggle("journey-static",isStatic())}
+applyStaticClass();
+
+/* ==========================================================
+   頂部列高度
+   ========================================================== */
+const topbar=document.querySelector(".topbar");
+
+function syncTopbarHeight(){
+  if(!topbar) return;
+  const height=Math.ceil(topbar.getBoundingClientRect().height);
+  root.style.setProperty("--topbar-height",`${height}px`);
+}
+
+syncTopbarHeight();
+
+if("ResizeObserver" in window){
+  new ResizeObserver(()=>{
+    syncTopbarHeight();
+    measureEntrance();
+    requestEntranceUpdate();
+    requestCoupleLayout();
+  }).observe(topbar);
+}else{
+  addEventListener("resize",syncTopbarHeight,{passive:true});
+}
+
+document.fonts?.ready.then(()=>{
+  syncTopbarHeight();
+  requestCoupleLayout();
+});
+
+(function setOpeningPaper(){
+  const path=String(C.openingPaperUrl||"").trim();
+  if(!path) return;
+  try{
+    const url=new URL(path,document.baseURI).href;
+    root.style.setProperty("--opening-paper",`url(${JSON.stringify(url)})`);
+  }catch(error){
+    console.warn("Opening paper path error:",error);
+  }
+})();
+
+link("mapLink",C.mapUrl);
+link("chapelWebsiteLink",C.chapelWebsiteUrl);
+
+/* ==========================================================
+   手繪教堂：元素
+   ========================================================== */
+const entrance=$("chapelEntrance");
+const entranceSticky=$("entranceSticky");
+const entranceStage=$("entranceStage");
+const entranceZoom=$("entranceZoom");
+const entranceVeil=$("entranceVeil");
+const entranceImage=$("entranceImage");
+const entranceSource=$("entranceDesktopSource");
+const entranceFallback=$("entranceFallback");
+const entranceCard=$("entranceCard");
+
+const sceneInterior=$("sceneInterior");
+const interiorStage=$("interiorStage");
+const interiorZoom=$("interiorZoom");
+const interiorImage=$("interiorImage");
+const interiorSource=$("interiorDesktopSource");
+const interiorFallback=$("interiorFallback");
+const interiorCard=$("interiorCard");
+
+const coupleFigure=$("coupleFigure");
+const coupleImage=$("coupleImage");
+
+const fgFigure=$("foregroundFigure");
+const fgImage=$("foregroundImage");
+const fgSource=$("foregroundDesktopSource");
+
+let entranceHasImage=false;
+let entranceStarted=false;
+let entranceSettled=false;
+
+let interiorHasImage=false;
+let interiorStarted=false;
+let interiorWanted=false;
+
+let coupleStarted=false;
+let coupleReady=false;
+let coupleTicking=false;
+
+let fgStarted=false;
+let fgReady=false;
+let fgAlpha=null;
+let fgLastNote="";
+
+root.style.setProperty("--entrance-pos-portrait",String(C.entrancePositionPortrait||"50% 58%"));
+root.style.setProperty("--entrance-pos-landscape",String(C.entrancePositionLandscape||"50% 56%"));
+root.style.setProperty("--interior-pos-portrait",String(C.interiorPositionPortrait||"50% 52%"));
+root.style.setProperty("--interior-pos-landscape",String(C.interiorPositionLandscape||"50% 50%"));
+
+let fracA=.5;
+let fracT=.22;
+
+(function setJourneyScroll(){
+  const a=clamp(numeric(C.entranceScrollScreens,1.6),.5,4);
+  const t=clamp(numeric(C.interiorTransitionScreens,.7),.3,2);
+  const h=clamp(numeric(C.interiorHoldScreens,.9),.3,3);
+  const total=a+t+h;
+  fracA=a/total;
+  fracT=t/total;
+  const unit=window.CSS?.supports?.("height","1svh")?"svh":"vh";
+  root.style.setProperty("--entrance-scroll",`${(total*100).toFixed(1)}${unit}`);
+})();
+
+/* 入口圖片 */
+function entranceDone(){
+  entranceSettled=true;
+  if(interiorWanted) startInteriorImage();
+}
+function showEntranceImage(){
+  entranceHasImage=true;
+  entranceImage.hidden=false;
+  entranceImage.classList.add("is-loaded");
+  entranceFallback.hidden=true;
+  measureEntrance();
+  requestEntranceUpdate();
+  entranceDone();
+  startDecor();   // Checkpoint 2：背景圖成功載入後，先載入裝飾及背面新人
+}
+function showEntranceFallback(){
+  entranceHasImage=false;
+  entranceImage.hidden=true;
+  entranceFallback.hidden=false;
+  requestEntranceUpdate();
+  entranceDone();
+}
+entranceImage.addEventListener("load",()=>{
+  if(entranceImage.naturalWidth>0) showEntranceImage();
+  else showEntranceFallback();
+});
+entranceImage.addEventListener("error",()=>{
+  console.warn("Chapel entrance image failed; showing placeholder.");
+  showEntranceFallback();
+});
+function startEntranceImage(){
+  if(entranceStarted) return;
+  entranceStarted=true;
+  const mobileUrl=String(C.entranceMobileUrl||"").trim();
+  const desktopUrl=String(C.entranceDesktopUrl||"").trim();
+  if(desktopUrl) entranceSource.srcset=desktopUrl;
+  else entranceSource.remove();
+  if(mobileUrl || desktopUrl) entranceImage.src=mobileUrl||desktopUrl;
+  else showEntranceFallback();
+}
+if(document.readyState==="complete"){
+  setTimeout(startEntranceImage,600);
+}else{
+  addEventListener("load",()=>setTimeout(startEntranceImage,600),{once:true});
+}
+
+/* 室內圖片 */
+function showInteriorImage(){
+  interiorHasImage=true;
+  interiorImage.hidden=false;
+  interiorImage.classList.add("is-loaded");
+  interiorFallback.hidden=true;
+  requestEntranceUpdate();
+  startCoupleImage();
+  startForegroundImage();   // 室內圖載入後先下載花草
+  updateCoupleVisibility();
+  updateForegroundVisibility();
+}
+function showInteriorFallback(){
+  interiorHasImage=false;
+  interiorImage.hidden=true;
+  interiorFallback.hidden=false;
+  requestEntranceUpdate();
+  updateCoupleVisibility();
+  updateForegroundVisibility(); // 室內圖失敗：花草唔會浮喺佔位上面
+}
+interiorImage.addEventListener("load",()=>{
+  if(interiorImage.naturalWidth>0) showInteriorImage();
+  else showInteriorFallback();
+});
+interiorImage.addEventListener("error",()=>{
+  console.warn("Chapel interior image failed; showing placeholder.");
+  showInteriorFallback();
+});
+function startInteriorImage(){
+  if(interiorStarted) return;
+  interiorStarted=true;
+  const mobileUrl=String(C.interiorMobileUrl||"").trim();
+  const desktopUrl=String(C.interiorDesktopUrl||"").trim();
+  if(desktopUrl) interiorSource.srcset=desktopUrl;
+  else interiorSource.remove();
+  if(mobileUrl || desktopUrl) interiorImage.src=mobileUrl||desktopUrl;
+  else showInteriorFallback();
+}
+function queueInterior(){
+  interiorWanted=true;
+  if(entranceSettled) startInteriorImage();
+}
+
+/* ==========================================================
+   新人插畫（室內；已確認，未改）
+   ========================================================== */
+function startCoupleImage(){
+  if(coupleStarted) return;
+  coupleStarted=true;
+  const url=String(C.coupleUrl||"").trim();
+  if(!url){
+    hideCouple();
+    return;
+  }
+  coupleImage.src=url;
+}
+
+function hideCouple(){
+  coupleReady=false;
+  coupleFigure.hidden=true;
+  coupleFigure.classList.remove("is-loaded");
+  requestCoupleLayout();
+}
+
+function cornersOpaque(img){
+  try{
+    const canvas=document.createElement("canvas");
+    const w=canvas.width=Math.max(1,Math.min(64,img.naturalWidth));
+    const h=canvas.height=Math.max(1,Math.min(64,img.naturalHeight));
+    const ctx=canvas.getContext("2d");
+    ctx.drawImage(img,0,0,w,h);
+    const data=ctx.getImageData(0,0,w,h).data;
+    const points=[[0,0],[w-1,0],[0,h-1],[w-1,h-1]];
+    return points.every(([x,y])=>data[(y*w+x)*4+3]>=250);
+  }catch(error){
+    console.info("Couple illustration: transparency could not be checked here (e.g. opened via file://).",error);
+    return false;
+  }
+}
+
+coupleImage.addEventListener("load",()=>{
+  if(!(coupleImage.naturalWidth>0)){
+    hideCouple();
+    return;
+  }
+  if(C.coupleHideIfOpaque!==false && cornersOpaque(coupleImage)){
+    console.warn("Couple illustration: all four corners are opaque. The background may not be removed. Hidden for now. Set coupleHideIfOpaque:false to show anyway.");
+    hideCouple();
+    return;
+  }
+  coupleReady=true;
+  updateCoupleVisibility();
+});
+
+coupleImage.addEventListener("error",()=>{
+  console.warn("Couple illustration failed to load; hidden.");
+  hideCouple();
+});
+
+function updateCoupleVisibility(){
+  const show=coupleReady && interiorHasImage;
+  coupleFigure.hidden=!show;
+  if(!show){
+    coupleFigure.classList.remove("is-loaded");
+    requestCoupleLayout();
+    return;
+  }
+  layoutCouple();
+  requestAnimationFrame(()=>coupleFigure.classList.add("is-loaded"));
+  requestCoupleLayout();
+}
+
+function layoutCouple(){
+  if(coupleFigure.hidden || !coupleImage.naturalWidth) return;
+
+  const W=interiorStage.offsetWidth;
+  const H=interiorStage.offsetHeight;
+  if(!W || !H) return;
+
+  const cardTop=interiorCard.offsetTop-interiorStage.offsetTop;
+  const cardRight=interiorCard.offsetLeft+interiorCard.offsetWidth-interiorStage.offsetLeft;
+
+  const ratio=coupleImage.naturalWidth/coupleImage.naturalHeight;
+  const landscape=landscapeQuery.matches;
+  const gap=Math.max(10,H*.02);
+
+  let h,w,left,bottom;
+
+  if(!landscape){
+    const feet=Math.min(cardTop-gap,H*.92);
+    const want=clamp(numeric(C.coupleHeightPortrait,.36),.15,.6)*H;
+    h=Math.min(want,feet-H*.14);
+    w=h*ratio;
+    const maxW=W*.72;
+    if(w>maxW){w=maxW;h=w/ratio}
+    const cx=clamp(numeric(C.coupleCenterPortrait,.5),.2,.8)*W;
+    left=cx-w/2;
+    bottom=H-feet;
+  }else{
+    h=clamp(numeric(C.coupleHeightLandscape,.5),.15,.75)*H;
+    w=h*ratio;
+    const maxW=W*.42;
+    if(w>maxW){w=maxW;h=w/ratio}
+    bottom=clamp(numeric(C.coupleBottomLandscape,.08),0,.4)*H;
+    const cx=clamp(numeric(C.coupleCenterLandscape,.56),.2,.85)*W;
+    const minLeft=cardRight+gap;
+    const maxRight=W*.96;
+    left=Math.max(cx-w/2,minLeft);
+    if(left+w>maxRight){
+      w=Math.max(0,maxRight-left);
+      h=w/ratio;
+    }
+  }
+
+  if(!(h>=70)){
+    coupleFigure.style.visibility="hidden";
+    return;
+  }
+
+  coupleFigure.style.visibility="";
+  coupleFigure.style.width=`${w.toFixed(1)}px`;
+  coupleFigure.style.height=`${h.toFixed(1)}px`;
+  coupleFigure.style.left=`${left.toFixed(1)}px`;
+  coupleFigure.style.bottom=`${bottom.toFixed(1)}px`;
+}
+
+/* ==========================================================
+   花草前景（室內；已確認，未改）
+   ========================================================== */
+function startForegroundImage(){
+  if(fgStarted) return;
+  fgStarted=true;
+  const mobileUrl=String(C.foregroundMobileUrl||"").trim();
+  const desktopUrl=String(C.foregroundDesktopUrl||"").trim();
+  if(!mobileUrl && !desktopUrl){
+    hideForeground();
+    return;
+  }
+  if(desktopUrl) fgSource.srcset=desktopUrl;
+  else fgSource.remove();
+  fgImage.src=mobileUrl||desktopUrl;
+}
+
+function hideForeground(){
+  fgFigure.hidden=true;
+  fgFigure.classList.remove("is-loaded");
+}
+
+function readAlpha(img){
+  try{
+    const w=Math.max(1,Math.min(240,img.naturalWidth));
+    const h=Math.max(1,Math.round(w*img.naturalHeight/img.naturalWidth));
+    const canvas=document.createElement("canvas");
+    canvas.width=w;
+    canvas.height=h;
+    const ctx=canvas.getContext("2d",{willReadFrequently:true});
+    ctx.drawImage(img,0,0,w,h);
+    const data=ctx.getImageData(0,0,w,h).data;
+    let solid=0,soft=0;
+    for(let i=3;i<data.length;i+=4){
+      if(data[i]>=250) solid++;
+      else if(data[i]>8) soft++;
+    }
+    const total=w*h;
+    return {src:img.currentSrc||img.src,w,h,data,opaque:solid/total,soft:soft/total};
+  }catch(error){
+    return null;
+  }
+}
+
+fgImage.addEventListener("load",()=>{
+  if(!(fgImage.naturalWidth>0)){
+    fgReady=false;
+    hideForeground();
+    return;
+  }
+  fgAlpha=readAlpha(fgImage);
+  const file=(fgImage.currentSrc||fgImage.src).split("/").pop();
+
+  if(fgAlpha){
+    console.info(`Foreground ${file}: ${fgImage.naturalWidth}×${fgImage.naturalHeight}px; opaque ${pct(fgAlpha.opaque)}, semi-transparent ${pct(fgAlpha.soft)}, transparent ${pct(1-fgAlpha.opaque-fgAlpha.soft)}. (Edge quality must still be checked by eye.)`);
+    if(C.foregroundHideIfOpaque!==false && fgAlpha.opaque>.85){
+      console.warn(`Foreground ${file}: most pixels are opaque — the background may not be removed (white or checkerboard). Hidden.`);
+      fgReady=false;
+      hideForeground();
+      return;
+    }
+  }else{
+    console.info(`Foreground ${file}: transparency and overlap could not be checked here (e.g. opened via file://). Shown as-is.`);
+  }
+
+  fgReady=true;
+  updateForegroundVisibility();
+});
+
+fgImage.addEventListener("error",()=>{
+  console.warn("Foreground image failed to load; hidden.");
+  fgReady=false;
+  hideForeground();
+});
+
+function updateForegroundVisibility(){
+  const show=fgReady && interiorHasImage;
+  if(!show){
+    hideForeground();
+    return;
+  }
+  fgFigure.hidden=false;
+  layoutForeground();
+}
+
+function setForeground(visible,note){
+  fgFigure.style.visibility=visible?"":"hidden";
+  if(visible) requestAnimationFrame(()=>fgFigure.classList.add("is-loaded"));
+  else fgFigure.classList.remove("is-loaded");
+  if(note && note!==fgLastNote){
+    fgLastNote=note;
+    console.info(note);
+  }
+}
+
+function parsePos(value){
+  const parts=String(value||"50% 50%").trim().split(/\s+/);
+  const f=s=>{
+    const m=/^(-?\d+(?:\.\d+)?)%$/.exec(s||"");
+    return m?clamp(Number(m[1])/100):.5;
+  };
+  return [f(parts[0]),f(parts[1])];
+}
+
+function coverage(r,map){
+  const a=fgAlpha;
+  const kx=a.w/fgImage.naturalWidth;
+  const ky=a.h/fgImage.naturalHeight;
+  const x0=(r.x-map.ox)/map.s*kx, x1=(r.x+r.w-map.ox)/map.s*kx;
+  const y0=(r.y-map.oy)/map.s*ky, y1=(r.y+r.h-map.oy)/map.s*ky;
+  const area=Math.max(1,(x1-x0)*(y1-y0));
+  const sx0=Math.max(0,Math.floor(x0)), sx1=Math.min(a.w,Math.ceil(x1));
+  const sy0=Math.max(0,Math.floor(y0)), sy1=Math.min(a.h,Math.ceil(y1));
+  let hit=0;
+  for(let y=sy0;y<sy1;y++){
+    for(let x=sx0;x<sx1;x++){
+      if(a.data[(y*a.w+x)*4+3]>48) hit++;
+    }
+  }
+  return Math.min(1,hit/area);
+}
+
+function layoutForeground(){
+  if(fgFigure.hidden || !fgImage.naturalWidth) return;
+
+  const W=interiorStage.offsetWidth;
+  const H=interiorStage.offsetHeight;
+  if(!W || !H) return;
+
+  if(H<numeric(C.foregroundMinStageHeight,340)){
+    setForeground(false,"Foreground hidden: interior area is too small on this screen.");
+    return;
+  }
+
+  if(fgAlpha && fgAlpha.src!==(fgImage.currentSrc||fgImage.src)){
+    setForeground(false,"");
+    return;
+  }
+
+  const iw=fgImage.naturalWidth;
+  const ih=fgImage.naturalHeight;
+  const ratio=iw/ih;
+  const landscape=landscapeQuery.matches;
+
+  let mode=String(C.foregroundFit||"auto");
+  if(mode!=="frame" && mode!=="bottom"){
+    const r2=interiorImage.naturalWidth/interiorImage.naturalHeight;
+    mode=(r2 && Math.abs(ratio/r2-1)<.04)?"frame":"bottom";
+  }
+
+  const st=fgFigure.style;
+  let map;
+
+  if(mode==="frame"){
+    fgFigure.classList.remove("is-bottom");
+    st.inset="";
+    st.left="";
+    st.bottom="";
+    st.width="";
+    st.height="";
+    const s=Math.max(W/iw,H/ih);
+    const [px,py]=parsePos(landscape?C.interiorPositionLandscape:C.interiorPositionPortrait);
+    map={s,ox:(W-iw*s)*px,oy:(H-ih*s)*py};
+  }else{
+    let w=W,h=W/ratio;
+    const maxH=clamp(numeric(C.foregroundBottomMaxHeight,.55),.2,1)*H;
+    if(h>maxH){h=maxH;w=h*ratio}
+    const left=(W-w)/2;
+    fgFigure.classList.add("is-bottom");
+    st.inset="auto";
+    st.left=`${left.toFixed(1)}px`;
+    st.bottom="0px";
+    st.width=`${w.toFixed(1)}px`;
+    st.height=`${h.toFixed(1)}px`;
+    map={s:w/iw,ox:left,oy:H-h};
+  }
+
+  fgFigure.dataset.mode=mode;
+
+  if(!fgAlpha){
+    setForeground(true,`Foreground shown (${mode} mode); overlap not checked.`);
+    return;
+  }
+
+  const cx=clamp(numeric(landscape?C.coupleCenterLandscape:C.coupleCenterPortrait,landscape?.56:.5),.2,.85)*W;
+  const aisle=landscape
+    ?{x:cx-.08*W,y:.4*H,w:.16*W,h:.42*H}
+    :{x:cx-.1*W,y:.35*H,w:.2*W,h:.4*H};
+  const aisleHit=coverage(aisle,map);
+
+  let coupleHit=0;
+  if(!coupleFigure.hidden && coupleFigure.style.visibility!=="hidden" && coupleFigure.offsetWidth){
+    coupleHit=coverage({
+      x:coupleFigure.offsetLeft,
+      y:coupleFigure.offsetTop,
+      w:coupleFigure.offsetWidth,
+      h:coupleFigure.offsetHeight
+    },map);
+  }
+
+  const maxCouple=clamp(numeric(C.foregroundMaxCoupleOverlap,.05),0,1);
+  const maxAisle=clamp(numeric(C.foregroundMaxAisleOverlap,.08),0,1);
+
+  if(coupleHit>maxCouple || aisleHit>maxAisle){
+    setForeground(false,`Foreground hidden (${mode} mode): would cover couple ${pct(coupleHit)} / aisle ${pct(aisleHit)} (limits ${pct(maxCouple)} / ${pct(maxAisle)}).`);
+    return;
+  }
+
+  setForeground(true,`Foreground shown (${mode} mode): covers couple ${pct(coupleHit)}, aisle ${pct(aisleHit)}.`);
+}
+
+function layoutDecorInterior(){
+  coupleTicking=false;
+  layoutCouple();
+  layoutForeground();
+}
+
+function requestCoupleLayout(){
+  if(coupleTicking) return;
+  coupleTicking=true;
+  requestAnimationFrame(layoutDecorInterior);
+}
+
+if("ResizeObserver" in window){
+  new ResizeObserver(requestCoupleLayout).observe(interiorCard);
+}
+
+/* ==========================================================
+   Checkpoint 2：入口景深裝飾 + 背面新人
+   - 入口背景係合併圖，唔可以拆層；呢度只加獨立素材疊層。
+   - 疊層喺 #entranceStage 內（唔受背景 zoom 影響），
+     所以用數學方式把「背景圖比例座標」換算成畫面座標，
+     並套用同背景一樣嘅 zoom / shift，令佢哋貼住背景移動。
+   - 前景花葉：移動幅度最大；中景：背面新人；遠景：水紋（極細微）。
+   - 任何素材載入失敗／未去背 → 只隱藏該素材。
+   ========================================================== */
+const decorEl=$("entranceDecor");
+const decorFar=$("decorFar");
+const decorMid=$("decorMid");
+const decorNear=$("decorNear");
+const WI=C.walkIn||{};
+const DP=C.depth||{};
+const FL=DP.florals||{};
+const RP=DP.ripples||{};
+
+let decorStarted=false;
+const sheets={walk:null,floral:null,ripple:null};
+let geom=null;            // 背景圖喺畫面嘅換算資料
+let curZoom=1, curShift=0; // 同 updateEntrance 套用喺背景嘅 zoom / shift
+let walker=null;          // {box,img}
+let nearItems=[], farItems=[];
+
+function sheetOpaque(im,name){
+  try{
+    const c=document.createElement("canvas");
+    c.width=32;c.height=32;
+    const ctx=c.getContext("2d",{willReadFrequently:true});
+    ctx.drawImage(im,0,0,32,32);
+    const d=ctx.getImageData(0,0,32,32).data;
+    const pts=[[0,0],[31,0],[0,31],[31,31]];
+    const opaque=pts.every(([x,y])=>d[(y*32+x)*4+3]>=250);
+    if(opaque) console.warn(`${name}: all four corners are opaque — probably a black (not transparent) background. Hidden. (No pixels were modified.)`);
+    return opaque;
+  }catch(error){
+    console.info(`${name}: transparency could not be checked here (e.g. opened via file://). Shown as-is; if you see black boxes, test via a local server or set enabled:false.`);
+    return false;
+  }
+}
+
+function loadSheet(key,url,name){
+  const raw=String(url||"").trim();
+  if(!raw) return;
+  let abs;
+  try{abs=new URL(raw,document.baseURI).href}catch(error){console.warn(name,"path error:",error);return}
+  const im=new Image();
+  im.onload=()=>{
+    if(!(im.naturalWidth>0)) return;
+    if(sheetOpaque(im,name)) return;
+    sheets[key]={url:abs};
+    buildDecor();
+    requestEntranceUpdate();
+  };
+  im.onerror=()=>console.warn(`${name} failed to load; that decoration is hidden.`);
+  im.src=abs;
+}
+
+function startDecor(){
+  if(decorStarted) return;
+  decorStarted=true;
+  if(WI.enabled!==false) loadSheet("walk",WI.sheetUrl,"Walk-in sheet");
+  if(DP.enabled!==false){
+    loadSheet("floral",FL.sheetUrl,"Florals sheet");
+    loadSheet("ripple",RP.sheetUrl,"Sea ripples sheet");
+  }
+}
+
+function makeSprite(url){
+  const box=document.createElement("div");
+  box.className="deco";
+  const clip=document.createElement("div");
+  clip.className="deco-clip";
+  const img=document.createElement("img");
+  img.alt="";
+  img.draggable=false;
+  img.decoding="async";
+  img.addEventListener("error",()=>{box.hidden=true});
+  img.src=url;
+  clip.append(img);
+  box.append(clip);
+  return {box,img};
+}
+
+// 以素材表 crop（sheetRef 單位）顯示，boxW = 畫面上嘅闊度（px）。回傳高度。
+function fitSprite(sp,ref,crop,boxW,dx=0,dy=0){
+  const k=boxW/crop.w;
+  sp.box.style.width=`${boxW.toFixed(1)}px`;
+  sp.box.style.height=`${(crop.h*k).toFixed(1)}px`;
+  sp.img.style.width=`${(ref*k).toFixed(1)}px`;
+  sp.img.style.left=`${(-(crop.x+dx)*k).toFixed(1)}px`;
+  sp.img.style.top=`${(-(crop.y+dy)*k).toFixed(1)}px`;
+  return crop.h*k;
+}
+
+function buildDecor(){
+  const land=landscapeQuery.matches;
+
+  if(sheets.walk && WI.enabled!==false && !walker){
+    walker=makeSprite(sheets.walk.url);
+    const shadow=document.createElement("div");
+    shadow.className="deco-shadow";
+    walker.box.prepend(shadow);
+    decorMid.append(walker.box);
+  }
+
+  decorNear.replaceChildren();
+  nearItems=[];
+  if(sheets.floral && DP.enabled!==false){
+    for(const cfg of (land?FL.landscape:FL.portrait)||[]){
+      const crop=(FL.crops||{})[cfg.crop];
+      if(!crop) continue;
+      const sp=makeSprite(sheets.floral.url);
+      decorNear.append(sp.box);
+      nearItems.push({sp,cfg,crop});
+    }
+  }
+
+  decorFar.replaceChildren();
+  farItems=[];
+  if(sheets.ripple && DP.enabled!==false){
+    for(const cfg of (land?RP.landscape:RP.portrait)||[]){
+      const crop=(RP.crops||{})[cfg.crop];
+      if(!crop) continue;
+      const sp=makeSprite(sheets.ripple.url);
+      decorFar.append(sp.box);
+      farItems.push({sp,cfg,crop});
+    }
+  }
+}
+
+function imgToStage(u,v){
+  const bx=geom.ox+u*geom.iw*geom.s;
+  const by=geom.oy+v*geom.ih*geom.s;
+  return {
+    x:geom.fx+(bx-geom.fx)*curZoom,
+    y:geom.fy+(by-geom.fy)*curZoom+curShift
+  };
+}
+
+function decorWanted(){
+  return !isStatic() && !paused && entranceHasImage && !!geom && (!!walker || nearItems.length>0 || farItems.length>0);
+}
+
+function updateDecor(pe){
+  const on=decorWanted();
+  decorEl.hidden=!on;
+  entrance.classList.toggle("walker-on",on && !!walker);
+  if(!on) return;
+
+  const land=landscapeQuery.matches;
+  const dFadeS=numeric(DP.fadeStart,.84), dFadeE=Math.max(dFadeS+.01,numeric(DP.fadeEnd,.96));
+  const fadeOut=1-smooth(clamp((pe-dFadeS)/(dFadeE-dFadeS)));
+  const fadeIn=smooth(clamp(pe/.1));
+
+  /* 遠景：水紋（跟背景，只做細微水平漂移） */
+  for(const it of farItems){
+    const c=it.cfg;
+    const p=imgToStage(numeric(c.u,.5),numeric(c.v,.6));
+    const bw=numeric(c.w,.12)*geom.iw*geom.s*curZoom;
+    const bh=fitSprite(it.sp,numeric(RP.sheetRef,1024),it.crop,bw);
+    const mx=numeric(c.moveX,0)*pe;
+    it.sp.box.style.transform=`translate3d(${(p.x-bw/2+mx).toFixed(1)}px,${(p.y-bh/2).toFixed(1)}px,0)`;
+    it.sp.box.style.opacity=(numeric(c.opacity,.5)*fadeIn*fadeOut).toFixed(3);
+  }
+
+  /* 中景：背面新人 */
+  if(walker){
+    const T=WI.timing||{};
+    const L=(land?WI.landscape:WI.portrait)||{};
+    const ap=smooth(clamp((pe-T.appearStart)/Math.max(.01,T.appearEnd-T.appearStart)));
+    const lp=smooth(clamp((pe-T.leaveStart)/Math.max(.01,T.leaveEnd-T.leaveStart)));
+    const alpha=ap*(1-lp);
+    if(alpha<=.003){
+      walker.box.style.opacity="0";
+    }else{
+      const wp=clamp((pe-T.walkStart)/Math.max(.01,T.walkEnd-T.walkStart));
+      const X=lerp(L.startX,L.endX,wp);
+      const Y=lerp(L.startY,L.endY,wp);
+      const Hn=lerp(L.startH,L.endH,wp);
+      const order=(WI.frameOrder&&WI.frameOrder.length)?WI.frameOrder:[0,1,2,3];
+      const n=order.length;
+      const idx=Math.floor(wp*numeric(WI.cycles,5)*n)%n;
+      const f=(WI.frames||[])[order[idx]]||{x:0,y:0};
+      const crop={x:f.x,y:f.y,w:numeric(WI.cropW,400),h:numeric(WI.cropH,480)};
+      const boxH=Hn*geom.ih*geom.s*curZoom;
+      const boxW=boxH*crop.w/crop.h;
+      fitSprite(walker.sp||walker,numeric(WI.sheetRef,1024),crop,boxW,numeric(f.dx,0),numeric(f.dy,0));
+      const p=imgToStage(X,Y);
+      const bottom=p.y+numeric(WI.feetInset,.04)*boxH;
+      walker.box.style.transform=`translate3d(${(p.x-boxW/2).toFixed(1)}px,${(bottom-boxH).toFixed(1)}px,0)`;
+      walker.box.style.opacity=alpha.toFixed(3);
+    }
+  }
+
+  /* 前景：花葉（移動幅度最大） */
+  for(const it of nearItems){
+    const c=it.cfg;
+    const bw=numeric(c.w,.25)*geom.W;
+    const bh=fitSprite(it.sp,numeric(FL.sheetRef,1024),it.crop,bw);
+    const s=1+numeric(c.grow,0)*pe;
+    const cx=numeric(c.x,.5)*geom.W+numeric(c.moveX,0)*pe;
+    const cy=numeric(c.y,.9)*geom.H+numeric(c.moveY,0)*pe;
+    it.sp.box.style.transform=`translate3d(${(cx-bw/2).toFixed(1)}px,${(cy-bh/2).toFixed(1)}px,0) scale(${c.flip?-s:s},${s})`;
+    it.sp.box.style.opacity=(numeric(c.opacity,.9)*fadeIn*fadeOut).toFixed(3);
+  }
+}
+
+/* ==========================================================
+   scroll 控制：入口走近 → 紙色 → 室內
+   ========================================================== */
+let zoomMax=1;
+let focusY=.62;
+let stageHeight=0;
+let entranceTicking=false;
+
+function parseFocusY(value,fallback){
+  const parts=String(value||"").trim().split(/\s+/);
+  const match=/^(-?\d+(?:\.\d+)?)%$/.exec(parts[1]||"");
+  return match?clamp(Number(match[1])/100):fallback;
+}
+function parseFocusX(value,fallback){
+  const parts=String(value||"").trim().split(/\s+/);
+  const match=/^(-?\d+(?:\.\d+)?)%$/.exec(parts[0]||"");
+  return match?clamp(Number(match[1])/100):fallback;
+}
+
+function measureEntrance(){
+  const landscape=landscapeQuery.matches;
+  const focus=String((landscape?C.entranceFocusLandscape:C.entranceFocusPortrait)||"").trim()||(landscape?"50% 72%":"50% 62%");
+  entranceZoom.style.transformOrigin=focus;
+  focusY=parseFocusY(focus,landscape?.72:.62);
+  const focusX=parseFocusX(focus,.5);
+
+  const rect=entranceStage.getBoundingClientRect();
+  stageHeight=rect.height;
+
+  const configured=clamp(numeric(C.entranceZoomMax,1.5),1,2);
+  let allowed=configured;
+
+  if(entranceImage.naturalWidth && rect.width && rect.height){
+    const cover=Math.max(rect.width/entranceImage.naturalWidth,rect.height/entranceImage.naturalHeight);
+    const dpr=Math.min(devicePixelRatio||1,2);
+    const sharpness=clamp(numeric(C.entranceMinSharpness,.5),.2,1);
+    allowed=1/(cover*dpr*sharpness);
+
+    // Checkpoint 2：背景圖換算資料（object-fit:cover + object-position）
+    const iw=entranceImage.naturalWidth, ih=entranceImage.naturalHeight;
+    const W=entranceStage.offsetWidth, H=entranceStage.offsetHeight;
+    const s=Math.max(W/iw,H/ih);
+    const [px,py]=parsePos(landscape?C.entrancePositionLandscape:C.entrancePositionPortrait);
+    geom={W,H,iw,ih,s,ox:(W-iw*s)*px,oy:(H-ih*s)*py,fx:focusX*W,fy:focusY*H};
+  }else{
+    geom=null;
+  }
+
+  zoomMax=clamp(allowed,Math.min(configured,1.15),configured);
+}
+
+function journeyDistance(){
+  return Math.max(1,entrance.offsetHeight-entranceSticky.offsetHeight);
+}
+
+function setCards(entranceOn,interiorOn){
+  entranceCard.classList.toggle("is-off",!entranceOn);
+  interiorCard.classList.toggle("is-on",interiorOn);
+}
+
+function updateEntrance(){
+  entranceTicking=false;
+
+  if(isStatic()){
+    entranceZoom.style.transform="none";
+    entranceVeil.style.opacity="0";
+    sceneInterior.style.opacity="";
+    interiorZoom.style.transform="";
+    entrance.classList.remove("is-walking");
+    curZoom=1;curShift=0;
+    updateDecor(0);
+    setCards(true,true);
+    return;
+  }
+
+  const rect=entrance.getBoundingClientRect();
+  const p=clamp(-rect.top/journeyDistance());
+  const pe=clamp(p/fracA);
+  const pt=clamp((p-fracA)/fracT);
+
+  if(pe>.3 && rect.bottom>0) startInteriorImage();
+
+  entrance.classList.toggle("is-walking",pe>.03);
+
+  if(paused){
+    const inside=pt>=.5;
+    entranceZoom.style.transform="none";
+    entranceVeil.style.opacity="0";
+    sceneInterior.style.opacity=inside?"1":"0";
+    interiorZoom.style.transform="none";
+    curZoom=1;curShift=0;
+    updateDecor(pe);   // paused → decorWanted() 為 false，裝飾隱藏
+    setCards(!inside,inside);
+    return;
+  }
+
+  if(entranceHasImage){
+    const eased=smooth(pe);
+    const zoom=1+(zoomMax-1)*eased;
+    let shift=(.5-focusY)*stageHeight*.35*eased;
+    const slackDown=(zoom-1)*focusY*stageHeight;
+    const slackUp=(zoom-1)*(1-focusY)*stageHeight;
+    shift=clamp(shift,-slackUp,slackDown);
+    entranceZoom.style.transform=`translate(0,${shift.toFixed(1)}px) scale(${zoom.toFixed(4)})`;
+    curZoom=zoom;curShift=shift;
+  }else{
+    entranceZoom.style.transform="none";
+    curZoom=1;curShift=0;
+  }
+
+  updateDecor(pe);
+
+  const veil=.55*clamp((pe-.82)/.18)+.37*clamp(pt/.45);
+  entranceVeil.style.opacity=veil.toFixed(3);
+
+  const fade=smooth(clamp((pt-.3)/.6));
+  sceneInterior.style.opacity=fade.toFixed(3);
+
+  const settle=interiorHasImage?1+.05*(1-smooth(pt)):1;
+  interiorZoom.style.transform=`scale(${settle.toFixed(4)})`;
+
+  setCards(pt<.45,pt>=.5);
+}
+
+function requestEntranceUpdate(){
+  if(entranceTicking) return;
+  entranceTicking=true;
+  requestAnimationFrame(updateEntrance);
+}
+
+function scrollToJourney(progress){
+  if(isStatic()) return;
+  const top=entrance.getBoundingClientRect().top+scrollY+progress*journeyDistance();
+  window.scrollTo({top,left:0,behavior:"instant"});
+}
+
+entranceCard.addEventListener("focusin",()=>{
+  if(!isStatic() && entranceCard.classList.contains("is-off")) scrollToJourney(0);
+});
+interiorCard.addEventListener("focusin",()=>{
+  if(!isStatic() && !interiorCard.classList.contains("is-on")) scrollToJourney(fracA+fracT);
+});
+
+addEventListener("scroll",requestEntranceUpdate,{passive:true});
+addEventListener("resize",()=>{
+  measureEntrance();
+  requestEntranceUpdate();
+  requestCoupleLayout();
+},{passive:true});
+if(landscapeQuery.addEventListener){
+  landscapeQuery.addEventListener("change",()=>{
+    measureEntrance();
+    buildDecor();   // 直屏／橫屏用唔同花葉、水紋設定
+    requestEntranceUpdate();
+    requestCoupleLayout();
+  });
+}
+
+measureEntrance();
+
+/* ==========================================================
+   教堂實景照
+   ========================================================== */
+const chapelPhoto=$("chapelPhoto");
+const chapelFigure=$("chapelFigure");
+const chapelPhotoFallback=$("chapelPhotoFallback");
+
+chapelPhoto.style.objectPosition=C.chapelPhotoPosition||"50% 50%";
+
+function showChapelPhoto(){
+  chapelPhoto.hidden=false;
+  chapelFigure.classList.add("has-photo");
+  chapelPhotoFallback.hidden=true;
+  $("chapelPhotoBadge").hidden=false;
+  $("chapelPhotoCaption").hidden=false;
+}
+function showChapelPhotoFallback(){
+  chapelFigure.classList.remove("has-photo");
+  chapelPhoto.hidden=true;
+  chapelPhotoFallback.hidden=false;
+  $("chapelPhotoBadge").hidden=true;
+  $("chapelPhotoCaption").hidden=true;
+  chapelStatusKey="details.chapelPhotoUnavailable";
+  put("chapelPhotoStatus",chapelStatusKey);
+}
+chapelPhoto.addEventListener("load",()=>{
+  if(chapelPhoto.naturalWidth>0) showChapelPhoto();
+  else showChapelPhotoFallback();
+});
+chapelPhoto.addEventListener("error",showChapelPhotoFallback);
+
+const chapelPhotoUrl=String(C.chapelPhotoUrl||"").trim();
+if(chapelPhotoUrl) chapelPhoto.src=chapelPhotoUrl;
+else showChapelPhotoFallback();
+
+/* 字體 */
+if(C.fontUrl && "FontFace" in window){
+  try{
+    const url=new URL(C.fontUrl,document.baseURI).href;
+    const font=new FontFace("Maoken Wedding",`url(${JSON.stringify(url)})`,{style:"normal",weight:"400",display:"swap"});
+    document.fonts.add(font);
+    font.load()
+      .then(()=>{syncTopbarHeight();requestCoupleLayout()})
+      .catch(error=>console.warn("Font loading failed; using fallback fonts:",error));
+  }catch(error){
+    console.warn("Font configuration error:",error);
+  }
+}
+
+/* ==========================================================
+   倒數（已確認，未改）
+   ========================================================== */
+const ceremonyTime=Date.parse(C.event.ceremonyStart);
+const calStart=Date.parse(C.event.doorsOpen);
+const calEnd=Date.parse(C.event.expectedEnd);
+const pad=n=>String(n).padStart(2,"0");
+let cdTimer;
+
+function updateCountdown(){
+  if(!Number.isFinite(ceremonyTime)){
+    ["cdDays","cdHours","cdMinutes","cdSeconds"].forEach(id=>$(id).textContent="—");
+    return;
+  }
+  const diff=ceremonyTime-Date.now();
+  const started=diff<=0;
+  $("countdownGrid").hidden=started;
+  $("countdownStarted").hidden=!started;
+  if(started) return;
+
+  const total=Math.ceil(diff/1000);
+  $("cdDays").textContent=Math.floor(total/86400);
+  $("cdHours").textContent=pad(Math.floor(total%86400/3600));
+  $("cdMinutes").textContent=pad(Math.floor(total%3600/60));
+  $("cdSeconds").textContent=pad(total%60);
+}
+
+function scheduleCountdown(){
+  clearTimeout(cdTimer);
+  updateCountdown();
+  if(document.hidden || !Number.isFinite(ceremonyTime)) return;
+  const left=ceremonyTime-Date.now();
+  if(left<=0) return;
+  const delay=(left%1000)||1000;
+  cdTimer=setTimeout(scheduleCountdown,delay+20);
+}
+
+function updateLocalTime(){
+  const el=$("countdownLocal");
+  if(!Number.isFinite(ceremonyTime)){
+    el.textContent="";
+    return;
+  }
+  const date=new Date(ceremonyTime);
+  if(date.getTimezoneOffset()===-540){
+    put("countdownLocal","countdown.localSame");
+    return;
+  }
+  let localTime;
+  try{
+    localTime=new Intl.DateTimeFormat(get("locale"),{
+      year:"numeric",month:"long",day:"numeric",weekday:"short",
+      hour:"numeric",minute:"2-digit",timeZoneName:"short"
+    }).format(date);
+  }catch{
+    localTime=date.toString();
+  }
+  put("countdownLocal","countdown.localLabel",{localTime});
+}
+
+/* ==========================================================
+   行事曆（已確認，未改）
+   ========================================================== */
+function utcStamp(ms){
+  return new Date(ms).toISOString().replace(/\.\d{3}Z$/,"Z").replace(/[-:]/g,"");
+}
+function calendarText(){
+  return {
+    title:copy("calendar.title"),
+    location:copy("calendar.location"),
+    description:(get("calendar.description")||[]).map(line=>format(line)).join("\n")
+  };
+}
+function calendarValid(){
+  return Number.isFinite(calStart) && Number.isFinite(calEnd) && calEnd>calStart;
+}
+function updateGoogleLink(){
+  const a=$("googleCalLink");
+  if(!calendarValid()){
+    a.hidden=true;
+    return;
+  }
+  const t=calendarText();
+  const enc=encodeURIComponent;
+  a.href="https://calendar.google.com/calendar/render?action=TEMPLATE"+
+    "&text="+enc(t.title)+
+    "&dates="+utcStamp(calStart)+"/"+utcStamp(calEnd)+
+    "&details="+enc(t.description)+
+    "&location="+enc(t.location)+
+    "&ctz=Asia%2FTokyo";
+  a.hidden=false;
+}
+function icsEscape(value){
+  return String(value).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n");
+}
+const utf8=new TextEncoder();
+function foldLine(line){
+  const out=[];
+  let current="";
+  let bytes=0;
+  for(const ch of line){
+    const size=utf8.encode(ch).length;
+    if(bytes+size>75){
+      out.push(current);
+      current=" "+ch;
+      bytes=1+size;
+    }else{
+      current+=ch;
+      bytes+=size;
+    }
+  }
+  out.push(current);
+  return out.join("\r\n");
+}
+function buildICS(){
+  const t=calendarText();
+  const language=get("htmlLang")||lang;
+  const lines=[
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Marco and Jenny//Wedding Invitation//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    "BEGIN:VEVENT",
+    `UID:${C.calendarUid}`,
+    `DTSTAMP:${utcStamp(Date.now())}`,
+    `DTSTART:${utcStamp(calStart)}`,
+    `DTEND:${utcStamp(calEnd)}`,
+    `SUMMARY;LANGUAGE=${language}:${icsEscape(t.title)}`,
+    `LOCATION;LANGUAGE=${language}:${icsEscape(t.location)}`,
+    `DESCRIPTION;LANGUAGE=${language}:${icsEscape(t.description)}`,
+    `URL:${C.mapUrl}`,
+    "TRANSP:OPAQUE",
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ];
+  return lines.map(foldLine).join("\r\n")+"\r\n";
+}
+$("icsButton").addEventListener("click",()=>{
+  try{
+    if(!calendarValid()) throw new Error("Invalid event time");
+    const blob=new Blob([buildICS()],{type:"text/calendar;charset=utf-8"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;
+    a.download=C.icsFileName||"wedding.ics";
+    a.rel="noopener";
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),10000);
+  }catch(error){
+    console.warn("ICS download failed:",error);
+    toast("messages.icsFailed");
+  }
+});
+
+/* ==========================================================
+   音樂：唯一入口係音樂掣（已確認，未改）
+   ========================================================== */
+let audioContext;
+let master;
+let audioElement;
+let musicPlaying=false;
+let audioBusy=false;
+let audioToken=0;
+let musicTimer;
+let noteIndex=0;
+let nextNote=0;
+
+const voices=new Set();
+const volume=clamp(numeric(C.musicVolume,.22));
+const melody=[72,76,79,76,74,77,81,77,71,74,79,74,72,76,79,84,81,79,76,74,72,76,74,67,69,72,76,72,67,71,74,71];
+const bass=[48,53,55,48,57,53,50,55];
+
+function musicUI(){
+  const button=$("musicButton");
+  put("musicButton",musicPlaying?"controls.musicStop":"controls.musicPlay");
+  const label=copy(musicPlaying?"controls.musicOnLabel":"controls.musicOffLabel");
+  button.setAttribute("aria-label",label);
+  button.title=label;
+  button.classList.toggle("is-playing",musicPlaying);
+}
+
+function tone(midi,when,duration,strength){
+  const osc=audioContext.createOscillator();
+  const gain=audioContext.createGain();
+  osc.type="sine";
+  osc.frequency.value=440*Math.pow(2,(midi-69)/12);
+  gain.gain.setValueAtTime(0,when);
+  gain.gain.linearRampToValueAtTime(strength,when+.025);
+  gain.gain.exponentialRampToValueAtTime(.0001,when+duration);
+  osc.connect(gain);
+  gain.connect(master);
+  voices.add(osc);
+  osc.onended=()=>{
+    voices.delete(osc);
+    osc.disconnect();
+    gain.disconnect();
+  };
+  osc.start(when);
+  osc.stop(when+duration+.05);
+}
+
+function scheduleMusic(){
+  if(!musicPlaying || audioContext?.state!=="running") return;
+  if(nextNote<audioContext.currentTime) nextNote=audioContext.currentTime+.04;
+  while(nextNote<audioContext.currentTime+.3){
+    tone(melody[noteIndex%melody.length],nextNote,1.6,.23);
+    if(noteIndex%4===0){
+      const r=bass[Math.floor(noteIndex/4)%bass.length];
+      tone(r,nextNote,2.7,.16);
+      tone(r+7,nextNote,2.5,.065);
+    }
+    noteIndex++;
+    nextNote+=.49;
+  }
+}
+
+function stopMusic(){
+  audioToken++;
+  musicPlaying=false;
+  clearInterval(musicTimer);
+  audioElement?.pause();
+  for(const osc of voices){
+    try{osc.stop()}catch{}
+  }
+  voices.clear();
+  if(audioContext?.state==="running") audioContext.suspend().catch(()=>{});
+  musicUI();
+}
+
+async function startMusic(){
+  if(musicPlaying || audioBusy || document.hidden) return;
+  audioBusy=true;
+  const token=++audioToken;
+  $("musicButton").disabled=true;
+
+  try{
+    if(String(C.musicUrl||"").trim()){
+      if(!audioElement){
+        audioElement=new Audio(C.musicUrl);
+        audioElement.loop=true;
+        audioElement.volume=volume;
+        audioElement.addEventListener("error",()=>{
+          stopMusic();
+          toast("messages.musicFileFailed");
+        });
+      }
+      await audioElement.play();
+    }else{
+      const API=window.AudioContext||window.webkitAudioContext;
+      if(!API) throw new Error("Web Audio unavailable");
+      if(!audioContext){
+        audioContext=new API();
+        master=audioContext.createGain();
+        master.gain.value=volume;
+        master.connect(audioContext.destination);
+      }
+      await audioContext.resume();
+      if(audioContext.state!=="running") throw new Error("Audio blocked");
+    }
+
+    if(token!==audioToken || document.hidden){
+      audioElement?.pause();
+      if(audioContext?.state==="running") await audioContext.suspend();
+      return;
+    }
+
+    musicPlaying=true;
+
+    if(!audioElement){
+      nextNote=audioContext.currentTime+.04;
+      scheduleMusic();
+      clearInterval(musicTimer);
+      musicTimer=setInterval(scheduleMusic,120);
+    }
+  }catch(error){
+    console.warn(error);
+    musicPlaying=false;
+    if(token===audioToken) toast("messages.musicBlocked");
+  }finally{
+    audioBusy=false;
+    $("musicButton").disabled=false;
+    musicUI();
+  }
+}
+
+$("musicButton").addEventListener("click",()=>{
+  if(musicPlaying) stopMusic();
+  else startMusic().catch(error=>console.warn("Music error:",error));
+});
+
+/* ==========================================================
+   第一幕：櫻花持續飄落（Checkpoint 2 狀態修正）
+   - 花瓣數量直接讀 sakuraLayer.childElementCount，唔再用另一個計數器。
+   - 減少動態：立即清走所有花瓣；關閉後恢復生成。
+   - 暫停：停止生成並凍結現有花瓣；恢復後繼續。
+   - 永遠只有一個 sakuraTimer。
+   ========================================================== */
+const sakuraLayer=$("sakuraLayer");
+const sakuraCfg=C.sakura||{};
+let sakuraActive=false;
+let sakuraSheetOK=false;
+let sakuraSheetUrl="";
+let sakuraTimer=0;
+
+function rangeOf(value,fallback){
+  const a=Array.isArray(value)?value:fallback;
+  const lo=numeric(a[0],fallback[0]);
+  const hi=numeric(a[1],fallback[1]);
+  return [Math.min(lo,hi),Math.max(lo,hi)];
+}
+function rand([lo,hi]){return lo+Math.random()*(hi-lo)}
+
+function sakuraCanSpawn(){
+  return sakuraActive && sakuraSheetOK && !paused && !reduced.matches && !document.hidden;
+}
+
+function spawnPetal(){
+  if(!sakuraCanSpawn()) return null;
+  const maxActive=Math.max(1,Math.round(numeric(sakuraCfg.maxActive,8)));
+  if(sakuraLayer.childElementCount>=maxActive) return null;
+
+  const size=rand(rangeOf(sakuraCfg.sizePx,[22,40]));
+  const dur=rand(rangeOf(sakuraCfg.durationSec,[12,20]));
+  const drift=rand(rangeOf(sakuraCfg.driftPx,[30,130]))*(Math.random()<.5?-1:1);
+  const sway=rand(rangeOf(sakuraCfg.swayPx,[10,40]))*(Math.random()<.5?-1:1);
+  const rot=rand(rangeOf(sakuraCfg.rotateDeg,[120,360]))*(Math.random()<.5?-1:1);
+  const op=rand(rangeOf(sakuraCfg.opacity,[.55,.85]));
+  const index=Math.floor(Math.random()*6);
+  const col=index%3;
+  const row=Math.floor(index/3);
+
+  const el=document.createElement("i");
+  el.className="sakura-petal";
+  el.style.left=`${(Math.random()*100).toFixed(1)}%`;
+  el.style.width=`${size.toFixed(1)}px`;
+  el.style.height=`${(size*1.5).toFixed(1)}px`;
+  el.style.backgroundImage=`url(${JSON.stringify(sakuraSheetUrl)})`;
+  el.style.backgroundPosition=`${col*50}% ${row*100}%`;
+  el.style.setProperty("--dur",`${dur.toFixed(1)}s`);
+  el.style.setProperty("--drift",`${drift.toFixed(0)}px`);
+  el.style.setProperty("--sway",`${sway.toFixed(0)}px`);
+  el.style.setProperty("--rot",`${rot.toFixed(0)}deg`);
+  el.style.setProperty("--op",op.toFixed(2));
+  el.addEventListener("animationend",()=>el.remove(),{once:true});
+  sakuraLayer.append(el);
+  return el;
+}
+
+function sakuraSchedule(){
+  clearTimeout(sakuraTimer);
+  sakuraTimer=0;
+  if(!sakuraCanSpawn()) return;
+  const wait=rand(rangeOf(sakuraCfg.spawnIntervalMs,[1600,3200]));
+  sakuraTimer=setTimeout(()=>{
+    sakuraTimer=0;
+    spawnPetal();
+    sakuraSchedule();
+  },Math.max(200,wait));
+}
+
+// 狀態改變（暫停／播放、減少動態、分頁可見性、離開第一幕）後同步一次
+function sakuraSync(){
+  if(reduced.matches && sakuraLayer.childElementCount) sakuraLayer.replaceChildren();
+  if(sakuraCanSpawn()){
+    if(!sakuraTimer) sakuraSchedule();
+  }else{
+    clearTimeout(sakuraTimer);
+    sakuraTimer=0;
+  }
+}
+
+function startSakura(){
+  const url=String(sakuraCfg.sheetUrl||"").trim();
+  if(!url){
+    console.info("Sakura: no sheetUrl set; petals disabled.");
+    return;
+  }
+  try{
+    sakuraSheetUrl=new URL(url,document.baseURI).href;
+  }catch(error){
+    console.warn("Sakura path error:",error);
+    return;
+  }
+  sakuraActive=true;
+  const probe=new Image();
+  probe.onload=()=>{
+    if(!(probe.naturalWidth>0)){
+      console.warn("Sakura sheet has no size; petals disabled.");
+      return;
+    }
+    sakuraSheetOK=true;
+    if(!sakuraActive) return;
+    const burst=Math.max(0,Math.round(numeric(sakuraCfg.initialBurst,3)));
+    for(let i=0;i<burst;i++){
+      const el=spawnPetal();
+      if(el){
+        const dur=parseFloat(el.style.getPropertyValue("--dur"))||16;
+        el.style.animationDelay=`${(-Math.random()*dur*.5).toFixed(1)}s`;
+      }
+    }
+    sakuraSync();
+  };
+  probe.onerror=()=>{
+    console.warn("Sakura sheet failed to load; petals disabled (intro still works).");
+    sakuraSheetOK=false;
+  };
+  probe.src=sakuraSheetUrl;
+}
+
+function stopSakura(){
+  sakuraActive=false;
+  clearTimeout(sakuraTimer);
+  sakuraTimer=0;
+}
+
+function clearSakura(){
+  stopSakura();
+  sakuraLayer.replaceChildren();
+  sakuraLayer.hidden=true;
+}
+
+/* ==========================================================
+   合照及擦霧（已確認，未改）
+   ========================================================== */
+const intro=$("intro");
+const fog=$("fogCanvas");
+const photo=$("couplePhoto");
+
+let pointerId=null;
+let previousPoint=null;
+let lastSample=0;
+let fogContext=null;
+
+photo.style.objectPosition=C.photoPosition||"50% 50%";
+photo.addEventListener("load",()=>{
+  photo.hidden=false;
+  $("photoFallback").hidden=true;
+});
+photo.addEventListener("error",()=>{
+  photo.hidden=true;
+  $("photoFallback").hidden=false;
+  console.warn("Photo loading failed; showing fallback card.");
+});
+if(String(C.photoUrl||"").trim()) photo.src=C.photoUrl;
+
+function showRevealMessage(moveFocus=false){
+  if(requested || entered) return;
+  $("revealMessage").hidden=false;
+  $("enterButton").hidden=false;
+  announceKey="intro.announcement";
+  put("revealAnnouncement",announceKey);
+  $("revealMessage").scrollIntoView({block:"nearest",behavior:reduced.matches?"instant":"smooth"});
+  if(moveFocus) $("enterButton").focus({preventScroll:true});
+}
+
+function revealPhoto(fromButton=false){
+  if(revealed || requested || entered) return;
+  revealed=true;
+  pointerId=null;
+  previousPoint=null;
+  startEntranceImage();
+  intro.classList.add("revealed");
+  scratchHelpKey="intro.helpRevealed";
+  put("scratchHelp",scratchHelpKey);
+
+  const focusWasOnReveal=document.activeElement===$("revealButton");
+  $("revealButton").hidden=true;
+  $("enterButton").hidden=true;
+
+  clearTimeout(revealTimer);
+  revealTimer=setTimeout(()=>{
+    if(!document.hidden) showRevealMessage(fromButton || focusWasOnReveal);
+  },reduced.matches?0:1000);
+}
+
+$("revealButton").addEventListener("click",()=>revealPhoto(true));
+
+try{
+  fogContext=fog.getContext("2d",{willReadFrequently:true});
+  if(!fogContext) throw new Error("Canvas unavailable");
+  const ctx=fogContext;
+
+  const bg=ctx.createLinearGradient(0,0,600,750);
+  bg.addColorStop(0,"#f3ece0");
+  bg.addColorStop(.5,"#faf6ee");
+  bg.addColorStop(1,"#e8eee9");
+  ctx.fillStyle=bg;
+  ctx.fillRect(0,0,600,750);
+
+  for(let i=0;i<35;i++){
+    const x=(Math.sin(i*7.19)+1)*300;
+    const y=(Math.cos(i*4.73)+1)*375;
+    const r=80+(i%5)*25;
+    const gradient=ctx.createRadialGradient(x,y,0,x,y,r);
+    gradient.addColorStop(0,"rgba(255,253,247,.55)");
+    gradient.addColorStop(1,"rgba(255,253,247,0)");
+    ctx.fillStyle=gradient;
+    ctx.fillRect(x-r,y-r,r*2,r*2);
+  }
+
+  const tints=[
+    [80,110,170,"rgba(169,200,211,.20)"],
+    [520,150,150,"rgba(191,209,197,.18)"],
+    [500,650,180,"rgba(217,179,168,.14)"]
+  ];
+  for(const [x,y,r,color] of tints){
+    const gradient=ctx.createRadialGradient(x,y,0,x,y,r);
+    gradient.addColorStop(0,color);
+    gradient.addColorStop(1,"rgba(255,255,255,0)");
+    ctx.fillStyle=gradient;
+    ctx.fillRect(x-r,y-r,r*2,r*2);
+  }
+
+  let grain=7;
+  for(let i=0;i<1600;i++){
+    grain=(grain*16807)%2147483647;
+    const x=grain%600;
+    grain=(grain*16807)%2147483647;
+    const y=grain%750;
+    ctx.fillStyle=i%2?"rgba(120,108,88,.05)":"rgba(255,255,255,.35)";
+    ctx.fillRect(x,y,1.3,1.3);
+  }
+}catch(error){
+  console.warn(error);
+  fog.hidden=true;
+  $("fogHint").hidden=true;
+  scratchHelpKey="intro.helpUnavailable";
+}
+
+const sampleCanvas=document.createElement("canvas");
+sampleCanvas.width=60;
+sampleCanvas.height=75;
+let sampleContext=null;
+try{
+  sampleContext=sampleCanvas.getContext("2d",{willReadFrequently:true});
+}catch(error){
+  console.warn("Scratch sampler unavailable:",error);
+}
+
+function localPoint(event){
+  const rect=fog.getBoundingClientRect();
+  return {
+    x:clamp((event.clientX-rect.left)/rect.width)*600,
+    y:clamp((event.clientY-rect.top)/rect.height)*750
+  };
+}
+
+function stamp(x,y){
+  const radius=58;
+  const ctx=fogContext;
+  const brush=ctx.createRadialGradient(x,y,radius*.48,x,y,radius);
+  brush.addColorStop(0,"rgba(0,0,0,1)");
+  brush.addColorStop(1,"rgba(0,0,0,0)");
+  ctx.globalCompositeOperation="destination-out";
+  ctx.fillStyle=brush;
+  ctx.fillRect(x-radius,y-radius,radius*2,radius*2);
+}
+
+function checkCoverage(force=false){
+  if(!sampleContext || revealed) return;
+  const now=performance.now();
+  if(!force && now-lastSample<140) return;
+  lastSample=now;
+  try{
+    sampleContext.clearRect(0,0,60,75);
+    sampleContext.drawImage(fog,0,0,60,75);
+    const pixels=sampleContext.getImageData(0,0,60,75).data;
+    let alpha=0;
+    for(let i=3;i<pixels.length;i+=4) alpha+=pixels[i];
+    const erased=1-alpha/(60*75*255);
+    const threshold=clamp(numeric(C.revealThreshold,.35),.1,.8);
+    if(erased>=threshold) revealPhoto();
+  }catch(error){
+    console.warn("Coverage sampling failed:",error);
+  }
+}
+
+function eraseTo(point){
+  if(!fogContext || revealed) return;
+  intro.classList.add("scratching");
+  const from=previousPoint||point;
+  const steps=Math.max(1,Math.ceil(Math.hypot(point.x-from.x,point.y-from.y)/12));
+  for(let i=1;i<=steps;i++){
+    const p=i/steps;
+    stamp(from.x+(point.x-from.x)*p,from.y+(point.y-from.y)*p);
+  }
+  previousPoint=point;
+  checkCoverage();
+}
+
+fog.addEventListener("pointerdown",event=>{
+  if(revealed || requested || !event.isPrimary || event.button!==0 || !fogContext) return;
+  pointerId=event.pointerId;
+  previousPoint=null;
+  try{fog.setPointerCapture(event.pointerId)}catch{}
+  eraseTo(localPoint(event));
+});
+fog.addEventListener("pointermove",event=>{
+  if(event.pointerId===pointerId && !revealed) eraseTo(localPoint(event));
+});
+function endScratch(event){
+  if(event.pointerId!==pointerId) return;
+  pointerId=null;
+  previousPoint=null;
+  checkCoverage(true);
+}
+fog.addEventListener("pointerup",endScratch);
+fog.addEventListener("pointercancel",endScratch);
+fog.addEventListener("lostpointercapture",endScratch);
+
+/* ==========================================================
+   動畫控制
+   ========================================================== */
+function motionUI(){
+  put("motionButton",paused?"controls.play":"controls.pause");
+  $("motionButton").setAttribute("aria-pressed",String(paused));
+  document.body.classList.toggle("motion-paused",paused);
+  sakuraSync();
+}
+
+$("motionButton").addEventListener("click",()=>{
+  paused=!paused;
+  motionUI();
+  requestEntranceUpdate();
+});
+
+// 系統「減少動態」改變：動畫狀態同步（開 → 暫停；關 → 恢復），花瓣由 sakuraSync 清走／恢復
+function reducedChange(event){
+  paused=event.matches;
+  applyStaticClass();
+  motionUI();
+  measureEntrance();
+  requestEntranceUpdate();
+  requestCoupleLayout();
+}
+if(reduced.addEventListener) reduced.addEventListener("change",reducedChange);
+else reduced.addListener(reducedChange);
+
+/* ==========================================================
+   三語（已確認，未改）
+   ========================================================== */
+function paragraphs(id,values,className=""){
+  const fragment=document.createDocumentFragment();
+  for(const value of values){
+    const p=document.createElement("p");
+    p.className=("copy "+className).trim();
+    p.textContent=format(value);
+    fragment.append(p);
+  }
+  $(id).replaceChildren(fragment);
+}
+
+function renderTimeline(){
+  const fragment=document.createDocumentFragment();
+  for(const item of get("schedule.events")||[]){
+    const row=document.createElement("div");
+    const time=document.createElement("p");
+    const block=document.createElement("div");
+    const heading=document.createElement("h4");
+    const text=document.createElement("p");
+    row.className="event";
+    time.className="event-time copy";
+    heading.className="copy";
+    text.className="copy";
+    time.textContent=format(item.time);
+    heading.textContent=format(item.heading);
+    text.textContent=format(item.paragraph);
+    if(item.tbc){
+      const badge=document.createElement("span");
+      badge.className="tbc";
+      badge.textContent=copy("plans.tbc");
+      heading.append(badge);
+    }
+    block.append(heading,text);
+    row.append(time,block);
+    fragment.append(row);
+  }
+  $("timeline").replaceChildren(fragment);
+}
+
+function applyLanguage(announce=false){
+  vars.guestName=copy("guestName");
+  root.lang=get("htmlLang")||lang;
+  document.title=copy("page.title");
+  $("pageDescription").content=copy("page.description");
+  $("brand").textContent=C.initials;
+
+  document.querySelectorAll("[data-copy]").forEach(el=>{
+    el.textContent=copy(el.dataset.copy);
+  });
+  document.querySelectorAll("[data-label]").forEach(el=>{
+    el.setAttribute("aria-label",copy(el.dataset.label));
+  });
+
+  paragraphs("letterParagraphs",get("letter.paragraphs")||[]);
+  paragraphs("reminderParagraphs",get("reminders.paragraphs")||[],"small");
+  renderTimeline();
+
+  put("scratchHelp",scratchHelpKey);
+  if(announceKey) put("revealAnnouncement",announceKey);
+  put("chapelPhotoStatus",chapelStatusKey);
+
+  photo.alt=copy("intro.photoAlt");
+  entranceImage.alt=copy("entrance.imageAlt");
+  interiorImage.alt=copy("interior.imageAlt");
+  chapelPhoto.alt=copy("details.chapelPhotoAlt");
+  // 新人插畫、花草、景深裝飾、背面新人：保持空 alt（裝飾性）
+
+  $("langGroup").setAttribute("aria-label",copy("controls.langGroup"));
+  document.querySelectorAll(".lang-btn").forEach(button=>{
+    button.setAttribute("aria-pressed",String(button.dataset.lang===lang));
+  });
+
+  musicUI();
+  motionUI();
+  updateLocalTime();
+  updateGoogleLink();
+  requestCoupleLayout();
+
+  if(announce) put("langStatus","controls.langChanged");
+}
+
+document.querySelectorAll(".lang-btn").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const next=button.dataset.lang;
+    if(!C.languages[next] || next===lang) return;
+    const y=scrollY;
+    lang=next;
+    try{localStorage.setItem(LANG_KEY,lang)}catch{}
+    try{
+      const url=new URL(location.href);
+      url.searchParams.set("lang",lang);
+      history.replaceState(history.state,"",url);
+    }catch{}
+    applyLanguage(true);
+    syncTopbarHeight();
+    measureEntrance();
+    window.scrollTo({top:y,left:0,behavior:"instant"});
+    requestEntranceUpdate();
+  });
+});
+
+/* ==========================================================
+   流程：合照 → 手繪教堂入口
+   ========================================================== */
+function instantMotion(){return reduced.matches || paused}
+
+function hideIntro(){
+  clearSakura();     // 離開第一幕：停止並清走所有花瓣
+  intro.hidden=true;
+  intro.inert=true;
+}
+
+function unlockPage(){
+  startEntranceImage();
+  document.body.classList.remove("waiting");
+  document.body.classList.add("entered");
+  $("mainContent").inert=false;
+  entrance.classList.add("is-shown");
+  setTimeout(()=>entrance.classList.add("cards-ready"),1900);
+  measureEntrance();
+  requestEntranceUpdate();
+  requestCoupleLayout();
+}
+
+function focusInvitation(){
+  $("countdownHeading").scrollIntoView({behavior:"instant",block:"start"});
+  $("countdownHeading").focus({preventScroll:true});
+}
+
+function enterChapel(){
+  if(!revealed || requested || entered) return;
+  requested=true;
+  leaving=true;
+  stopSakura();      // 按入場：不再生成新花瓣（淡出期間現有花瓣隨第一幕淡出）
+  clearTimeout(revealTimer);
+  $("enterButton").disabled=true;
+  window.scrollTo({top:0,left:0,behavior:"instant"});
+  unlockPage();
+  queueInterior();
+  intro.inert=true;
+  intro.classList.add("leaving");
+  transitionTimer=setTimeout(()=>{
+    leaving=false;
+    entered=true;
+    hideIntro();
+    $("entranceHeading").focus({preventScroll:true});
+  },instantMotion()?0:700);
+}
+
+function skipAll(){
+  clearTimeout(revealTimer);
+  clearTimeout(transitionTimer);
+  requested=true;
+  leaving=false;
+  entered=true;
+  unlockPage();
+  hideIntro();
+  focusInvitation();
+}
+
+$("enterButton").addEventListener("click",enterChapel);
+$("skipButton").addEventListener("click",skipAll);
+$("entranceSkip").addEventListener("click",focusInvitation);
+$("interiorSkip").addEventListener("click",focusInvitation);
+
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){
+    stopMusic();
+    clearTimeout(revealTimer);
+    clearTimeout(cdTimer);
+    sakuraSync();
+  }else{
+    scheduleCountdown();
+    requestEntranceUpdate();
+    sakuraSync();
+    if(revealed && !requested && !entered && $("revealMessage").hidden) showRevealMessage(false);
+  }
+});
+addEventListener("pageshow",()=>{
+  scheduleCountdown();
+  measureEntrance();
+  requestEntranceUpdate();
+  requestCoupleLayout();
+  sakuraSync();
+});
+addEventListener("pagehide",()=>{
+  stopMusic();
+  clearTimeout(cdTimer);
+  clearTimeout(sakuraTimer);
+  sakuraTimer=0;
+});
+
+/* 初始化 */
+applyLanguage(false);
+scheduleCountdown();
+$("motionButton").hidden=false;
+$("musicButton").hidden=false;
+syncTopbarHeight();
+$("mainContent").inert=true;
+intro.hidden=false;
+document.body.classList.add("waiting");
+window.scrollTo({top:0,left:0,behavior:"instant"});
+startSakura();   // 第一幕櫻花開始
+
+})();
+</script>
+</body>
+</html>
+
